@@ -1,0 +1,141 @@
+@import '../Utils/_variables.scss';
+
+.alert-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.alert {
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+	align-items: center;
+  width: 500px;
+  min-height: 60px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  flex-wrap:wrap;
+  position: relative;
+  animation: alert-in 500ms ease;
+  // animation: alert-in 0.5s, alert-out 0.5s 2.5s;
+}
+
+@keyframes alert-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animation-alert-out {
+  animation: alert-out 500ms ease;
+  opacity: 0;
+}
+
+@keyframes alert-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+  
+}
+
+.alert-entered {
+  opacity: 1;
+}
+
+.alert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 10px;
+  min-height: 60px;
+}
+
+.alert-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.alert-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.alert-text {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.alert-text-large {
+  margin-top: -15px;
+  margin-left: 50px;
+  margin-bottom: 15px;
+  line-height: 20px;
+}
+
+// .alert-close-btn {
+//   width: 60px;
+//   display: flex;
+//   justify-content: center;
+//   position: absolute;
+//   right: 0px;
+// }
+
+.alert-close-btn {
+  position: absolute;
+  top: 22px;
+  right: 15px;
+}
+
+.alert-close-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.alert-success {
+  background-color: $success-100;
+  border-color: $success-200;
+}
+
+.alert-success-icon {
+  color: $success-600;
+}
+
+.alert-warning {
+  background-color: $danger-100;
+  border-color: $danger-200;
+}
+
+.alert-warning-icon {
+  color: $danger-600;
+}
+
+.alert-info {
+  background-color: $primary-100;
+  border-color: $primary-200;
+}
+
+.alert-info-icon {
+  color: $primary-600
+}
+
+
+
+@media only screen and (max-width: 550px) {
+  .alert {
+    width: 100%;
+    margin-left: 5px;
+  }
+}

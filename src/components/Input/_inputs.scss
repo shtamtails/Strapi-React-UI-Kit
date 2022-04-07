@@ -1,0 +1,61 @@
+@import "../Utils/_variables.scss";
+
+.input-label {
+  margin: 10px 20px 0px 20px;
+  font-size: 16px;
+  color: $neutral-800;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  margin: 5px 20px 0px 20px;
+  min-height: 40px;
+  min-width: 240px;
+  border: 1px solid $neutral-200;
+  border-radius: 4px;
+  padding-left: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  &:focus {
+    outline-color: $primary-600;
+  }
+}
+
+
+
+textarea {
+  padding-top: 10px;
+  height: 80px;
+}
+
+::placeholder {
+  color: $neutral-500;
+}
+
+.input-description {
+  margin: 5px 20px 10px 20px;
+  font-size: 12px;
+  color: $neutral-600;
+}
+
+.input-error {
+  border-color: $danger-600;
+  color: $danger-600;
+}
+
+.disabled {
+  background-color: $neutral-150;
+}
+
+.show-password-btn {
+  display: inline;
+  margin-left: -50px;
+  margin-top: 20px;
+  position: absolute;
+  cursor: pointer;
+  color: $neutral-500;
+}

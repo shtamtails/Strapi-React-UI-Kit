@@ -1,0 +1,25 @@
+@import '../Utils/_variables.scss';
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin: 5px 20px 0px 20px;
+    .custom-checkbox {
+      min-width: 20px;
+      min-height: 20px;
+      border: 1px solid $neutral-200;
+      border-radius: 4px;
+    }
+    .checked {
+      background-color: $primary-600;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 10px;
+      background-image: url(../images/Check.svg); /* Add custom arrow */
+    }
+    .checkbox-label {
+      font-size: 16px;
+      color: $neutral-800;
+      margin-left: 10px;
+    }
+}
