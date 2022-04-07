@@ -1,23 +1,11 @@
-import { useEffect, useState } from "react"
 import { FaExclamationCircle, FaCheckCircle, FaInfoCircle } from "react-icons/fa"
-import {FiX} from "react-icons/fi"
+import { FiX } from "react-icons/fi"
 
-// TODO Add alert delete timer
-
-
-
-
-const Alert = ({text, type, onDelete, transitionState}) => {
-    const [animation, setAnimation] = useState(false)
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            // setAnimation(true)
-        }, 2200);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+const Alert = ({ alerts, setAlerts, text, type, id }) => {
+    const clearAlert = removeAlert(alerts, setAlerts)
 
     return (
-            <div className={`alert alert-${type} ${animation && "animation-alert-out"}`}>
+            <div className={`alert alert-${type}`}>
                 <div className={`alert-icon alert-${type}-icon `}>
                     {type === "warning" && <FaExclamationCircle />}
                     {type === "success" && <FaCheckCircle />}
@@ -33,16 +21,34 @@ const Alert = ({text, type, onDelete, transitionState}) => {
                     {text}
                 </div>
                 <div className="alert-close-btn">
-                    <FiX onClick={onDelete}/>
+                    <FiX onClick={() => clearAlert(id)}/>
                 </div>
             </div>
     )
 }
 
 Alert.defaultProps = {
-    type: "info",
-    timer: 5000,
+    type: "info"
 }
 
-
 export default Alert
+
+export function removeAlert(alerts, setAlerts) {
+    return (id) => {
+        setAlerts(alerts.filter((el) => el.id !== id))
+    }
+}
+
+export function newAlert(alerts, setAlerts) {
+    return (type, text) => {
+      const alertId = Math.random().toString(36).slice(2, 9)
+      setAlerts([
+        ...alerts,
+        {
+          id: alertId,
+          text: `${text}-${alerts.length}`,
+          type: type,
+        }
+      ])
+    }
+  }
