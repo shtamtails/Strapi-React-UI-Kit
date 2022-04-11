@@ -20,54 +20,6 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
-  -webkit-animation: alert-in 500ms ease;
-          animation: alert-in 500ms ease;
-}
-
-@-webkit-keyframes alert-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes alert-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animation-alert-out {
-  -webkit-animation: alert-out 500ms ease 2200ms;
-          animation: alert-out 500ms ease 2200ms;
-  opacity: 0;
-}
-
-@-webkit-keyframes alert-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes alert-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.alert-entered {
-  opacity: 1;
 }
 
 .alert-icon {

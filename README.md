@@ -23,7 +23,7 @@ const addAlert = newAlert(alerts, setAlerts);
 ```
 
 ```js
-<AlertsContainer alerts={alerts} setAlerts={setAlerts} />
+<AlertsContainer alerts={alerts} setAlerts={setAlerts} style={{}} />
 ```
 
 To add alert:

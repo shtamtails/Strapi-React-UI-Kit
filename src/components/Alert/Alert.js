@@ -1,54 +1,64 @@
 import { FaExclamationCircle, FaCheckCircle, FaInfoCircle } from "react-icons/fa"
 import { FiX } from "react-icons/fi"
+import { removeAlert } from "./Utils";
+import PropTypes from 'prop-types'
 
-const Alert = ({ alerts, setAlerts, text, type, id }) => {
-    const clearAlert = removeAlert(alerts, setAlerts)
+const Alert = ({ alerts, setAlerts, text, type, style, id }) => {
+    let ALERT_STYLE;
+    let ALERT_ICON;
+    let ALERT_TITLE;
+
+    switch(type) {
+    case "warning":
+        ALERT_STYLE = "alert-warning"
+        ALERT_ICON = <FaExclamationCircle />;
+        ALERT_TITLE = "Warning Alert:";        
+    break;
+    case "success":
+        ALERT_STYLE = "alert-success"
+        ALERT_ICON = <FaCheckCircle />
+        ALERT_TITLE = "Success Alert:"
+    break;
+    case "info": 
+        ALERT_STYLE = "alert-info"
+        ALERT_ICON = <FaInfoCircle />
+        ALERT_TITLE = "Info Alert:"
+    break;
+    default: 
+        ALERT_STYLE = "alert-info"
+        ALERT_ICON = <FaInfoCircle />
+        ALERT_TITLE = "Info Alert:"
+    break;
+    }
+
+    const deleteAlert = removeAlert(alerts,setAlerts);
 
     return (
-            <div className={`alert alert-${type}`}>
-                <div className={`alert-icon alert-${type}-icon `}>
-                    {type === "warning" && <FaExclamationCircle />}
-                    {type === "success" && <FaCheckCircle />}
-                    {type === "info" && <FaInfoCircle />}
-                </div>
-                <div className="alert-title">
-                    {type === "warning" && "Warning Alert:"}
-                    {type === "success" && "Success Alert:"}
-                    {type === "info" && "Info Alert:"}
-                </div>
-                <div className={`alert-text 
-                ${text.length > 34 ? "alert-text-large" : ""}`}>
-                    {text}
-                </div>
-                <div className="alert-close-btn">
-                    <FiX onClick={() => clearAlert(id)}/>
-                </div>
-            </div>
+    <div className={`alert ${ALERT_STYLE}`} style={style}>
+        <div className={`alert-icon ${ALERT_STYLE}-icon`}>
+            {ALERT_ICON}
+        </div>
+        <div className="alert-title">
+            {ALERT_TITLE}
+        </div>
+        <div className={`alert-text${text.length > 34 ? " alert-text-large" : ""}`}>
+            {text}
+        </div>
+        <div className="alert-close-btn">
+            <FiX onClick={() => {deleteAlert(id)}}/>
+        </div>
+    </div>
     )
 }
 
 Alert.defaultProps = {
+    text: "Ooopsie, something went wrong!",
     type: "info"
 }
 
-export default Alert
-
-export function removeAlert(alerts, setAlerts) {
-    return (id) => {
-        setAlerts(alerts.filter((el) => el.id !== id))
-    }
+Alert.propTypes = {
+    type: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
 }
 
-export function newAlert(alerts, setAlerts) {
-    return (type, text) => {
-      const alertId = Math.random().toString(36).slice(2, 9)
-      setAlerts([
-        ...alerts,
-        {
-          id: alertId,
-          text: `${text}-${alerts.length}`,
-          type: type,
-        }
-      ])
-    }
-  }
+export default Alert
