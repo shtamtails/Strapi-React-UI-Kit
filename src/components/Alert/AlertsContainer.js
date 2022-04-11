@@ -1,9 +1,7 @@
 import React from 'react'
-import { useEffect } from 'react'
 import Alert from './Alert'
 
 export const AlertsContainer = ({ alerts, setAlerts, style }) => {
-
   return (
     <>
       {alerts.length > 0 &&

@@ -1,27 +1,31 @@
-const Button = ({ text, variant, size, width, icon, onClick }) => {
+import PropTypes from 'prop-types'
+import { useUniqueId } from '../Hooks/useUniqueId';
+
+const Button = ({ children, type, style, onClick, icon }) => {
     return (
-        <button 
-        className={`btn btn-${variant} ${size}`} 
-        style={{ width: width}}
-        onClick={onClick}
-        >
-            <div className="btn-text">
-            {icon && <div className="btn-icon">
-                {icon}
+        <button key={useUniqueId} className={`btn btn-${type}`} onClick={onClick} style={style}>
+            {icon && 
+            <div className="btn-icon">
+            {icon}
             </div>}
-                {text}
+            <div className="btn-text">
+            {children}
             </div>
-            
         </button>
-        
     )
     
 };
 
 Button.defaultProps = {
-    text: "button",
-    variant: "btn-primary",
-    size: "s",
+    children: "OK",
+    type: "primary",
+}
+
+Button.propTypes = {
+    children: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    style: PropTypes.object,
+    onClick: PropTypes.func.isRequired,
 }
 
 export default Button;

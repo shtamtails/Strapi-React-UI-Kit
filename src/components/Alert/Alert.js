@@ -4,6 +4,8 @@ import { removeAlert } from "./Utils";
 import PropTypes from 'prop-types'
 
 const Alert = ({ alerts, setAlerts, text, type, style, id }) => {
+    
+    const deleteAlert = removeAlert(alerts,setAlerts);
     let ALERT_STYLE;
     let ALERT_ICON;
     let ALERT_TITLE;
@@ -31,7 +33,6 @@ const Alert = ({ alerts, setAlerts, text, type, style, id }) => {
     break;
     }
 
-    const deleteAlert = removeAlert(alerts,setAlerts);
 
     return (
     <div className={`alert ${ALERT_STYLE}`} style={style}>
