@@ -5,11 +5,7 @@ Created using [Strapi - UI Kit](https://www.figma.com/community/file/10507019759
 ## Alerts
 
 ```js
-import { AlertsContainer } from './Alert/AlertsContainer
-```
-
-```js
-import { newAlert, removeAlert } from './Alert/
+import { newAlert, removeAlert, AlertsContainer } from './Alert/
 ```
 
 In app:
