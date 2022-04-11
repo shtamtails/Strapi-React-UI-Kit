@@ -34,8 +34,8 @@ AddAlert("warning", "text");
 
 ### Props:
 
-`type` - `warning`, `info`, `success`<br>
-`text` - `Alert text`<br>
+`type` - required. `warning`, `info`, `success`<br>
+`text` - required. `Alert text`<br>
 
 ## Buttons
 
@@ -58,7 +58,7 @@ Hello World
 
 ### Props:
 
-`type` - `primary`, `secondary`, `tertiary`, `success`, `danger`, `danger-light`, `success-light` required.<br>
+`type` - required. `primary`, `secondary`, `tertiary`, `success`, `danger`, `danger-light`, `success-light`<br>
 `icon` - optional. <br>
 `style` - optional. JSX styling. <br>
 `onClick` - required. Any function that will execute on button click.
