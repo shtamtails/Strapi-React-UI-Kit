@@ -1,4 +1,4 @@
-@import '../Utils/_variables.scss';
+@import "../Utils/_variables.scss";
 
 .alert-container {
   position: fixed;
@@ -10,12 +10,12 @@
   margin-bottom: 10px;
   font-size: 14px;
   display: flex;
-	align-items: center;
+  align-items: center;
   width: 500px;
   min-height: 60px;
   border: 1px solid #000;
   border-radius: 4px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   position: relative;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .alert-info-icon {
-  color: $primary-600
+  color: $primary-600;
 }
 
 @media only screen and (max-width: 550px) {

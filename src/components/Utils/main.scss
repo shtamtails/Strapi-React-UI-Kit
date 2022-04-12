@@ -1,14 +1,13 @@
 @import "_variables.scss";
 // @import "../Alert/alerts";
 // @import "../Button/buttons";
-// @import "../Checkbox/checkbox";
-// @import "../Input/inputs";
+@import "../Checkbox/checkbox";
+@import "../Input/inputs";
 // @import "../Modal/modal";
 @import "../Navbar/navbar";
 // @import "../Select/select";
 // @import "../Switch/switch";
 // @import "../Toggle/toggle";
-
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",

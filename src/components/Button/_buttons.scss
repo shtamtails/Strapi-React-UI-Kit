@@ -15,20 +15,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .btn-text {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .btn-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 6px;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 .btn-primary {
@@ -80,8 +83,7 @@
   background-color: $success-100;
   &:hover {
     transition: 0.2s ease-out;
-    background: none;
-
+    background-color: $success-200;
   }
 }
 
@@ -91,7 +93,16 @@
   background-color: $danger-100;
   &:hover {
     transition: 0.2s ease-out;
-    background: none;
+    background-color: $danger-200;
+  }
+}
 
+.btn-disabled {
+  background-color: $neutral-150;
+  border: 1px solid $neutral-200;
+  color: $neutral-600;
+  cursor: auto;
+  &:hover {
+    background-color: $neutral-150;
   }
 }
