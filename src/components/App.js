@@ -1,7 +1,7 @@
 import "../css/main.css";
 import Navbar from "./Navbar";
 import Checkbox from "./Checkbox";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 // ! Add color chose to every input component
 
@@ -13,8 +13,8 @@ const App = () => {
       <Navbar />
       <div className="container-main">
         <Checkbox
-          isChecked={subscriptionCheckbox}
-          setChecked={setSubscriptionCheckbox}
+          isCheckedState={subscriptionCheckbox}
+          setCheckedState={setSubscriptionCheckbox}
           label="I agree to sell my privacy"
           disabled
         />

@@ -62,3 +62,30 @@ Hello World
 `icon` - optional. <br>
 `style` - optional. JSX styling. <br>
 `onClick` - required. Any function that will execute on button click.
+
+## Checkbox
+
+```js
+import Checkbox from "./Checkbox/";
+```
+
+To add checkbox:
+
+```js
+const [privacyCheckbox, setPrivacyCheckbox] = useState(true);
+<Checkbox
+  isCheckedState={privacyCheckbox}
+  setCheckedState={setPrivacyCheckbox}
+  label="I agree to sell my privacy"
+  description="Thats a very important description."
+/>;
+```
+
+### Props:
+
+`label` <br>
+`description` <br>
+`isCheckedState` - REQUIRED. <br>
+`setCheckedState` - REQUIRED.<br>
+`label` - REQUIRED.<br>
+`disabled` <br>

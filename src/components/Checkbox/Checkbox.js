@@ -39,8 +39,8 @@ Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
   description: PropTypes.string,
   disabled: PropTypes.bool,
-  isChecked: PropTypes.bool.isRequired,
-  setChecked: PropTypes.any.isRequired,
+  isCheckedState: PropTypes.bool.isRequired,
+  setCheckedState: PropTypes.any.isRequired,
 };
 
 export default Checkbox;
