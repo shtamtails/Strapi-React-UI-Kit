@@ -5,7 +5,7 @@ Created using [Strapi - UI Kit](https://www.figma.com/community/file/10507019759
 ## Alerts
 
 ```js
-import { newAlert, removeAlert, AlertsContainer } from './Alert/
+import { newAlert, removeAlert, AlertsContainer } from "./Alert/";
 ```
 
 In app:
@@ -19,7 +19,7 @@ const addAlert = newAlert(alerts, setAlerts);
 ```
 
 ```js
-<AlertsContainer alerts={alerts} setAlerts={setAlerts} style={{ JSX css styling }} />
+<AlertsContainer alerts={alerts} setAlerts={setAlerts} />
 ```
 
 To add alert:

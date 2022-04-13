@@ -17,7 +17,9 @@ const Checkbox = ({ label, description, isCheckedState, setCheckedState, disable
           key={`checkbox-${CHECKBOX_UNIQUE_ID}`}
           onClick={
             !disabled
-              ? (e) => setCheckedState(!isCheckedState)
+              ? (e) => {
+                  setCheckedState(!isCheckedState);
+                }
               : (e) => {
                   e.preventDefault();
                 }

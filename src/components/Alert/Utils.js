@@ -12,7 +12,7 @@ export function newAlert(alerts, setAlerts) {
       ...alerts,
       {
         id: useUniqueId(),
-        text: `${text}-${alerts.length}`,
+        text: text,
         type: type,
       },
     ]);
