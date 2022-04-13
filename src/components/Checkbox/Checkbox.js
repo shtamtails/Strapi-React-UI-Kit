@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useMemo } from "react";
 import { useUniqueId } from "../Hooks/useUniqueId";
 
-const Checkbox = ({ label, description, checkboxState, changeCheckedState, disabled }) => {
+const Checkbox = ({ checkboxState, changeCheckedState, disabled, ...props }) => {
   const handleClick = (e) => {
     if (!disabled) {
       changeCheckedState();
@@ -30,9 +30,9 @@ const Checkbox = ({ label, description, checkboxState, changeCheckedState, disab
           id={`checkbox-${CHECKBOX_UNIQUE_ID}`}
           onClick={handleClick}
         />
-        <label htmlFor={`checkbox-${CHECKBOX_UNIQUE_ID}`}>{label}</label>
+        <label htmlFor={`checkbox-${CHECKBOX_UNIQUE_ID}`}>{props.label}</label>
       </div>
-      <div className="checkbox-description">{description}</div>
+      <div className="checkbox-description">{props.description}</div>
     </div>
   );
 };

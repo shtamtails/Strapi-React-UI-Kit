@@ -1,22 +1,21 @@
 import PropTypes from "prop-types";
-import { useUniqueId } from "../Hooks/useUniqueId";
 
-const Button = ({ children, type, style, onClick, icon, disabled }) => {
+const Button = (props) => {
+  const handleClick = (e) => {
+    if (!props.disabled) {
+      props.onClick();
+    } else {
+      e.preventDefault();
+    }
+  };
+
+  const buttonStyles = ["btn", `btn-${props.type}`];
+  props.disabled && buttonStyles.push("btn-disabled");
+
   return (
-    <button
-      key={useUniqueId}
-      className={`btn btn-${type}${disabled ? " btn-disabled" : ""}`}
-      onClick={
-        !disabled
-          ? onClick
-          : (e) => {
-              e.preventDefault();
-            }
-      }
-      style={style}
-    >
-      {icon && <div className="btn-icon">{icon}</div>}
-      <div className="btn-text">{children}</div>
+    <button className={buttonStyles.join(" ")} onClick={handleClick} style={props.style}>
+      {props.icon && <div className="btn-icon">{props.icon}</div>}
+      <div className="btn-text">{props.children}</div>
     </button>
   );
 };

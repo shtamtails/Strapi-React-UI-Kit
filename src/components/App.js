@@ -1,21 +1,22 @@
 import "../css/main.css";
-import Navbar from "./Navbar";
-import Checkbox from "./Checkbox/";
+import { TextInput } from "./Inputs";
 import { useState } from "react";
 
 const App = () => {
-  const [checkbox, setCheckbox] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [value, setValue] = useState("");
+
   return (
     <>
-      <Navbar />
-      <main className="container-main">
-        <Checkbox
-          label="test"
-          description="test"
-          checkboxState={checkbox}
-          changeCheckedState={() => setCheckbox(!checkbox)}
-        />
-      </main>
+      <TextInput
+        required
+        value={value}
+        setValue={setValue}
+        label="Input Label"
+        description="description"
+        placeholder="Placeholder"
+        loading={loading}
+      />
     </>
   );
 };
