@@ -70,11 +70,31 @@ To add checkbox:
 ```js
 const [privacyCheckbox, setPrivacyCheckbox] = useState(true);
 <Checkbox
-  isCheckedState={privacyCheckbox}
-  setCheckedState={setPrivacyCheckbox}
+  checkboxState={privacyCheckbox}
+  changeCheckedState={() => setPrivacyCheckbox(!checkbox)}
   label="I agree to sell my privacy"
   description="Thats a very important description."
 />;
+```
+
+In multi-state state:
+
+```js
+  const [checkbox, setCheckbox] = useState({
+    first: false,
+    second: true,
+  });
+
+  <Checkbox
+    label="first"
+    checkboxState={checkbox.first}
+    changeCheckedState={() => setCheckbox({ ...checkbox, first: !checkbox.first })}
+  />
+  <Checkbox
+    label="second"
+    checkboxState={checkbox.second}
+    changeCheckedState={() => setCheckbox({ ...checkbox, second: !checkbox.second })}
+  />
 ```
 
 ### Props:

@@ -1,3 +1,72 @@
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox-description {
+  font-size: 12px;
+  color: #666687;
+}
+
+label {
+  font-size: 16px;
+  color: #32324d;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox + label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.custom-checkbox + label::before {
+  margin-right: 8px;
+  content: "";
+  -webkit-transition: 100ms ease;
+  transition: 100ms ease;
+  min-width: 20px;
+  min-height: 20px;
+  border: 1px solid #dcdce4;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox-disabled + label::before {
+  background-color: #eaeaef;
+  cursor: not-allowed;
+}
+
+.custom-checkbox:checked + label::before {
+  -webkit-transition: 100ms ease;
+  transition: 100ms ease;
+  background-color: #4945ff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='%23FFFFFF' stroke-width='0' viewBox='0 0 512 512' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.checkbox-disabled:checked + label::before {
+  background-color: #eaeaef;
+  cursor: not-allowed;
+  background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='%23000000' stroke-width='0' viewBox='0 0 512 512' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'%3E%3C/path%3E%3C/svg%3E");
+}
+
 .navbar {
   width: 225px;
   -webkit-transition: 500ms ease;
