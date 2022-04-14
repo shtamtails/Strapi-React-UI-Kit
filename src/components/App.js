@@ -1,14 +1,14 @@
 import "../css/main.css";
-import { TextInput } from "./Inputs";
+import { PasswordInput } from "./Inputs";
 import { useState } from "react";
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [value, setValue] = useState("");
 
   return (
     <>
-      <TextInput
+      <PasswordInput
         required
         value={value}
         setValue={setValue}
