@@ -1,17 +1,16 @@
 import "../css/main.css";
-import { Switch } from "./Inputs";
+import { Checkbox } from "./Inputs";
 import { useState } from "react";
 
 // TODO add size prop to inputs
+// ! Delete input-label if label is not added
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [value, setValue] = useState(false);
-  console.log(value);
+  const [value, setValue] = useState(true);
   return (
     <>
-      <Switch value={value} setValue={setValue} label="label" description="description" showStatus disabled />
-      {/* <button onClick={() => setValue(!value)}></button> */}
+      <Checkbox value={value} setValue={setValue} disabled label="Label" labelBg />
     </>
   );
 };
