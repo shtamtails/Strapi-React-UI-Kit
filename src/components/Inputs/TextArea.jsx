@@ -8,7 +8,7 @@ export const TextArea = ({ value, setValue, size, ...props }) => {
   }
 
   return (
-    <div className="text-input-container">
+    <div className="input-container">
       <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>
       <div className="text-input">
         <textarea

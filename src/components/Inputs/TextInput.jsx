@@ -2,15 +2,13 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { AiOutlineLoading } from "react-icons/ai";
 
-// TODO When disabled change placeholder color to primary 600
-
 export const TextInput = ({ value, setValue, size, ...props }) => {
   if (props.loading === true) {
     props.disabled = true;
   }
 
   return (
-    <div className="text-input-container">
+    <div className="input-container">
       <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>
       <div className="text-input">
         <input
