@@ -153,3 +153,29 @@ const Demo = () => {
 
 export default Demo;
 ```
+
+### Checkbox
+
+```js
+import { Checkbox } from "./Inputs";
+import { useState } from "react";
+import { useUniqueId } from "./Hooks/useUniqueId";
+
+const Demo = () => {
+  const [value, setValue] = useState(false);
+
+  return (
+    <Checkbox
+      // required props
+      value={value}
+      setValue={setValue}
+      // optional props
+      disabled
+      label="Input label"
+      labelBg
+    />
+  );
+};
+
+export default Demo;
+```
