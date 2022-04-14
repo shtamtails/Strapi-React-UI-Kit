@@ -109,7 +109,7 @@ const Demo = () => {
   ];
 
   return (
-    <TextArea
+    <Select
       // required props
       value={value}
       setValue={setValue}
@@ -118,6 +118,33 @@ const Demo = () => {
       disabled
       required
       loading={loading}
+      label="Input label"
+      description="Input description"
+    />
+  );
+};
+
+export default Demo;
+```
+
+### Switch
+
+```js
+import { Switch } from "./Inputs";
+import { useState } from "react";
+import { useUniqueId } from "./Hooks/useUniqueId";
+
+const Demo = () => {
+  const [value, setValue] = useState("Select");
+
+  return (
+    <Switch
+      // required props
+      value={value}
+      setValue={setValue}
+      // optional props
+      showStatus
+      disabled
       label="Input label"
       description="Input description"
     />
