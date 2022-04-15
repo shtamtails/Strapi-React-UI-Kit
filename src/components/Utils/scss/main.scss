@@ -1,7 +1,7 @@
 @import "_variables.scss";
-@import "../../UI/Inputs/_general.scss";
-@import "../../UI/Inputs/Button/_button.scss";
-@import "../../UI/Inputs/TextInput/_textInput.scss";
+@import "../../UI/Inputs/general";
+@import "../../UI/Inputs/Button/button";
+@import "../../UI/Inputs/TextInput/textInput";
 @import "../../UI/Inputs/PasswordInput/passwordInput";
 @import "../../UI/Inputs/TextArea/textArea";
 @import "../../UI/Inputs/Select/select";
