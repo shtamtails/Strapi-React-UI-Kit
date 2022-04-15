@@ -4,10 +4,12 @@ import { useState } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { AiOutlineLoading } from "react-icons/ai";
 
+// ! Add border on open
+
 export const Select = ({ optionsList, value, setValue, ...props }) => {
   const [select, setSelect] = useState(false);
 
-  const handleInputClick = (e) => {
+  const handleSelectClick = (e) => {
     !props.disabled && !props.loading && setSelect(!select);
   };
 
@@ -16,12 +18,10 @@ export const Select = ({ optionsList, value, setValue, ...props }) => {
     setValue(e.target.attributes.value.nodeValue);
   };
 
-  // ! Add border on open
-
   return (
     <div className="input-container">
       {props.label && <div className={`${props.required && "required"} input-label`}>{props.label}</div>}
-      <div className="select-input-container" onClick={handleInputClick}>
+      <div className="select-input-container" onClick={handleSelectClick}>
         <div className={`${props.loading || (props.disabled && "select-disabled")} select-input`}>{value}</div>
         {!props.loading ? (
           <div className={`${select && "select-input-icon-opened"} select-input-icon`}>
