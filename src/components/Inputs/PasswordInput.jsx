@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { AiOutlineLoading } from "react-icons/ai";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -11,7 +11,7 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
 
   return (
     <div className="input-container">
-      <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>
+      {props.label && <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>}
       <div className="text-input">
         <input
           required={props.required && true}
@@ -40,7 +40,7 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
           </div>
         )}
       </div>
-      <div className="input-description">{props.description}</div>
+      {props.description && <div className="input-description">{props.description}</div>}
     </div>
   );
 };

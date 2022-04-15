@@ -7,7 +7,7 @@ export const Switch = ({ value, setValue, ...props }) => {
   };
   return (
     <div className="input-container">
-      <div className="input-label">{props.label}</div>
+      {props.label && <div className="input-label">{props.label}</div>}
       <div className="switch-container">
         <div
           className={`${value ? "switch-true" : "switch-false"} ${props.disabled && "input-disabled"} switch-input`}
@@ -25,7 +25,7 @@ export const Switch = ({ value, setValue, ...props }) => {
           </div>
         )}
       </div>
-      <div className="input-description">{props.description}</div>
+      {props.description && <div className="input-description">{props.description}</div>}
     </div>
   );
 };

@@ -20,7 +20,7 @@ export const Select = ({ optionsList, value, setValue, ...props }) => {
 
   return (
     <div className="input-container">
-      <div className={`${props.required && "required"} input-label`}>{props.label}</div>
+      {props.label && <div className={`${props.required && "required"} input-label`}>{props.label}</div>}
       <div className="select-input-container" onClick={handleInputClick}>
         <div className={`${props.loading && "input-disabled"} select-input`}>{value}</div>
         {!props.loading ? (
@@ -44,7 +44,7 @@ export const Select = ({ optionsList, value, setValue, ...props }) => {
           })}
         </div>
       )}
-      <div className="input-description">{props.description}</div>
+      {props.description && <div className="input-description">{props.description}</div>}
     </div>
   );
 };

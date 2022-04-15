@@ -188,12 +188,33 @@ textarea[type="text"] {
   transform: rotate(-180deg);
   transition: transform 300ms ease;
 }
-
 .select-option-container {
+  max-height: 200px;
+  overflow-y: scroll;
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    opacity: 0;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
   position: fixed;
+  z-index: 999;
   font-size: 14px;
   margin-top: 5px;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
   width: 252px;
   min-width: 250px;
   border: 1px solid #eaeaef;
@@ -201,6 +222,7 @@ textarea[type="text"] {
   border-radius: 4px;
   .select-option {
     margin: 5px 0;
+    overflow-x: hidden;
     border-radius: 4px;
     display: flex;
     align-items: center;
