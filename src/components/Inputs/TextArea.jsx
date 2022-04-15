@@ -15,7 +15,6 @@ export const TextArea = ({ value, setValue, size, ...props }) => {
           required={props.required && true}
           disabled={props.disabled && true}
           type="text"
-          className={`${props.disabled ? "input-disabled" : ""}`}
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
             setValue(e.target.value);

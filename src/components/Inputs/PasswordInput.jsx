@@ -17,7 +17,6 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
           required={props.required && true}
           disabled={props.disabled && true}
           type={`${passwordVisibility ? "text" : "password"}`}
-          className={`${props.disabled ? "input-disabled" : ""}`}
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
             setValue(e.target.value);
@@ -30,7 +29,7 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
               setPasswordVisibility(!passwordVisibility);
             }}
           >
-            {passwordVisibility ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            {passwordVisibility && !props.disabled ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
           </div>
         )}
 

@@ -7,6 +7,7 @@ export const Checkbox = ({ value, setValue, label, disabled, ...props }) => {
     !disabled && setValue(!value);
   };
 
+  // Using arrays of styling to make code cleaner because of big amount of dynamic styles
   const checkboxStyles = ["checkbox"];
   const inputCheckboxStyles = ["input-checkbox"];
   const checkmarkStyles = ["checkbox-checkmark"];

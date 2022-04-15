@@ -8,7 +8,7 @@ export const Select = ({ optionsList, value, setValue, ...props }) => {
   const [select, setSelect] = useState(false);
 
   const handleInputClick = (e) => {
-    !props.loading && setSelect(!select);
+    !props.disabled && !props.loading && setSelect(!select);
   };
 
   const handleOptionClick = (e) => {
@@ -22,7 +22,7 @@ export const Select = ({ optionsList, value, setValue, ...props }) => {
     <div className="input-container">
       {props.label && <div className={`${props.required && "required"} input-label`}>{props.label}</div>}
       <div className="select-input-container" onClick={handleInputClick}>
-        <div className={`${props.loading && "input-disabled"} select-input`}>{value}</div>
+        <div className={`${props.loading || (props.disabled && "select-disabled")} select-input`}>{value}</div>
         {!props.loading ? (
           <div className={`${select && "select-input-icon-opened"} select-input-icon`}>
             <TiArrowSortedDown />
