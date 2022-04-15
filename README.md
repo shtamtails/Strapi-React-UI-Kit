@@ -179,3 +179,22 @@ const Demo = () => {
 
 export default Demo;
 ```
+
+### Button
+
+```js
+import { Button } from "./Inputs";
+import { useState } from "react";
+
+const Demo = () => {
+  const [value, setValue] = useState(false);
+
+  return (
+    <Button value={value} setValue={setValue} type="success" variant="light" disabled>
+      Click me!
+    </Button>
+  );
+};
+
+export default Demo;
+```

@@ -34,6 +34,12 @@ export const Button = ({ value, setValue, type, variant, ...props }) => {
   );
 };
 
-Button.propTypes = {};
+Button.propTypes = {
+  value: PropTypes.bool.isRequired,
+  setValue: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  variant: PropTypes.string,
+  disabled: PropTypes.bool,
+};
 
 export default Button;
