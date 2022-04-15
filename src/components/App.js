@@ -1,7 +1,15 @@
 import "../css/main.css";
+import { Button } from "./UI/Inputs";
+import React, { useState } from "react";
 
 const App = () => {
-  return <></>;
+  const [value, setValue] = useState(false);
+
+  return (
+    <Button value={value} setValue={setValue} type="success" variant="light" disabled>
+      Click me!
+    </Button>
+  );
 };
 
 export default App;

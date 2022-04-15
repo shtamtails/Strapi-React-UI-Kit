@@ -9,7 +9,7 @@ export const TextArea = ({ value, setValue, size, ...props }) => {
 
   return (
     <div className="input-container">
-      {props.inputLabel && <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>}
+      {props.label && <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>}
       <div className="text-input">
         <textarea
           required={props.required && true}
@@ -32,7 +32,7 @@ export const TextArea = ({ value, setValue, size, ...props }) => {
 };
 
 TextArea.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.any.isRequired,
   setValue: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   required: PropTypes.bool,

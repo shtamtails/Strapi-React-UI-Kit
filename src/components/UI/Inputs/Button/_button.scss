@@ -1,0 +1,140 @@
+@import "../_general.scss";
+
+.btn {
+  transition: 150ms ease;
+  margin: 5px;
+  min-width: 58px;
+  min-height: 32px;
+  border: 1px solid black;
+  background: none;
+  color: black;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  &:disabled {
+    background-color: $neutral-100;
+    border: 1px solid $neutral-200;
+    color: $neutral-600;
+    cursor: not-allowed;
+    &:hover {
+      background-color: $neutral-100;
+      border: 1px solid $neutral-200;
+      color: $neutral-600;
+    }
+  }
+}
+
+.btn-filled-success {
+  color: $neutral-0;
+  border: none;
+  background-color: $success-600;
+  &:hover {
+    background-color: $success-500;
+  }
+}
+
+.btn-outline-success {
+  background: none;
+  border: 1px solid $success-600;
+  color: $success-600;
+  &:hover {
+    background-color: $success-100;
+  }
+}
+
+.btn-light-success {
+  background-color: $success-100;
+  border: 1px solid $success-200;
+  color: $success-600;
+  &:hover {
+    background: none;
+  }
+}
+
+.btn-subtle-success {
+  color: $success-600;
+  background: none;
+  border: none;
+  &:hover {
+    background-color: $success-100;
+  }
+}
+
+//
+
+.btn-filled-danger {
+  color: $neutral-0;
+  border: none;
+  background-color: $danger-600;
+  &:hover {
+    background-color: $danger-500;
+  }
+}
+
+.btn-outline-danger {
+  background: none;
+  border: 1px solid $danger-600;
+  color: $danger-600;
+  &:hover {
+    background-color: $danger-100;
+  }
+}
+
+.btn-light-danger {
+  background-color: $danger-100;
+  border: 1px solid $danger-200;
+  color: $danger-600;
+  &:hover {
+    background: none;
+  }
+}
+
+.btn-subtle-danger {
+  color: $danger-600;
+  background: none;
+  border: none;
+  &:hover {
+    background-color: $danger-100;
+  }
+}
+
+//
+
+.btn-filled-info {
+  border: none;
+  background-color: $primary-600;
+  color: $neutral-0;
+  &:hover {
+    background-color: $primary-500;
+  }
+}
+
+.btn-outline-info {
+  background: none;
+  border: 1px solid $primary-600;
+  color: $primary-600;
+  &:hover {
+    background-color: $primary-100;
+  }
+}
+
+.btn-light-info {
+  background-color: $primary-100;
+  border: 1px solid $primary-200;
+  color: $primary-600;
+  &:hover {
+    background: none;
+  }
+}
+
+.btn-subtle-info {
+  color: $primary-600;
+  background: none;
+  border: none;
+  &:hover {
+    background-color: $primary-100;
+  }
+}

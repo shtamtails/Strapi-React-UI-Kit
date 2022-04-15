@@ -1,13 +1,13 @@
 @import "_variables.scss";
-// @import "../Alert/alerts";
-// @import "../Button/buttons";
-// @import "../Checkbox/checkbox";
-@import "../Inputs/inputs";
-// @import "../Modal/modal";
-// @import "../Navbar/navbar";
-// @import "../Select/select";
-// @import "../Switch/switch";
-// @import "../Toggle/toggle";
+@import "../../UI/Inputs/_general.scss";
+@import "../../UI/Inputs/Button/_button.scss";
+@import "../../UI/Inputs/TextInput/_textInput.scss";
+@import "../../UI/Inputs/PasswordInput/passwordInput";
+@import "../../UI/Inputs/TextArea/textArea";
+@import "../../UI/Inputs/Select/select";
+@import "../../UI/Inputs/Switch/switch";
+@import "../../UI/Inputs/Checkbox/checkbox";
+@import "../../UI/Inputs/Button/button";
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
@@ -31,10 +31,6 @@ body {
   flex: 1;
   height: 100vh;
   overflow-y: auto;
-}
-
-.warning {
-  color: $danger-500;
 }
 
 a {

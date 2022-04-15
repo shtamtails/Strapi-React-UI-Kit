@@ -9,7 +9,7 @@ export const TextInput = ({ value, setValue, size, ...props }) => {
 
   return (
     <div className="input-container">
-      {props.inputLabel && <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>}
+      {props.label && <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>}
       <div className="text-input">
         <input
           required={props.required && true}
@@ -63,7 +63,7 @@ export const TextInput = ({ value, setValue, size, ...props }) => {
 };
 
 TextInput.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.any.isRequired,
   setValue: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   required: PropTypes.bool,

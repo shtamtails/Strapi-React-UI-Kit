@@ -12,7 +12,7 @@ import { useState } from "react";
 
 const Demo = () => {
   const [loading, setLoading] = useState(false);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   return (
     <TextInput
@@ -41,7 +41,7 @@ import { useState } from "react";
 
 const Demo = () => {
   const [loading, setLoading] = useState(false);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   return (
     <PasswordInput
@@ -70,7 +70,7 @@ import { useState } from "react";
 
 const Demo = () => {
   const [loading, setLoading] = useState(false);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   return (
     <TextArea
@@ -135,7 +135,7 @@ import { useState } from "react";
 import { useUniqueId } from "./Hooks/useUniqueId";
 
 const Demo = () => {
-  const [value, setValue] = useState("Select");
+  const [value, setValue] = useState(false);
 
   return (
     <Switch

@@ -19,9 +19,8 @@ export const Switch = ({ value, setValue, ...props }) => {
           <div
             className={`${value ? "status-false" : "status-true"} ${props.disabled && "status-disabled"} switch-status`}
           >
-            {value && !props.disabled && "Enabled"}
-            {!value && !props.disabled && "Disabled"}
-            {props.disabled && "Disabled"}
+            {value && "Enabled"}
+            {!value && "Disabled"}
           </div>
         )}
       </div>

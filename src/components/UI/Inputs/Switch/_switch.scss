@@ -1,0 +1,53 @@
+@import "../_general.scss";
+.switch-container {
+  display: flex;
+  align-items: center;
+
+  .switch-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 24px;
+    border-radius: 24px;
+    .switch-ball {
+      position: absolute;
+      margin-left: 4px;
+      margin-right: 4px;
+      display: flex;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background-color: #fff;
+    }
+    .ball-true {
+      transition: left 300ms ease;
+      left: 16px;
+    }
+    .ball-false {
+      transition: left 300ms ease;
+      left: 0;
+    }
+  }
+
+  .switch-true {
+    background-color: $success-500;
+  }
+  .switch-false {
+    background-color: $danger-500;
+  }
+  .switch-status {
+    margin-left: 10px;
+  }
+}
+
+.status-true {
+  color: $danger-500;
+}
+
+.status-false {
+  color: $success-500;
+}
+.status-disabled {
+  color: $neutral-600 !important;
+}

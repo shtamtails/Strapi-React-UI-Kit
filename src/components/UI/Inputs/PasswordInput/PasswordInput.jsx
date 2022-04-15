@@ -45,7 +45,7 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
 };
 
 PasswordInput.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.any.isRequired,
   setValue: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
