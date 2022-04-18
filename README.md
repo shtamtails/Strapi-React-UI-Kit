@@ -198,3 +198,32 @@ const Demo = () => {
 
 export default Demo;
 ```
+
+### ActionIcon
+
+```js
+import React, { useState } from "react";
+import { ActionIcon } from "./UI/Inputs/";
+import { GoSettings } from "react-icons/go";
+
+const Demo = () => {
+  const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+
+  return (
+    <ActionIcon
+      variant="light"
+      size="md"
+      onClick={() => {
+        console.log("clicked");
+      }}
+      disabled={disabled}
+      loading={loading}
+    >
+      <GoSettings />
+    </ActionIcon>
+  );
+};
+
+export default Demo;
+```
