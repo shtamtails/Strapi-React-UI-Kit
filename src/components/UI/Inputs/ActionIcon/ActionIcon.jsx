@@ -8,27 +8,35 @@ export const ActionIcon = ({ ...props }) => {
     !props.disabled && !props.loading && props.onClick();
   };
 
-  const listOfVariants = ["filled", "outline", "transparent", "hover", "light"];
-  const listOfSizes = ["sm", "md", "lg"];
-
   const containerStyles = [""];
   const iconStyles = [""];
 
-  useCorrectType(props.variant, listOfVariants) && containerStyles.push(`action-${props.variant}`);
-  useCorrectType(props.size, listOfSizes) && iconStyles.push(props.size);
+  useCorrectType(props.variant, ActionIcon.availableProps.variant)
+    ? containerStyles.push(`action-${props.variant}`)
+    : containerStyles.push(`action-light`);
+
+  useCorrectType(props.size, ActionIcon.availableProps.size)
+    ? iconStyles.push(props.size)
+    : iconStyles.push("md");
+
   props.disabled && containerStyles.push("action-disabled");
   props.loading && containerStyles.push("action-disabled");
 
   return (
-    <div className={`action-icon-container${containerStyles.join(" ")}`} onClick={handleClick}>
-      <div className={`action-icon${iconStyles.join(" ")}`}>{!props.loading ? props.children : <Loader />}</div>
+    <div
+      className={`action-icon-container${containerStyles.join(" ")}`}
+      onClick={handleClick}
+    >
+      <div className={`action-icon${iconStyles.join(" ")}`}>
+        {!props.loading ? props.children : <Loader />}
+      </div>
     </div>
   );
 };
 
-ActionIcon.defaultProps = {
-  size: "sm",
-  variant: "light",
+ActionIcon.availableProps = {
+  variant: ["filled", "outline", "transparent", "hover", "light"],
+  size: ["sm", "md", "lg"],
 };
 
 ActionIcon.propTypes = {
