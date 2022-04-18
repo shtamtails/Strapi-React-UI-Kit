@@ -756,6 +756,155 @@ textarea[type="text"] {
   background-color: #f0f0ff;
 }
 
+.action-icon-container {
+  padding: 5px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.action-icon-container:hover {
+  background-color: #dcdce4;
+}
+
+.action-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.action-icon svg {
+  color: #212134;
+}
+
+.action-filled {
+  background-color: #7b79ff;
+}
+
+.action-filled:hover {
+  background-color: #4945ff;
+}
+
+.action-filled svg {
+  color: #fff;
+}
+
+.action-outline {
+  border: 1px solid #7b79ff;
+}
+
+.action-outline:hover {
+  background-color: #f0f0ff;
+}
+
+.action-outline svg {
+  color: #7b79ff;
+}
+
+.action-transparent {
+  background: none;
+}
+
+.action-transparent:hover {
+  background: none;
+}
+
+.action-transparent svg {
+  color: #7b79ff;
+}
+
+.action-hover {
+  background: none;
+}
+
+.action-hover:hover {
+  background: #d9d8ff;
+}
+
+.action-hover svg {
+  color: #4945ff;
+}
+
+.action-light {
+  background: #d9d8ff;
+}
+
+.action-light:hover {
+  background: #d9d8ff;
+}
+
+.action-light svg {
+  color: #4945ff;
+}
+
+.action-disabled {
+  background-color: #dcdce4;
+  cursor: not-allowed;
+}
+
+.action-disabled svg {
+  color: #a5a5ba;
+}
+
+.action-disabled:hover {
+  background-color: #dcdce4;
+}
+
+.action-disabled:hover svg {
+  color: #a5a5ba;
+}
+
+.sm svg {
+  width: 14px;
+  height: auto;
+}
+
+.md svg {
+  width: 26px;
+  height: auto;
+}
+
+.lg svg {
+  width: 34px;
+  height: auto;
+}
+
+.loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #32324d;
+  -webkit-animation: spin 800ms infinite ease;
+          animation: spin 800ms infinite ease;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }

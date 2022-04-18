@@ -1,0 +1,106 @@
+.action-icon-container {
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $neutral-200;
+  }
+}
+
+.action-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    color: $neutral-900;
+  }
+}
+
+.action-filled {
+  background-color: $primary-500;
+  &:hover {
+    background-color: $primary-600;
+  }
+  svg {
+    color: #fff;
+  }
+}
+
+.action-outline {
+  border: 1px solid $primary-500;
+  &:hover {
+    background-color: $primary-100;
+  }
+  svg {
+    color: $primary-500;
+  }
+}
+
+.action-transparent {
+  background: none;
+  &:hover {
+    background: none;
+  }
+  svg {
+    color: $primary-500;
+  }
+}
+
+.action-hover {
+  background: none;
+
+  &:hover {
+    background: $primary-200;
+  }
+  svg {
+    color: $primary-600;
+  }
+}
+
+.action-light {
+  background: $primary-200;
+  &:hover {
+    background: $primary-200;
+  }
+  svg {
+    color: $primary-600;
+  }
+}
+
+.action-disabled {
+  background-color: $neutral-200;
+  cursor: not-allowed;
+  svg {
+    color: $neutral-400;
+  }
+  &:hover {
+    background-color: $neutral-200;
+    svg {
+      color: $neutral-400;
+    }
+  }
+}
+
+.sm {
+  svg {
+    width: 14px;
+    height: auto;
+  }
+}
+
+.md {
+  svg {
+    width: 26px;
+    height: auto;
+  }
+}
+
+.lg {
+  svg {
+    width: 34px;
+    height: auto;
+  }
+}

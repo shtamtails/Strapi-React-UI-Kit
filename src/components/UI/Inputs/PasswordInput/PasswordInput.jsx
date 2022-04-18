@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { AiOutlineLoading } from "react-icons/ai";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
+// !! TODO ADD LOADER COMPONENT
+
 export const PasswordInput = ({ value, setValue, size, ...props }) => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
   if (props.loading === true) {

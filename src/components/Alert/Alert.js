@@ -2,21 +2,9 @@ import { FaExclamationCircle, FaCheckCircle, FaInfoCircle } from "react-icons/fa
 import { FiX } from "react-icons/fi";
 import { removeAlert } from "./Utils";
 import PropTypes from "prop-types";
-import { useEffect } from "react";
 
 const Alert = ({ alerts, setAlerts, text, type, style, id }) => {
   const deleteAlert = removeAlert(alerts, setAlerts);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (alerts.length > 0) {
-        deleteAlert(alerts[0].id);
-      }
-    }, 3000);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [alerts]);
 
   const ALERT = {
     ALERT_STYLE: "",
