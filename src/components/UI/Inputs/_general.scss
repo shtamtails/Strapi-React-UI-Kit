@@ -56,11 +56,7 @@ textarea[type="text"] {
 }
 
 .input-loading svg {
-  display: flex;
-  color: $neutral-800;
   margin-left: -30px;
-  animation: spin 800ms infinite;
-  transform: rotate(0deg);
 }
 
 .input-disabled {
@@ -69,15 +65,6 @@ textarea[type="text"] {
   cursor: not-allowed;
   &::placeholder {
     color: $neutral-600 !important;
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 

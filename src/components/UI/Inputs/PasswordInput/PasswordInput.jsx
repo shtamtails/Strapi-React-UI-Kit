@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { AiOutlineLoading } from "react-icons/ai";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import Loader from "../../../Utils/Loader/Loader";
 
 // !! TODO ADD LOADER COMPONENT
 
@@ -37,7 +38,7 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
 
         {props.loading && (
           <div className="input-loading">
-            <AiOutlineLoading />
+            <Loader />
           </div>
         )}
       </div>

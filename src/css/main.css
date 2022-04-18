@@ -105,15 +105,7 @@ textarea[type="text"]:disabled::placeholder {
 }
 
 .input-loading svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #32324d;
   margin-left: -30px;
-  -webkit-animation: spin 800ms infinite;
-          animation: spin 800ms infinite;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
 }
 
 .input-disabled {
@@ -136,28 +128,6 @@ textarea[type="text"]:disabled::placeholder {
 
 .input-disabled::placeholder {
   color: #666687 !important;
-}
-
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }
 
 .text-input {
@@ -883,7 +853,7 @@ textarea[type="text"] {
   height: auto;
 }
 
-.loader {
+.loader svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -892,6 +862,17 @@ textarea[type="text"] {
           animation: spin 800ms infinite ease;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
