@@ -3,24 +3,20 @@ import PropTypes from "prop-types";
 import { InputContainer, InputLabel, InputDescription } from "../General";
 import { SwitchMain, SwitchStatus } from "./Components";
 
-export const Switch = ({ value, setValue, ...props }) => {
+export const Switch = (props) => {
   const handleSwitchClick = (e) => {
-    !props.disabled && setValue(!value);
+    !props.disabled && setValue(!props.value);
   };
   return (
     <InputContainer>
       <InputLabel label={props.label} required={props.required} />
       <div className="switch-container">
         <SwitchMain
-          value={value}
+          value={props.value}
           disabled={props.disabled}
           handleSwitchClick={handleSwitchClick}
         />
-        <SwitchStatus
-          value={value}
-          disabled={props.disabled}
-          showStatus={props.showStatus}
-        />
+        <SwitchStatus value={props.value} disabled={props.disabled} showStatus={props.showStatus} />
       </div>
       <InputDescription description={props.description} />
     </InputContainer>

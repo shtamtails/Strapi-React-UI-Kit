@@ -9,19 +9,12 @@ export const Button = ({ value, setValue, type, variant, ...props }) => {
   };
 
   const buttonStyles = [""];
-  useCorrectType(
-    [type, variant],
-    [Button.availableProps.type, Button.availableProps.variant]
-  )
-    ? buttonStyles.push(`btn-${variant}-${type}`)
-    : buttonStyles.push(`btn-light-info`);
+  useCorrectType([type, variant], [Button.availableProps.type, Button.availableProps.variant])
+    ? buttonStyles.push(`btn-${variant}-${type}`) // custom
+    : buttonStyles.push(`btn-light-info`); // default
 
   return (
-    <button
-      disabled={props.disabled}
-      className={`btn${buttonStyles.join(" ")}`}
-      onClick={handleBtnClick}
-    >
+    <button disabled={props.disabled} className={`btn${buttonStyles.join(" ")}`} onClick={handleBtnClick}>
       {props.children}
     </button>
   );
