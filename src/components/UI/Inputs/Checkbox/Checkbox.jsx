@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { BsCheckLg } from "react-icons/bs";
+import { CheckboxLabel, CheckboxMain, Checkmark } from "./Components";
 
 export const Checkbox = ({ value, setValue, label, disabled, ...props }) => {
   const handleCheckboxClick = (e) => {
@@ -8,13 +8,6 @@ export const Checkbox = ({ value, setValue, label, disabled, ...props }) => {
   };
 
   const checkboxStyles = ["checkbox"];
-  const inputCheckboxStyles = ["input-checkbox"];
-  const checkmarkStyles = ["checkbox-checkmark"];
-  const labelStyles = ["checkbox-label"];
-
-  disabled && inputCheckboxStyles.push("input-disabled");
-  disabled && checkmarkStyles.push("checkbox-checkmark-dark");
-  disabled && labelStyles.push("status-disabled");
 
   props.labelBg &&
     label &&
@@ -22,22 +15,15 @@ export const Checkbox = ({ value, setValue, label, disabled, ...props }) => {
     checkboxStyles.push("checkbox-with-label-disabled");
   label && props.labelBg && checkboxStyles.push("checkbox-with-label");
 
-  value && inputCheckboxStyles.push("checkbox-checked");
-
   return (
     <div className={checkboxStyles.join(" ")}>
       <div className="checkbox-container">
-        <div
-          className={inputCheckboxStyles.join(" ")}
-          onClick={handleCheckboxClick}
-        >
-          {value && (
-            <div className={checkmarkStyles.join(" ")}>
-              {value && <BsCheckLg />}
-            </div>
-          )}
-        </div>
-        {label && <div className={labelStyles.join(" ")}>{label}</div>}
+        <CheckboxMain
+          handleCheckboxClick={handleCheckboxClick}
+          disabled={disabled}
+          value={value}
+        />
+        <CheckboxLabel label={label} disabled={disabled} />
       </div>
     </div>
   );
