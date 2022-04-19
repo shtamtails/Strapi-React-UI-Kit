@@ -7,10 +7,8 @@ import {
   InputMain,
 } from "../General";
 
-export const TextArea = ({ value, setValue, size, ...props }) => {
-  if (props.loading === true) {
-    props.disabled = true;
-  }
+export const TextArea = (props) => {
+  props.loading && (props.disabled = true);
 
   return (
     <InputContainer>
@@ -22,7 +20,7 @@ export const TextArea = ({ value, setValue, size, ...props }) => {
           type="text"
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
-            setValue(e.target.value);
+            props.setValue(e.target.value);
           }}
         />
       </InputMain>

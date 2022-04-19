@@ -6,43 +6,34 @@ import { InputContainer, InputLabel, InputDescription } from "../General";
 
 // ! Add border on open
 
-export const Select = ({
-  value,
-  setValue,
-  optionsList,
-  label,
-  description,
-  disabled,
-  loading,
-  required,
-}) => {
+export const Select = (props) => {
   const [select, setSelect] = useState(false);
 
   const handleSelectClick = (e) => {
-    !disabled && !loading && setSelect(!select);
+    !props.disabled && !props.loading && setSelect(!select);
   };
 
   const handleOptionClick = (e) => {
     setSelect(false);
-    setValue(e.target.attributes.value.nodeValue);
+    props.setValue(e.target.attributes.value.nodeValue);
   };
 
   return (
     <InputContainer>
-      <InputLabel label={label} required={required} />
+      <InputLabel label={props.label} required={props.required} />
       <SelectMain
         handleSelectClick={handleSelectClick}
-        value={value}
-        loading={loading}
-        disable={disabled}
+        value={props.value}
+        loading={props.loading}
+        disable={props.disabled}
         select={select}
       />
       <SelectDrop
         select={select}
-        optionsList={optionsList}
+        optionsList={props.optionsList}
         handleOptionClick={handleOptionClick}
       />
-      <InputDescription description={description} />
+      <InputDescription description={props.description} />
     </InputContainer>
   );
 };

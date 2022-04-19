@@ -1,6 +1,8 @@
 import React from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { AiOutlineLoading } from "react-icons/ai";
+import Loader from "../../../../Utils/Loader/Loader";
+import { InputLoading } from "../../General";
 
 export const SelectMain = ({
   handleSelectClick,
@@ -17,13 +19,10 @@ export const SelectMain = ({
   return (
     <div className="select-input-container" onClick={handleSelectClick}>
       <div className={`${inputStyles.join(" ")} select-input`}>{value}</div>
-      {!loading ? (
+      <InputLoading loading={loading} />
+      {!loading && (
         <div className={`${inputIconStyles.join(" ")} select-input-icon`}>
           <TiArrowSortedDown />
-        </div>
-      ) : (
-        <div className="input-loading">
-          <AiOutlineLoading />
         </div>
       )}
     </div>

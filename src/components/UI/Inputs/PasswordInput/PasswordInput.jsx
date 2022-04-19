@@ -8,11 +8,9 @@ import {
   InputMain,
 } from "../General";
 
-export const PasswordInput = ({ value, setValue, size, ...props }) => {
+export const PasswordInput = (props) => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
-  if (props.loading === true) {
-    props.disabled = true;
-  }
+  props.loading && (props.disabled = true);
 
   return (
     <InputContainer>
@@ -24,7 +22,7 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
           type={`${passwordVisibility ? "text" : "password"}`}
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
-            setValue(e.target.value);
+            props.setValue(e.target.value);
           }}
         />
         <ShowPwdBtn

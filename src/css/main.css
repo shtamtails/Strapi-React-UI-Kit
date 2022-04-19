@@ -490,11 +490,11 @@ textarea[type="text"] {
 }
 
 .status-true {
-  color: #ee5e52;
+  color: #5cb176;
 }
 
 .status-false {
-  color: #5cb176;
+  color: #ee5e52;
 }
 
 .status-disabled {
