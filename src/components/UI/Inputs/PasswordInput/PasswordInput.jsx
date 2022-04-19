@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { AiOutlineLoading } from "react-icons/ai";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import Loader from "../../../Utils/Loader/Loader";
-
-// !! TODO ADD LOADER COMPONENT
+import { ShowPwdBtn } from "./Components";
+import {
+  InputContainer,
+  InputLabel,
+  InputDescription,
+  InputMain,
+} from "../General";
 
 export const PasswordInput = ({ value, setValue, size, ...props }) => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -13,9 +15,9 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
   }
 
   return (
-    <div className="input-container">
-      {props.label && <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>}
-      <div className="text-input">
+    <InputContainer>
+      <InputLabel label={props.label} required={props.required} />
+      <InputMain loading={props.loading}>
         <input
           required={props.required && true}
           disabled={props.disabled && true}
@@ -25,25 +27,16 @@ export const PasswordInput = ({ value, setValue, size, ...props }) => {
             setValue(e.target.value);
           }}
         />
-        {!props.loading && (
-          <div
-            className="password-visibility-btn"
-            onClick={() => {
-              setPasswordVisibility(!passwordVisibility);
-            }}
-          >
-            {passwordVisibility && !props.disabled ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-          </div>
-        )}
+        <ShowPwdBtn
+          loading={props.loading}
+          disabled={props.disabled}
+          passwordVisibility={passwordVisibility}
+          setPasswordVisibility={setPasswordVisibility}
+        />
+      </InputMain>
 
-        {props.loading && (
-          <div className="input-loading">
-            <Loader />
-          </div>
-        )}
-      </div>
-      {props.description && <div className="input-description">{props.description}</div>}
-    </div>
+      <InputDescription description={props.description} />
+    </InputContainer>
   );
 };
 

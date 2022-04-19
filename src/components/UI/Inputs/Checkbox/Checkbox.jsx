@@ -7,7 +7,6 @@ export const Checkbox = ({ value, setValue, label, disabled, ...props }) => {
     !disabled && setValue(!value);
   };
 
-  // Using arrays of styling to make code cleaner because of big amount of dynamic styles
   const checkboxStyles = ["checkbox"];
   const inputCheckboxStyles = ["input-checkbox"];
   const checkmarkStyles = ["checkbox-checkmark"];
@@ -17,16 +16,26 @@ export const Checkbox = ({ value, setValue, label, disabled, ...props }) => {
   disabled && checkmarkStyles.push("checkbox-checkmark-dark");
   disabled && labelStyles.push("status-disabled");
 
-  props.labelBg && label && disabled && checkboxStyles.push("checkbox-with-label-disabled");
+  props.labelBg &&
+    label &&
+    disabled &&
+    checkboxStyles.push("checkbox-with-label-disabled");
   label && props.labelBg && checkboxStyles.push("checkbox-with-label");
 
   value && inputCheckboxStyles.push("checkbox-checked");
 
   return (
     <div className={checkboxStyles.join(" ")}>
-      <div className="checkbox-container ">
-        <div className={inputCheckboxStyles.join(" ")} onClick={handleCheckboxClick}>
-          {value && <div className={checkmarkStyles.join(" ")}>{value && <BsCheckLg />}</div>}
+      <div className="checkbox-container">
+        <div
+          className={inputCheckboxStyles.join(" ")}
+          onClick={handleCheckboxClick}
+        >
+          {value && (
+            <div className={checkmarkStyles.join(" ")}>
+              {value && <BsCheckLg />}
+            </div>
+          )}
         </div>
         {label && <div className={labelStyles.join(" ")}>{label}</div>}
       </div>

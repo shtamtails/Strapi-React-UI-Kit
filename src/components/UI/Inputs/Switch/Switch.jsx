@@ -1,31 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { InputContainer, InputLabel, InputDescription } from "../General";
 
 export const Switch = ({ value, setValue, ...props }) => {
   const handleSwitchClick = (e) => {
     !props.disabled && setValue(!value);
   };
   return (
-    <div className="input-container">
-      {props.label && <div className="input-label">{props.label}</div>}
+    <InputContainer>
+      <InputLabel label={props.label} required={props.required} />
       <div className="switch-container">
         <div
-          className={`${value ? "switch-true" : "switch-false"} ${props.disabled && "input-disabled"} switch-input`}
+          className={`${value ? "switch-true" : "switch-false"} ${
+            props.disabled && "input-disabled"
+          } switch-input`}
           onClick={handleSwitchClick}
         >
-          <div className={`${value ? "ball-true" : "ball-false"} switch-ball`}></div>
+          <div
+            className={`${value ? "ball-true" : "ball-false"} switch-ball`}
+          ></div>
         </div>
         {props.showStatus && (
           <div
-            className={`${value ? "status-false" : "status-true"} ${props.disabled && "status-disabled"} switch-status`}
+            className={`${value ? "status-false" : "status-true"} ${
+              props.disabled && "status-disabled"
+            } switch-status`}
           >
             {value && "Enabled"}
             {!value && "Disabled"}
           </div>
         )}
       </div>
-      {props.description && <div className="input-description">{props.description}</div>}
-    </div>
+      <InputDescription description={props.description} />
+    </InputContainer>
   );
 };
 

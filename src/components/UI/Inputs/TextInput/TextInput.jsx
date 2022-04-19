@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AiOutlineLoading } from "react-icons/ai";
+import {
+  InputContainer,
+  InputLabel,
+  InputDescription,
+  InputMain,
+} from "../General";
 
 export const TextInput = ({ value, setValue, size, ...props }) => {
   if (props.loading === true) {
@@ -8,9 +13,9 @@ export const TextInput = ({ value, setValue, size, ...props }) => {
   }
 
   return (
-    <div className="input-container">
-      {props.label && <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>}
-      <div className="text-input">
+    <InputContainer>
+      <InputLabel label={props.label} required={props.required} />
+      <InputMain loading={props.loading}>
         <input
           required={props.required && true}
           disabled={props.disabled && true}
@@ -20,46 +25,10 @@ export const TextInput = ({ value, setValue, size, ...props }) => {
             setValue(e.target.value);
           }}
         />
-        {props.loading && (
-          <div className="input-loading">
-            <AiOutlineLoading />
-          </div>
-        )}
-      </div>
-      {props.description && <div className="input-description">{props.description}</div>}
-    </div>
+      </InputMain>
+      <InputDescription description={props.description} />
+    </InputContainer>
   );
-
-  // ! Form to test submit
-
-  // return (
-  //   <>
-  //     <form action="submit">
-  //       <div className="text-input-container">
-  //         <div className={`${props.required ? "required " : ""}input-label`}>{props.label}</div>
-  //         <div className="text-input">
-  //           <input
-  //             required={props.required && true}
-  //             disabled={props.disabled && true}
-  //             type="text"
-  //             className={`${props.disabled ? "input-disabled" : ""}`}
-  //             placeholder={props.placeholder && props.placeholder}
-  //             onChange={(e) => {
-  //               setValue(e.target.value);
-  //             }}
-  //           />
-  //           {props.loading && (
-  //             <div className="input-loading">
-  //               <AiOutlineLoading />
-  //             </div>
-  //           )}
-  //         </div>
-  //         <div className="input-description">{props.description}</div>
-  //       </div>
-  //       <button type="submit"></button>
-  //     </form>
-  //   </>
-  // );
 };
 
 TextInput.propTypes = {

@@ -1,14 +1,20 @@
 import "../css/main.css";
 import React, { useState } from "react";
-import { Button } from "./UI/Inputs";
+import { PasswordInput } from "./UI/Inputs";
+import { useUniqueId } from "./Hooks/useUniqueId";
 
 const App = () => {
-  const [value, setValue] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [value, setValue] = useState("Select");
+
+  const options = [
+    { id: useUniqueId(), text: "text1", value: "value1" },
+    { id: useUniqueId(), text: "text2", value: "value2" },
+    { id: useUniqueId(), text: "text3", value: "value3" },
+  ];
   return (
     <>
-      <Button value={value} setValue={setValue} type="danger" variant="light">
-        Click me!
-      </Button>
+      <PasswordInput value={value} setValue={setValue} loading />
     </>
   );
 };
