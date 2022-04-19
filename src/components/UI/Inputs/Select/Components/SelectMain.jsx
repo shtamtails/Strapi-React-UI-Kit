@@ -1,16 +1,8 @@
 import React from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { AiOutlineLoading } from "react-icons/ai";
-import Loader from "../../../../Utils/Loader/Loader";
 import { InputLoading } from "../../General";
 
-export const SelectMain = ({
-  handleSelectClick,
-  value,
-  loading,
-  disabled,
-  select,
-}) => {
+export const SelectMain = ({ handleSelectClick, value, loading, disabled, select }) => {
   const inputStyles = [""];
   const inputIconStyles = [""];
   (loading || disabled) && inputStyles.push("select-disabled");

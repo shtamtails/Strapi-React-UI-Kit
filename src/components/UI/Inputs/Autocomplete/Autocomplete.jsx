@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { SelectMain, SelectDrop } from "./Components";
+import { AutocompleteMain, AutocompleteDrop } from "./Components";
 import { InputContainer, InputLabel, InputDescription } from "../General";
 
-export const Select = (props) => {
+export const Autocomplete = (props) => {
   const [select, setSelect] = useState(false);
-
+  const [inputValue, setInputValue] = useState("");
   const handleSelectClick = (e) => {
     !props.disabled && !props.loading && setSelect(!select);
   };
@@ -14,29 +14,32 @@ export const Select = (props) => {
   const handleOptionClick = (e) => {
     setSelect(false);
     props.setValue(e.target.attributes.value.nodeValue);
+    setInputValue(e.target.innerHTML);
   };
 
   return (
     <InputContainer>
       <InputLabel label={props.label} required={props.required} />
-      <SelectMain
+      <AutocompleteMain
         handleSelectClick={handleSelectClick}
-        value={props.value}
         loading={props.loading}
         disabled={props.disabled}
         select={select}
+        setInputValue={setInputValue}
+        inputValue={inputValue}
       />
-      <SelectDrop
+      <AutocompleteDrop
         select={select}
         optionsList={props.optionsList}
         handleOptionClick={handleOptionClick}
+        inputValue={inputValue}
       />
       <InputDescription description={props.description} />
     </InputContainer>
   );
 };
 
-Select.propTypes = {
+Autocomplete.propTypes = {
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
   optionsList: PropTypes.array.isRequired,
@@ -47,4 +50,4 @@ Select.propTypes = {
   description: PropTypes.string,
 };
 
-export default Select;
+export default Autocomplete;
