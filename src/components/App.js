@@ -26,6 +26,18 @@ const App = () => {
         label="Input label"
         description="Input description"
       />
+
+      <Select
+        // required props
+        value={value}
+        setValue={setValue}
+        optionsList={options}
+        // optional props
+        required
+        // loading={loading}
+        label="Input label"
+        description="Input description"
+      />
     </>
   );
 };

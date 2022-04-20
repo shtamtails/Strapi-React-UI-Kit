@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { AutocompleteMain, AutocompleteDrop } from "./Components";
 import { InputContainer, InputLabel, InputDescription } from "../General";
+import useClickOutside from "../../../Hooks/useClickOutside";
+
+// TODO:
+// Add hook Click outside of container
+//
 
 export const Autocomplete = (props) => {
   const [select, setSelect] = useState(false);
   const [inputValue, setInputValue] = useState("");
+
   const handleSelectClick = (e) => {
-    !props.disabled && !props.loading && setSelect(!select);
+    !props.disabled && !props.loading && setSelect(true);
   };
 
   const handleOptionClick = (e) => {
@@ -17,8 +23,13 @@ export const Autocomplete = (props) => {
     setInputValue(e.target.innerHTML);
   };
 
+  const ref = useRef(null);
+  useClickOutside(ref, () => {
+    setSelect(false);
+  });
+
   return (
-    <InputContainer>
+    <InputContainer ref={ref}>
       <InputLabel label={props.label} required={props.required} />
       <AutocompleteMain
         handleSelectClick={handleSelectClick}
