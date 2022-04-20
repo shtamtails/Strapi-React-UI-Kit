@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { AutocompleteMain, AutocompleteDrop } from "./Components";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import { useClickOutside } from "../../../Hooks";
+import { useClickOutside } from "../../../../Hooks";
 
 export const Autocomplete = (props) => {
   const [select, setSelect] = useState(false);

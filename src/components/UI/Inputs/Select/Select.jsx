@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useState, useRef } from "react";
 import { SelectMain, SelectDrop } from "./Components";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import { useClickOutside } from "../../../Hooks";
+import { useClickOutside } from "../../../../Hooks";
 
 export const Select = (props) => {
   const [select, setSelect] = useState(false);

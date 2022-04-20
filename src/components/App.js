@@ -1,7 +1,7 @@
 import "../css/main.css";
 import React, { useState } from "react";
 import { Autocomplete, Select } from "./UI/";
-import { useUniqueId } from "./Hooks/";
+import { useUniqueId } from "../Hooks/";
 
 // TODO's
 // Add ref functionality to input elements to obtain their value without using state

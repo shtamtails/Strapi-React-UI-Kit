@@ -5,7 +5,7 @@ import { SwitchMain, SwitchStatus } from "./Components";
 
 export const Switch = (props) => {
   const handleSwitchClick = (e) => {
-    !props.disabled && setValue(!props.value);
+    !props.disabled && props.setValue(!props.value);
   };
   return (
     <InputContainer>

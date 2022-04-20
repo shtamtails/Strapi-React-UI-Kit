@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useCorrectType } from "../../../Hooks";
+import { useCorrectType } from "../../../../Hooks";
 
 export const Button = ({ value, setValue, type, variant, ...props }) => {
   const handleBtnClick = (e) => {

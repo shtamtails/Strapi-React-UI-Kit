@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useCorrectType } from "../../../Hooks/";
-import { Loader } from "../../../Utils/";
+import { useCorrectType } from "../../../../Hooks";
+import { Loader } from "../../../Utils";
 
 export const ActionIcon = ({ ...props }) => {
   const handleClick = (e) => {
