@@ -4,7 +4,7 @@ import { Autocomplete, Select } from "./UI/Inputs";
 import { useUniqueId } from "./Hooks/useUniqueId";
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [value, setValue] = useState("");
 
   const options = [
@@ -22,7 +22,7 @@ const App = () => {
         optionsList={options}
         // optional props
         required
-        loading={loading}
+        // loading={loading}
         label="Input label"
         description="Input description"
       />
