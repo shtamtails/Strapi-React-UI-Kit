@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineLoading } from "react-icons/ai";
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <div className="loader">
       <AiOutlineLoading />

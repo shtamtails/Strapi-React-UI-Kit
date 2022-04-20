@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useCorrectType } from "../../../Hooks/useCorrectType";
-import Loader from "../../../Utils/Loader/Loader";
+import { useCorrectType } from "../../../Hooks/";
+import { Loader } from "../../../Utils/";
 
 export const ActionIcon = ({ ...props }) => {
   const handleClick = (e) => {
@@ -23,10 +23,7 @@ export const ActionIcon = ({ ...props }) => {
   props.loading && containerStyles.push("action-disabled");
 
   return (
-    <div
-      className={`action-icon-container${containerStyles.join(" ")}`}
-      onClick={handleClick}
-    >
+    <div className={`action-icon-container${containerStyles.join(" ")}`} onClick={handleClick}>
       <div className={`action-icon${iconStyles.join(" ")}`}>
         {!props.loading ? props.children : <Loader />}
       </div>

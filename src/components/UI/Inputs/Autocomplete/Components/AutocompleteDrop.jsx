@@ -1,12 +1,19 @@
 import React from "react";
 
-export const AutocompleteDrop = ({ optionsList, handleOptionClick, select, inputValue }) => {
+export const AutocompleteDrop = ({
+  optionsList,
+  handleOptionClick,
+  select,
+  inputValue,
+  loading,
+  disabled,
+}) => {
   const tempOptionsList = optionsList.filter((el) => {
     return el.text.toLowerCase().includes(inputValue.toLowerCase());
   });
   return (
     <>
-      {select && (
+      {select && !loading && !disabled && tempOptionsList.length > 0 && (
         <div className="select-option-container">
           {tempOptionsList.map((el) => {
             return (

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useCorrectType } from "../../../Hooks/useCorrectType";
+import { useCorrectType } from "../../../Hooks";
 
 export const Button = ({ value, setValue, type, variant, ...props }) => {
   const handleBtnClick = (e) => {
@@ -14,7 +14,11 @@ export const Button = ({ value, setValue, type, variant, ...props }) => {
     : buttonStyles.push(`btn-light-info`); // default
 
   return (
-    <button disabled={props.disabled} className={`btn${buttonStyles.join(" ")}`} onClick={handleBtnClick}>
+    <button
+      disabled={props.disabled}
+      className={`btn${buttonStyles.join(" ")}`}
+      onClick={handleBtnClick}
+    >
       {props.children}
     </button>
   );

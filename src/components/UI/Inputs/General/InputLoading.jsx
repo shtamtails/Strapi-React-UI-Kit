@@ -1,11 +1,11 @@
 import React from "react";
-import Loader from "../../../Utils/Loader/Loader";
+import { Loader } from "../../../Utils/";
 
 export const InputLoading = ({ loading }) => {
   return (
     <>
       {loading && (
-        <div className="input-loading">
+        <div className="input-sidebutton">
           <Loader />
         </div>
       )}

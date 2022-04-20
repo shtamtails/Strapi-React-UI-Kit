@@ -104,7 +104,11 @@ textarea[type="text"]:disabled::placeholder {
   content: "*";
 }
 
-.input-loading svg {
+.input-sidebutton {
+  cursor: pointer;
+}
+
+.input-sidebutton svg {
   margin-left: -30px;
 }
 

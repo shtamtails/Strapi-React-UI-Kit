@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { AutocompleteMain, AutocompleteDrop } from "./Components";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import useClickOutside from "../../../Hooks/useClickOutside";
-
-// TODO:
-// Add hook Click outside of container
-//
+import { useClickOutside } from "../../../Hooks";
 
 export const Autocomplete = (props) => {
   const [select, setSelect] = useState(false);
@@ -41,6 +37,8 @@ export const Autocomplete = (props) => {
       />
       <AutocompleteDrop
         select={select}
+        loading={props.loading}
+        disabled={props.disabled}
         optionsList={props.optionsList}
         handleOptionClick={handleOptionClick}
         inputValue={inputValue}
