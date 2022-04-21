@@ -1,15 +1,16 @@
 import "../css/main.css";
 import React, { useState } from "react";
-import { Autocomplete, Select } from "./UI/";
+import { Autocomplete, Select, Button } from "./UI/";
 import { useUniqueId } from "../Hooks/";
 
 // TODO's
 // Add ref functionality to input elements to obtain their value without using state
 // Add clear button to Autocomplete component
+// use propTypes.oneOf insatead of useCorrectType
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(false);
 
   const options = [
     { id: useUniqueId(), text: "Disable Comments", value: "disableComments" },
@@ -19,28 +20,9 @@ const App = () => {
 
   return (
     <>
-      <Autocomplete
-        // required props
-        value={value}
-        setValue={setValue}
-        optionsList={options}
-        // optional props
-        required
-        label="Input label"
-        description="Input description"
-      />
-
-      <Select
-        // required props
-        value={value}
-        setValue={setValue}
-        optionsList={options}
-        // optional props
-        required
-        // loading={loading}
-        label="Input label"
-        description="Input description"
-      />
+      <Button value={value} setValue={setValue}>
+        Click me
+      </Button>
     </>
   );
 };

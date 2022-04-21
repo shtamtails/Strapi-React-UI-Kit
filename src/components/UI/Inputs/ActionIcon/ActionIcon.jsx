@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useCorrectType } from "../../../../Hooks";
 import { Loader } from "../../../Utils";
 
 export const ActionIcon = ({ ...props }) => {
@@ -11,13 +10,8 @@ export const ActionIcon = ({ ...props }) => {
   const containerStyles = [""];
   const iconStyles = [""];
 
-  useCorrectType(props.variant, ActionIcon.availableProps.variant)
-    ? containerStyles.push(`action-${props.variant}`)
-    : containerStyles.push(`action-light`);
-
-  useCorrectType(props.size, ActionIcon.availableProps.size)
-    ? iconStyles.push(props.size)
-    : iconStyles.push("md");
+  containerStyles.push(`action-${props.variant}`);
+  iconStyles.push(props.size);
 
   props.disabled && containerStyles.push("action-disabled");
   props.loading && containerStyles.push("action-disabled");
@@ -31,16 +25,16 @@ export const ActionIcon = ({ ...props }) => {
   );
 };
 
-ActionIcon.availableProps = {
-  variant: ["filled", "outline", "transparent", "hover", "light"],
-  size: ["sm", "md", "lg"],
-};
-
 ActionIcon.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.object.isRequired,
-  variant: PropTypes.string,
-  size: PropTypes.string,
+  variant: PropTypes.oneOf(["filled", "outline", "transparent", "hover", "light"]),
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
+};
+
+ActionIcon.defaultProps = {
+  variant: "hover",
+  size: "md",
 };
 
 export default ActionIcon;
