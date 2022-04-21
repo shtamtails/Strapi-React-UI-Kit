@@ -227,3 +227,42 @@ const Demo = () => {
 
 export default Demo;
 ```
+
+### Skeleton
+
+```js
+import React, { useState } from "react";
+import { SkeletonContainer, Skeleton } from "./Utils/";
+
+const Demo = () => {
+  return (
+    <div style={{ width: "1100px", margin: "0 auto" }}>
+      <SkeletonContainer width="100%">
+        <Skeleton circle width="50px" height="50px" style={{ marginTop: "50px" }} />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+      </SkeletonContainer>
+    </div>
+  );
+};
+
+export default Demo;
+```
+
+### Divider
+
+```js
+import React, { useState } from "react";
+import { Divider } from "./Utils/";
+
+const Demo = () => {
+  return (
+    <Divider height="2px" variant="solid" width="1100px" padding="5px">
+      Hello World
+    </Divider>
+  );
+};
+
+export default Demo;
+```
