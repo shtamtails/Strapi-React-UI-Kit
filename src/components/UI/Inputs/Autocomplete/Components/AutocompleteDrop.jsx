@@ -3,7 +3,7 @@ import React from "react";
 export const AutocompleteDrop = ({
   optionsList,
   handleOptionClick,
-  select,
+  dropDown,
   inputValue,
   loading,
   disabled,
@@ -13,7 +13,7 @@ export const AutocompleteDrop = ({
   });
   return (
     <>
-      {select && !loading && !disabled && tempOptionsList.length > 0 && (
+      {dropDown && !loading && !disabled && tempOptionsList.length > 0 && (
         <div className="select-option-container">
           {tempOptionsList.map((el) => {
             return (

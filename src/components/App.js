@@ -1,7 +1,7 @@
 import "../css/main.css";
 import React, { useState } from "react";
-import { Autocomplete, Select, Button } from "./UI/";
-import { useUniqueId } from "../Hooks/";
+import Skeleton from "./Utils/Components/Skeleton/Skeleton";
+import SkeletonContainer from "./Utils/Components/Skeleton/SkeletonContainer";
 
 // TODO's
 // Add ref functionality to input elements to obtain their value without using state
@@ -9,20 +9,14 @@ import { useUniqueId } from "../Hooks/";
 // use propTypes.oneOf insatead of useCorrectType
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-  const [value, setValue] = useState(false);
-
-  const options = [
-    { id: useUniqueId(), text: "Disable Comments", value: "disableComments" },
-    { id: useUniqueId(), text: "Enable Comments", value: "enableComments" },
-    { id: useUniqueId(), text: "Hide Comments", value: "hideComments" },
-  ];
-
   return (
     <>
-      <Button value={value} setValue={setValue}>
-        Click me
-      </Button>
+      <SkeletonContainer width="60%">
+        <Skeleton circle width="50px" height="50px" style={{ marginTop: "50px" }} />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+      </SkeletonContainer>
     </>
   );
 };

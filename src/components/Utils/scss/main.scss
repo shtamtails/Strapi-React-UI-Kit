@@ -1,16 +1,17 @@
 @import "_variables.scss";
 @import "../../UI/Inputs/general";
-@import "../../UI/Inputs/Button/button";
-@import "../../UI/Inputs/TextInput/textInput";
-@import "../../UI/Inputs/PasswordInput/passwordInput";
-@import "../../UI/Inputs/TextArea/textArea";
-@import "../../UI/Inputs/Select/select";
-@import "../../UI/Inputs/Switch/switch";
-@import "../../UI/Inputs/Checkbox/checkbox";
-@import "../../UI/Inputs/Button/button";
-@import "../../UI/Inputs/ActionIcon/actionIcon";
-@import "../../UI/Inputs/Autocomplete/autocomplete";
-@import "../Loader/loader";
+// @import "../../UI/Inputs/Button/button";
+// @import "../../UI/Inputs/TextInput/textInput";
+// @import "../../UI/Inputs/PasswordInput/passwordInput";
+// @import "../../UI/Inputs/TextArea/textArea";
+// @import "../../UI/Inputs/Select/select";
+// @import "../../UI/Inputs/Switch/switch";
+// @import "../../UI/Inputs/Checkbox/checkbox";
+// @import "../../UI/Inputs/Button/button";
+// @import "../../UI/Inputs/ActionIcon/actionIcon";
+// @import "../../UI/Inputs/Autocomplete/autocomplete";
+@import "../Components/Loader/loader";
+@import "../Components/Skeleton/skeleton";
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,

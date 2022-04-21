@@ -6,22 +6,22 @@ import { InputContainer, InputLabel, InputDescription } from "../General";
 import { useClickOutside } from "../../../../Hooks";
 
 export const Autocomplete = (props) => {
-  const [select, setSelect] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
   const handleSelectClick = (e) => {
-    !props.disabled && !props.loading && setSelect(true);
+    !props.disabled && !props.loading && setDropDown(true);
   };
 
   const handleOptionClick = (e) => {
-    setSelect(false);
+    setDropDown(false);
     props.setValue(e.target.attributes.value.nodeValue);
     setInputValue(e.target.innerHTML);
   };
 
   const ref = useRef(null);
   useClickOutside(ref, () => {
-    setSelect(false);
+    setDropDown(false);
   });
 
   return (
@@ -31,12 +31,12 @@ export const Autocomplete = (props) => {
         handleSelectClick={handleSelectClick}
         loading={props.loading}
         disabled={props.disabled}
-        select={select}
+        dropDown={dropDown}
         setInputValue={setInputValue}
         inputValue={inputValue}
       />
       <AutocompleteDrop
-        select={select}
+        dropDown={dropDown}
         loading={props.loading}
         disabled={props.disabled}
         optionsList={props.optionsList}
