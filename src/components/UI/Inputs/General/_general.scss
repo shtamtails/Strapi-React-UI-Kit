@@ -1,4 +1,4 @@
-@import "../../Utils/scss/_variables.scss";
+@import "../../scss/variables";
 
 input[type="text"],
 input[type="password"],
@@ -31,7 +31,6 @@ textarea[type="text"] {
 }
 
 .input-container {
-  margin-left: 10px;
   font-size: 14px;
 }
 

@@ -1,0 +1,42 @@
+@import "./variables";
+@import "../Inputs/ActionIcon/actionIcon";
+@import "../Inputs/Autocomplete/autocomplete";
+@import "../Inputs/Button/button";
+@import "../Inputs/Checkbox/checkbox";
+@import "../Inputs/General/general";
+@import "../Inputs/PasswordInput/passwordInput";
+@import "../Inputs/Select/select";
+@import "../Inputs/Switch/switch";
+@import "../Inputs/TextArea/textArea";
+@import "../Inputs/TextInput/textInput";
+@import "../Utils/Divider/divider";
+@import "../Utils/Loader/loader";
+@import "../Utils/Skeleton/skeleton";
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: $neutral-100;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+// #container {
+//   display: flex;
+// }
+
+.container__main {
+  z-index: 10;
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+a {
+  text-decoration: none;
+}

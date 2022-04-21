@@ -10,3 +10,8 @@ export { ActionIcon } from "./Inputs/ActionIcon/ActionIcon";
 export { Autocomplete } from "./Inputs/Autocomplete/Autocomplete";
 // Layout
 export { Navbar } from "./Layout/Navbar/Navbar";
+// Utils
+export { Loader } from "./Utils/Loader/Loader";
+export { Skeleton } from "./Utils/Skeleton/Skeleton";
+export { SkeletonContainer } from "./Utils/Skeleton/SkeletonContainer";
+export { Divider } from "./Utils/Divider/Divider";

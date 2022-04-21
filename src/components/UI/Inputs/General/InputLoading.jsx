@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader } from "../../../Utils/";
+import { Loader } from "../../";
 
 export const InputLoading = ({ loading }) => {
   return (

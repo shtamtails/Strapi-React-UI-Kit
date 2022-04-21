@@ -5,7 +5,7 @@ import DividerLabel from "./Components/DividerLabel";
 import DividerContainer from "./Components/DividerContainer";
 export const Divider = (props) => {
   return (
-    <DividerContainer padding={props.padding} width={props.width}>
+    <DividerContainer padding={`${props.padding} 0`} width={props.width}>
       {props.children ? (
         <>
           <DividerLine height={props.height} variant={props.variant} color={props.color} />

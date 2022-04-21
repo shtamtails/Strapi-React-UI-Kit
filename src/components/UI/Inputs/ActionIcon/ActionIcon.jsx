@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Loader } from "../../../Utils";
+import { Loader } from "../../";
 
 export const ActionIcon = ({ ...props }) => {
   const handleClick = (e) => {
