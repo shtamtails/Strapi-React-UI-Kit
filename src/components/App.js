@@ -1,22 +1,24 @@
 import "../css/main.css";
 import React, { useState } from "react";
-import Skeleton from "./Utils/Components/Skeleton/Skeleton";
-import SkeletonContainer from "./Utils/Components/Skeleton/SkeletonContainer";
+import { SkeletonContainer, Skeleton, Divider } from "./Utils/";
 
 // TODO's
 // Add ref functionality to input elements to obtain their value without using state
-// Add clear button to Autocomplete component
-// use propTypes.oneOf insatead of useCorrectType
 
 const App = () => {
   return (
     <>
-      <SkeletonContainer width="60%">
-        <Skeleton circle width="50px" height="50px" style={{ marginTop: "50px" }} />
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-      </SkeletonContainer>
+      <div style={{ width: "1100px", margin: "0 auto" }}>
+        <SkeletonContainer width="100%">
+          <Skeleton circle width="50px" height="50px" style={{ marginTop: "50px" }} />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+        </SkeletonContainer>
+      </div>
+      <Divider height="2px" variant="solid" width="1100px" padding="5px">
+        Hello World
+      </Divider>
     </>
   );
 };
