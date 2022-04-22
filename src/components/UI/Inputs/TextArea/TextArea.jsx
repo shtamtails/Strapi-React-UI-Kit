@@ -1,13 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  InputContainer,
-  InputLabel,
-  InputDescription,
-  InputMain,
-} from "../General";
+import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
-export const TextArea = (props) => {
+export const TextArea = React.forwardRef((props, ref) => {
   props.loading && (props.disabled = true);
 
   return (
@@ -28,11 +23,11 @@ export const TextArea = (props) => {
       <InputDescription description={props.description} />
     </InputContainer>
   );
-};
+});
 
 TextArea.propTypes = {
-  value: PropTypes.any.isRequired,
-  setValue: PropTypes.func.isRequired,
+  value: PropTypes.any,
+  setValue: PropTypes.func,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   loading: PropTypes.bool,

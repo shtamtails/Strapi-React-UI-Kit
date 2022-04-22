@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import { useState, useRef } from "react";
 import { SelectMain, SelectDrop } from "./Components";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import { useClickOutside } from "../../../../Hooks";
+import { useClickOutside, useElementWidth } from "../../../../Hooks";
 
 export const Select = (props) => {
   const [select, setSelect] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [width, setWidth] = useState(0);
 
   const handleSelectClick = (e) => {
     !props.disabled && !props.loading && setSelect(!select);
@@ -24,6 +25,10 @@ export const Select = (props) => {
     setSelect(false);
   });
 
+  useElementWidth(ref, (width) => {
+    setWidth(width - 2);
+  });
+
   return (
     <InputContainer ref={ref}>
       <InputLabel label={props.label} required={props.required} />
@@ -38,6 +43,7 @@ export const Select = (props) => {
         select={select}
         optionsList={props.optionsList}
         handleOptionClick={handleOptionClick}
+        width={width}
       />
       <InputDescription description={props.description} />
     </InputContainer>

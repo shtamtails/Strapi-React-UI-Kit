@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { ShowPwdBtn } from "./Components";
-import {
-  InputContainer,
-  InputLabel,
-  InputDescription,
-  InputMain,
-} from "../General";
+import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
-export const PasswordInput = (props) => {
+export const PasswordInput = React.forwardRef((props, ref) => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
   props.loading && (props.disabled = true);
 
@@ -36,11 +31,11 @@ export const PasswordInput = (props) => {
       <InputDescription description={props.description} />
     </InputContainer>
   );
-};
+});
 
 PasswordInput.propTypes = {
-  value: PropTypes.any.isRequired,
-  setValue: PropTypes.func.isRequired,
+  value: PropTypes.any,
+  setValue: PropTypes.func,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   loading: PropTypes.bool,

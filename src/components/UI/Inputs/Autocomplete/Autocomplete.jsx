@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { AutocompleteMain, AutocompleteDrop } from "./Components";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import { useClickOutside } from "../../../../Hooks";
+import { useClickOutside, useElementWidth } from "../../../../Hooks";
 
 export const Autocomplete = (props) => {
   const [dropDown, setDropDown] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [width, setWidth] = useState(0);
 
   const handleSelectClick = (e) => {
     !props.disabled && !props.loading && setDropDown(true);
@@ -22,6 +23,10 @@ export const Autocomplete = (props) => {
   const ref = useRef(null);
   useClickOutside(ref, () => {
     setDropDown(false);
+  });
+
+  useElementWidth(ref, (width) => {
+    setWidth(width - 2);
   });
 
   return (
@@ -42,6 +47,7 @@ export const Autocomplete = (props) => {
         optionsList={props.optionsList}
         handleOptionClick={handleOptionClick}
         inputValue={inputValue}
+        width={width}
       />
       <InputDescription description={props.description} />
     </InputContainer>

@@ -7,6 +7,7 @@ export const AutocompleteDrop = ({
   inputValue,
   loading,
   disabled,
+  width,
 }) => {
   const tempOptionsList = optionsList.filter((el) => {
     return el.text.toLowerCase().includes(inputValue.toLowerCase());
@@ -14,7 +15,7 @@ export const AutocompleteDrop = ({
   return (
     <>
       {dropDown && !loading && !disabled && tempOptionsList.length > 0 && (
-        <div className="select-option-container">
+        <div className="select-option-container" style={{ width: width }}>
           {tempOptionsList.map((el) => {
             return (
               <option

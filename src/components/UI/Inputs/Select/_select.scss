@@ -1,8 +1,7 @@
 .select-input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
-  width: 240px;
-  height: 40px;
+  height: 42px;
   border-radius: 4px;
   border: solid 1px $neutral-200;
   padding-left: 12px;
@@ -11,6 +10,8 @@
   align-items: center;
   color: $neutral-500;
   font-size: 14px;
+  width: 100%;
+  min-width: 242px;
 }
 
 .select-input-container {
@@ -34,7 +35,7 @@
 }
 .select-option-container {
   max-height: 200px;
-  overflow-y: scroll;
+  overflow-y: overlay;
   &:hover {
     &::-webkit-scrollbar-thumb {
       background: rgba(0, 0, 0, 0.2);
@@ -59,8 +60,6 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  width: 252px;
-  min-width: 250px;
   border: 1px solid #eaeaef;
   box-shadow: 0px 1px 4px rgba(33, 33, 52, 0.1);
   border-radius: 4px;

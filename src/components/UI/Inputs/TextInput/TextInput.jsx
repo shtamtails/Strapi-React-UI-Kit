@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
 export const TextInput = React.forwardRef((props, ref) => {
-  // export const TextInput = (props) => {
   props.loading && (props.disabled = true);
-
   return (
     <InputContainer>
       <InputLabel label={props.label} required={props.required} />
@@ -27,8 +25,8 @@ export const TextInput = React.forwardRef((props, ref) => {
 });
 
 TextInput.propTypes = {
-  value: PropTypes.any.isRequired,
-  setValue: PropTypes.func.isRequired,
+  value: PropTypes.any,
+  setValue: PropTypes.func,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   loading: PropTypes.bool,

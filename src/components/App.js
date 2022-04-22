@@ -1,15 +1,42 @@
 import "../css/main.css";
 import React, { useRef, useState } from "react";
-import { SkeletonContainer, Skeleton, Divider, TextInput, Button, Accordion } from "./UI/";
+import {
+  SkeletonContainer,
+  Skeleton,
+  Divider,
+  TextInput,
+  Button,
+  Accordion,
+  Autocomplete,
+  Select,
+} from "./UI/";
 
 // TODO's
 // Add ref functionality to input elements to obtain their value without using state
 // Add copy btn to TextInput
 
 const App = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("Select");
   const [btn, setBtn] = useState(false);
   const ref = useRef(null);
+
+  const options = [
+    {
+      id: 1,
+      value: "1",
+      text: "1",
+    },
+    {
+      id: 2,
+      value: "2",
+      text: "2",
+    },
+    {
+      id: 3,
+      value: "3",
+      text: "3",
+    },
+  ];
 
   return (
     <>
@@ -20,16 +47,17 @@ const App = () => {
           <Skeleton />
           <Skeleton />
         </SkeletonContainer>
+
         <Divider height="2px" variant="solid" width="1100px" padding="5px">
           Hello World
         </Divider>
+
         <div className="div" style={{ display: "flex" }}>
           <div className="div" style={{ width: "100%" }}>
-            <TextInput value={value} setValue={setValue} ref={ref} />
+            <TextInput ref={ref} />
           </div>
 
           <div className="div" style={{ display: "flex", width: "15%" }}>
-            {" "}
             <Button
               value={btn}
               setValue={setBtn}
@@ -41,8 +69,13 @@ const App = () => {
             </Button>
           </div>
         </div>
-
-        <Accordion />
+        <Select label="Basic Select" optionsList={options} value={value} setValue={setValue} />
+        <Autocomplete
+          label="Autocomplete"
+          optionsList={options}
+          value={value}
+          setValue={setValue}
+        />
       </div>
     </>
   );

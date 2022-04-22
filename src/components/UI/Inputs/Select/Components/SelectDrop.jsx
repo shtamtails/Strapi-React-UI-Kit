@@ -1,10 +1,10 @@
 import React from "react";
 
-export const SelectDrop = ({ optionsList, handleOptionClick, select }) => {
+export const SelectDrop = ({ optionsList, handleOptionClick, select, width }) => {
   return (
     <>
       {select && (
-        <div className="select-option-container">
+        <div className="select-option-container" style={{ width: width }}>
           {optionsList.map((el) => {
             return (
               <option
