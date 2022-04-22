@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 
 export const Button = (props) => {
   const handleBtnClick = (e) => {
-    e.preventDefault();
-    props.setValue(true);
+    props.onClick();
   };
 
   const buttonStyles = [""];
