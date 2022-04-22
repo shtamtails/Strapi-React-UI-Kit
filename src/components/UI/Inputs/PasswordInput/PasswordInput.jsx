@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import { ShowPwdBtn } from "./Components";
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
-export const PasswordInput = React.forwardRef((props, ref) => {
+export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
+  if (props.loading) {
+    props.disabled = true;
+  }
   const [passwordVisibility, setPasswordVisibility] = useState(true);
-  props.loading && (props.disabled = true);
 
   return (
     <InputContainer>

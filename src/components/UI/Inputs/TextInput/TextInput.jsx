@@ -2,13 +2,16 @@ import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
-export const TextInput = React.forwardRef((props, ref) => {
-  props.loading && (props.disabled = true);
+export const TextInput = React.forwardRef(({ ...props }, ref) => {
+  if (props.loading) {
+    props.disabled = true;
+  }
   return (
     <InputContainer>
       <InputLabel label={props.label} required={props.required} />
-      <InputMain loading={props.loading}>
+      <InputMain loading={props.loading} copy={props.copy}>
         <input
+          value={props.value}
           ref={ref}
           required={props.required && true}
           disabled={props.disabled && true}

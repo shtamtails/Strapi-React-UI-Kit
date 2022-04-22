@@ -12,6 +12,7 @@ export { Autocomplete } from "./Inputs/Autocomplete/Autocomplete";
 export { Navbar } from "./Layout/Navbar/Navbar";
 // Utils
 export { Loader } from "./Utils/Loader/Loader";
+export { Copy } from "./Utils/Copy/Copy";
 export { Skeleton } from "./Utils/Skeleton/Skeleton";
 export { SkeletonContainer } from "./Utils/Skeleton/SkeletonContainer";
 export { Divider } from "./Utils/Divider/Divider";

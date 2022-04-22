@@ -16,27 +16,9 @@ import {
 // Add copy btn to TextInput
 
 const App = () => {
-  const [value, setValue] = useState("Select");
+  const [value, setValue] = useState("FS6485SPZLR69KX9VBH6GZSREV4P39");
   const [btn, setBtn] = useState(false);
   const ref = useRef(null);
-
-  const options = [
-    {
-      id: 1,
-      value: "1",
-      text: "1",
-    },
-    {
-      id: 2,
-      value: "2",
-      text: "2",
-    },
-    {
-      id: 3,
-      value: "3",
-      text: "3",
-    },
-  ];
 
   return (
     <>
@@ -48,13 +30,9 @@ const App = () => {
           <Skeleton />
         </SkeletonContainer>
 
-        <Divider height="2px" variant="solid" width="1100px" padding="5px">
-          Hello World
-        </Divider>
-
-        <div className="div" style={{ display: "flex" }}>
+        <div className="div" style={{ display: "flex", marginTop: "50px" }}>
           <div className="div" style={{ width: "100%" }}>
-            <TextInput ref={ref} />
+            <TextInput ref={ref} value={value} setValue={setValue} loading={false} copy />
           </div>
 
           <div className="div" style={{ display: "flex", width: "15%" }}>
@@ -69,13 +47,6 @@ const App = () => {
             </Button>
           </div>
         </div>
-        <Select label="Basic Select" optionsList={options} value={value} setValue={setValue} />
-        <Autocomplete
-          label="Autocomplete"
-          optionsList={options}
-          value={value}
-          setValue={setValue}
-        />
       </div>
     </>
   );

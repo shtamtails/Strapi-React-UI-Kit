@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { InputLoading } from "../../General";
+import { InputSidebutton } from "../../General";
 import ClearButton from "./ClearButton";
 
 export const AutocompleteMain = React.forwardRef(
@@ -25,7 +25,7 @@ export const AutocompleteMain = React.forwardRef(
             inputValue={inputValue}
             setInputValue={setInputValue}
           />
-          <InputLoading loading={loading} />
+          <InputSidebutton loading={loading} />
         </div>
       </>
     );

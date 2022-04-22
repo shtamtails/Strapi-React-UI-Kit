@@ -1,11 +1,12 @@
 import React from "react";
-import { InputLoading } from "./InputLoading";
+import InputSidebutton from "./InputSidebutton";
 
-export const InputMain = ({ loading, children }) => {
+export const InputMain = ({ loading, copy, children }) => {
   return (
     <div className="text-input">
       {children}
-      <InputLoading loading={loading} />
+      {loading && <InputSidebutton loading={loading} />}
+      {copy && !loading && <InputSidebutton copy={copy} />}
     </div>
   );
 };

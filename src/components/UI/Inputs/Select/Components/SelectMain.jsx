@@ -1,6 +1,6 @@
 import React from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { InputLoading } from "../../General";
+import { InputSidebutton } from "../../General";
 
 export const SelectMain = ({ handleSelectClick, inputValue, loading, disabled, select }) => {
   const inputStyles = [""];
@@ -11,7 +11,7 @@ export const SelectMain = ({ handleSelectClick, inputValue, loading, disabled, s
   return (
     <div className="select-input-container" onClick={handleSelectClick}>
       <div className={`${inputStyles.join(" ")} select-input`}>{inputValue}</div>
-      <InputLoading loading={loading} />
+      <InputSidebutton loading={loading} />
       {!loading && (
         <div className={`${inputIconStyles.join(" ")} select-input-icon`}>
           <TiArrowSortedDown />

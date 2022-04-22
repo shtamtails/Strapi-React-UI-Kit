@@ -7,7 +7,8 @@ import { useClickOutside, useElementWidth } from "../../../../Hooks";
 
 export const Autocomplete = (props) => {
   const [dropDown, setDropDown] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("dsadasdas");
+  // width for dropdown container to be the same as the parent container
   const [width, setWidth] = useState(0);
 
   const handleSelectClick = (e) => {
