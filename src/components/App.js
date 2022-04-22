@@ -1,5 +1,5 @@
 import "../css/main.css";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { SkeletonContainer, Skeleton, Divider, TextInput, Button, Accordion } from "./UI/";
 
 // TODO's
@@ -9,6 +9,7 @@ import { SkeletonContainer, Skeleton, Divider, TextInput, Button, Accordion } fr
 const App = () => {
   const [value, setValue] = useState("");
   const [btn, setBtn] = useState(false);
+  const ref = useRef(null);
 
   return (
     <>
@@ -24,7 +25,7 @@ const App = () => {
         </Divider>
         <div className="div" style={{ display: "flex" }}>
           <div className="div" style={{ width: "100%" }}>
-            <TextInput value={value} setValue={setValue} />
+            <TextInput value={value} setValue={setValue} ref={ref} />
           </div>
 
           <div className="div" style={{ display: "flex", width: "15%" }}>
@@ -33,7 +34,7 @@ const App = () => {
               value={btn}
               setValue={setBtn}
               onClick={() => {
-                console.log(value);
+                console.log(ref.current.value);
               }}
             >
               Click
