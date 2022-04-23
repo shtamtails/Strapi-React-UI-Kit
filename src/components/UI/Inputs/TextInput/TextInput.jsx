@@ -6,6 +6,11 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
   if (props.loading) {
     props.disabled = true;
   }
+  if (props.value && ref) {
+    throw new Error(
+      "Catched attempt to use controlled and uncotrolled component at one time. Delete or value prop or ref prop from component props"
+    );
+  }
   return (
     <InputContainer>
       <InputLabel label={props.label} required={props.required} />
@@ -18,7 +23,7 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
           type="text"
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
-            props.value && props.setValue(e.target.value);
+            !ref && !props.copy && props.setValue(e.target.value);
           }}
         />
       </InputMain>
