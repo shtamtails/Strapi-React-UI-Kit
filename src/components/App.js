@@ -32,7 +32,7 @@ const App = () => {
 
         <div className="div" style={{ display: "flex", marginTop: "50px" }}>
           <div className="div" style={{ width: "100%" }}>
-            <TextInput ref={ref} value={value} setValue={setValue} loading={false} copy />
+            <TextInput ref={ref} loading={false} copy />
           </div>
 
           <div className="div" style={{ display: "flex", width: "15%" }}>

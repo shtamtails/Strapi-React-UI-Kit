@@ -17,7 +17,7 @@ export const TextArea = React.forwardRef(({ ...props }, ref) => {
           type="text"
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
-            props.setValue(e.target.value);
+            props.value && props.setValue(e.target.value);
           }}
         />
       </InputMain>

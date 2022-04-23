@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
@@ -18,7 +18,7 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
           type="text"
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
-            props.setValue(e.target.value);
+            props.value && props.setValue(e.target.value);
           }}
         />
       </InputMain>

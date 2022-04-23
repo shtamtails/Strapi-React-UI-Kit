@@ -19,7 +19,7 @@ export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
           type={`${passwordVisibility ? "text" : "password"}`}
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
-            props.setValue(e.target.value);
+            props.value && props.setValue(e.target.value);
           }}
         />
         <ShowPwdBtn
