@@ -18,3 +18,4 @@ export { SkeletonContainer } from "./Utils/Skeleton/SkeletonContainer";
 export { Divider } from "./Utils/Divider/Divider";
 // Data Display
 export { Accordion } from "./DataDisplay/Accordion/Accordion";
+export { AccordionItem } from "./DataDisplay/Accordion/Components";

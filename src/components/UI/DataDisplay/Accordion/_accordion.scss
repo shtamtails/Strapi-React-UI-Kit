@@ -1,0 +1,42 @@
+.accordion {
+  width: 100%;
+  border-bottom: 1px solid $neutral-200;
+  .accordion-label {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: $neutral-150;
+    }
+    .accordion-icon svg {
+      margin-left: 20px;
+      display: flex;
+      width: 26px;
+      height: auto;
+      color: $neutral-600;
+      transform: rotate(0deg);
+      transition: transform 300ms ease;
+    }
+    .opened svg {
+      transform: rotate(-180deg);
+      transition: transform 300ms ease;
+    }
+    .accordion-title {
+      margin-left: 10px;
+    }
+  }
+  .accordion-content {
+    padding-left: 56px;
+    height: 0px;
+    display: none;
+  }
+
+  .displayed {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    height: auto;
+  }
+}

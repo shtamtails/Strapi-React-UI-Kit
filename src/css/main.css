@@ -812,6 +812,69 @@ textarea[type="text"] {
   }
 }
 
+.accordion {
+  width: 100%;
+  border-bottom: 1px solid #dcdce4;
+}
+
+.accordion .accordion-label {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.accordion .accordion-label:hover {
+  background-color: #eaeaef;
+}
+
+.accordion .accordion-label .accordion-icon svg {
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 26px;
+  height: auto;
+  color: #666687;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.accordion .accordion-label .opened svg {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.accordion .accordion-label .accordion-title {
+  margin-left: 10px;
+}
+
+.accordion .accordion-content {
+  padding-left: 56px;
+  height: 0px;
+  display: none;
+}
+
+.accordion .displayed {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  height: auto;
+}
+
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }

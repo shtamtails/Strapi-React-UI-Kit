@@ -7,13 +7,10 @@ import {
   TextInput,
   Button,
   Accordion,
-  Autocomplete,
-  Select,
+  AccordionItem,
 } from "./UI/";
 
 // TODO's
-// Add ref functionality to input elements to obtain their value without using state
-// Add copy btn to TextInput
 
 const App = () => {
   const [value, setValue] = useState("FS6485SPZLR69KX9VBH6GZSREV4P39");
@@ -23,14 +20,15 @@ const App = () => {
   return (
     <>
       <div style={{ width: "1100px", margin: "0 auto" }}>
+        <Divider>Skeleton</Divider>
         <SkeletonContainer>
           <Skeleton circle width="50px" height="50px" style={{ marginTop: "50px" }} />
           <Skeleton />
           <Skeleton />
           <Skeleton />
         </SkeletonContainer>
-
-        <div className="div" style={{ display: "flex", marginTop: "50px" }}>
+        <Divider>Text Input</Divider>
+        <div className="div" style={{ display: "flex" }}>
           <div className="div" style={{ width: "100%" }}>
             <TextInput copy={false} value={value} setValue={setValue} />
           </div>
@@ -47,6 +45,24 @@ const App = () => {
             </Button>
           </div>
         </div>
+        <Divider> Accordion </Divider>
+        <Accordion>
+          <AccordionItem title="Aperiam porro dolorum dignissimos. Saepe, alias nihil.">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima quas cum est.
+            Optio, earum possimus! Veritatis voluptatibus suscipit iusto! Ipsa et eligendi dolorum
+            deleniti itaque quae officiis ut neque!
+          </AccordionItem>
+          <AccordionItem title="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, voluptates sint
+            obcaecati adipisci corporis! Quas, voluptates. Quidem nihil ab, obcaecati, sequi
+            consequatur culpa blanditiis molestias reprehenderit nam veniam fuga!
+          </AccordionItem>
+          <AccordionItem title="Repellendus dolor repudiandae officiis sequi quia!">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et voluptate perspiciatis
+            voluptatum molestiae natus possimus magnam dolores cumque praesentium fuga ad,
+            architecto nisi id ea ipsum dolorum delectus temporibus similique.
+          </AccordionItem>
+        </Accordion>
       </div>
     </>
   );
