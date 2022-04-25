@@ -1,21 +1,21 @@
 import React, { useState } from "react";
+import { createEmptyList } from "./Components";
 import AccordionItem from "./Components/AccordionItem";
 
-export const Accordion = ({ children }) => {
-  const itemsLength = children.length;
-  let postsState = {};
-  children.map((item, index) => {
-    return (postsState[index] = false);
-  });
-  const [isOpened, setIsOpened] = useState(postsState);
+export const Accordion = ({ children, multiple }) => {
+  const total = children.length;
 
-  const handleClick = (id) => {
-    let newPostsState = {};
-    for (let i = 0; i < itemsLength; i++) {
-      newPostsState[i] = false;
+  let postsListState = createEmptyList(total);
+  const [isOpened, setIsOpened] = useState(postsListState);
+
+  const handleClick = (index) => {
+    if (multiple) {
+      setIsOpened({ ...isOpened, [index]: !isOpened[index] });
+    } else {
+      let newPosts = createEmptyList(total);
+      newPosts[index] = !isOpened[index];
+      setIsOpened(newPosts);
     }
-    newPostsState[id] = !isOpened[id];
-    setIsOpened(newPostsState);
   };
 
   return (

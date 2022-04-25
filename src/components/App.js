@@ -46,7 +46,7 @@ const App = () => {
           </div>
         </div>
         <Divider> Accordion </Divider>
-        <Accordion>
+        <Accordion multiple>
           <AccordionItem title="Aperiam porro dolorum dignissimos. Saepe, alias nihil.">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima quas cum est.
             Optio, earum possimus! Veritatis voluptatibus suscipit iusto! Ipsa et eligendi dolorum
