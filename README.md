@@ -266,3 +266,32 @@ const Demo = () => {
 
 export default Demo;
 ```
+
+### Accordion
+
+```js
+import React from "react";
+import { Accordion, AccordionItem } from "./UI/";
+
+const Demo = () => {
+  return (
+    <Accordion multiple>
+      <AccordionItem title="Aperiam porro dolorum dignissimos. Saepe, alias nihil.">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima quas cum est. Optio,
+        earum possimus! Veritatis voluptatibus suscipit iusto! Ipsa et eligendi dolorum deleniti
+        itaque quae officiis ut neque!
+      </AccordionItem>
+      <AccordionItem title="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, voluptates sint
+        obcaecati adipisci corporis! Quas, voluptates. Quidem nihil ab, obcaecati, sequi consequatur
+        culpa blanditiis molestias reprehenderit nam veniam fuga!
+      </AccordionItem>
+      <AccordionItem title="Repellendus dolor repudiandae officiis sequi quia!">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et voluptate perspiciatis
+        voluptatum molestiae natus possimus magnam dolores cumque praesentium fuga ad, architecto
+        nisi id ea ipsum dolorum delectus temporibus similique.
+      </AccordionItem>
+    </Accordion>
+  );
+};
+```
