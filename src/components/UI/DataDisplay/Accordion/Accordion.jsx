@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import AccordionItem from "./Components/AccordionItem";
 
 export const Accordion = ({ children }) => {
-  let obj = {};
+  const itemsLength = children.length;
+  let postsState = {};
   children.map((item, index) => {
-    return (obj[index] = false);
+    return (postsState[index] = false);
   });
-  const [isOpened, setIsOpened] = useState(obj);
-  // const postsOpenedState = Object.values(isOpened);
-  const handleClick = (id) => {
-    setIsOpened({ ...isOpened, [id]: !isOpened[id] });
-  };
+  const [isOpened, setIsOpened] = useState(postsState);
 
-  // console.log(postsOpenedState.includes(true));
-  // console.log(postsOpenedState);
-  // console.log(postsOpenedState.indexOf(true));
-  // if (postsOpenedState.includes(true)) {
-  //   setIsOpened({ ...isOpened, [postsOpenedState.indexOf(true)]: false });
-  // }
+  const handleClick = (id) => {
+    let newPostsState = {};
+    for (let i = 0; i < itemsLength; i++) {
+      newPostsState[i] = false;
+    }
+    newPostsState[id] = !isOpened[id];
+    setIsOpened(newPostsState);
+  };
 
   return (
     <div className="accordion-container">
