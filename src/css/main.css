@@ -277,11 +277,6 @@
   background-color: #f0f0ff;
 }
 
-.checkbox {
-  margin: 5px;
-  padding: 5px 8px 5px 5px;
-}
-
 .checkbox-with-label {
   border-radius: 4px;
 }
@@ -347,7 +342,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 5px;
+  margin-left: 10px;
   font-size: 14px;
 }
 
@@ -356,9 +351,8 @@ input[type="password"],
 textarea[type="text"] {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 100%;
-  min-width: 240px;
   height: 100%;
-  min-height: 40px;
+  min-height: 32px;
   border-radius: 4px;
   border: solid 1px #dcdce4;
   padding-left: 12px;
@@ -934,6 +928,72 @@ textarea[type="text"] {
 
 .card .footer {
   padding: 20px;
+}
+
+.shadowing {
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.modal-hidden {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  opacity: 0;
+}
+
+.modal {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  position: fixed;
+  margin-top: 75px;
+  border-radius: 5px;
+  width: 450px;
+  background-color: #fff;
+  padding-bottom: 24px;
+}
+
+.modal .header {
+  padding-left: 20px;
+  padding-right: 16px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #f6f6f9;
+}
+
+.modal .close-btn svg {
+  width: 28px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal .close-btn:hover {
+  border-radius: 5px;
+  background-color: #f6f6f9;
+}
+
+.modal .content {
+  margin: 0 20px;
 }
 
 html {

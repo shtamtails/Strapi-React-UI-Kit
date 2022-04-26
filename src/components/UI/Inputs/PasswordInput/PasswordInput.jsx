@@ -16,7 +16,7 @@ export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
         <input
           required={props.required && true}
           disabled={props.disabled && true}
-          type={`${passwordVisibility ? "text" : "password"}`}
+          type={`${!passwordVisibility ? "text" : "password"}`}
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
             props.value && props.setValue(e.target.value);
