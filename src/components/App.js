@@ -6,6 +6,7 @@ import {
   Divider,
   TextInput,
   Button,
+  Kbd,
   Accordion,
   AccordionItem,
 } from "./UI/";
@@ -46,7 +47,6 @@ const App = () => {
           </div>
         </div>
         <Divider> Accordion </Divider>
-
         <Accordion>
           <AccordionItem title="Aperiam porro dolorum dignissimos. Saepe, alias nihil.">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima quas cum est.
@@ -64,6 +64,7 @@ const App = () => {
             architecto nisi id ea ipsum dolorum delectus temporibus similique.
           </AccordionItem>
         </Accordion>
+        <Kbd>Command</Kbd> + <Kbd>C</Kbd>
       </div>
     </>
   );
