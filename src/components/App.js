@@ -9,6 +9,7 @@ import {
   Kbd,
   Accordion,
   AccordionItem,
+  Card,
 } from "./UI/";
 
 // TODO's
@@ -64,7 +65,28 @@ const App = () => {
             architecto nisi id ea ipsum dolorum delectus temporibus similique.
           </AccordionItem>
         </Accordion>
+        <Divider> Kbd </Divider>
         <Kbd>Command</Kbd> + <Kbd>C</Kbd>
+        <Divider> Card </Divider>
+        <div style={{ display: "flex", justifyContent: "space-between", width: "360px" }}>
+          <Card shadow>
+            <Card.Image
+              height={180}
+              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+              alt=""
+            />
+            <Card.Title badge="46$">Norway Fjord Adventures</Card.Title>
+            <Card.Text>
+              With Fjord Tours you can explore more of the magical fjord landscapes with tours and
+              activities on and around the fjords of Norway
+            </Card.Text>
+            <Card.Footer>
+              <Button variant="light" type="info">
+                Book classic tour
+              </Button>
+            </Card.Footer>
+          </Card>
+        </div>
       </div>
     </>
   );

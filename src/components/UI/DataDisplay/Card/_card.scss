@@ -1,0 +1,42 @@
+.card {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 6px;
+
+  .image {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    background-color: #000;
+    width: 100%;
+    height: 160px;
+    img {
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .title-container {
+    font-weight: 400;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+  }
+  .title {
+  }
+  .badge {
+  }
+
+  .text {
+    font-size: 14px;
+    font-weight: 300;
+    color: $neutral-600;
+    margin: 0 20px;
+  }
+  .footer {
+    padding: 20px;
+  }
+}

@@ -20,3 +20,4 @@ export { Divider } from "./Utils/Divider/Divider";
 export { Accordion } from "./DataDisplay/Accordion/Accordion";
 export { AccordionItem } from "./DataDisplay/Accordion/Components";
 export { Kbd } from "./DataDisplay/Kbd/Kbd";
+export { Card } from "./DataDisplay/Card/Card";
