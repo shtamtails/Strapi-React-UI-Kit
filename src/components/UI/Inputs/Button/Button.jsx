@@ -14,6 +14,7 @@ export const Button = (props) => {
       disabled={props.disabled}
       className={`btn${buttonStyles.join(" ")}`}
       onClick={handleBtnClick}
+      type={props.submit && "submit"}
     >
       {props.children}
     </button>

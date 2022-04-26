@@ -17,6 +17,7 @@ import {
 
 // TODO's
 // ! ADD HEIGHT PROP TO INPUTS
+// ! ADD LEFT ICON TO INPUTS
 
 const App = () => {
   const [value, setValue] = useState("FS6485SPZLR69KX9VBH6GZSREV4P39");
@@ -27,39 +28,50 @@ const App = () => {
 
   return (
     <>
-      <Modal title="Modal title" modal={modal} setModal={setModal}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ width: "100%", marginRight: "5px" }}>
-            <TextInput label="First Name" placeholder="John" height="" />
-          </div>
-          <div style={{ width: "100%", marginLeft: "5px" }}>
-            <TextInput label="Last Name" placeholder="Doe" height="" />
-          </div>
-        </div>
-        <div style={{ margin: "20px 0" }}>
-          <TextInput label="Email" required placeholder="johndoe@mail.com" />
-        </div>
-        <div style={{ margin: "20px 0" }}>
-          <PasswordInput label="Password" required placeholder="Password" />
-        </div>
-        <div style={{ margin: "20px 0" }}>
-          <PasswordInput label="Confirm Password" required placeholder="Confirm Password" />
-        </div>
-        <div style={{ margin: "20px 0" }}>
-          <Checkbox value={checkbox} setValue={setCheckbox} label="I agree to sell my privacy" />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <div style={{ width: "60%" }}>I already have an account</div>
-          <div style={{ width: "40%", height: "38px" }}>
-            <Button>Register</Button>
-          </div>
-        </div>
-      </Modal>
+      {modal && (
+        <Modal title="Modal title" modal={modal} setModal={setModal}>
+          <form>
+            <div style={{ margin: "10px 0" }}>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div style={{ width: "100%", marginRight: "5px" }}>
+                  <TextInput label="First Name" placeholder="John" height="" />
+                </div>
+                <div style={{ width: "100%", marginLeft: "5px" }}>
+                  <TextInput label="Last Name" placeholder="Doe" height="" />
+                </div>
+              </div>
+            </div>
+
+            <div style={{ margin: "20px 0" }}>
+              <TextInput label="Email" required placeholder="johndoe@mail.com" />
+            </div>
+            <div style={{ margin: "20px 0" }}>
+              <PasswordInput label="Password" required placeholder="Password" />
+            </div>
+            <div style={{ margin: "20px 0" }}>
+              <PasswordInput label="Confirm Password" required placeholder="Confirm Password" />
+            </div>
+            <div style={{ margin: "20px 0" }}>
+              <Checkbox
+                value={checkbox}
+                setValue={setCheckbox}
+                label="I agree to sell my privacy"
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <div style={{ width: "60%" }}>I already have an account</div>
+              <div style={{ width: "40%", height: "38px" }}>
+                <Button submit>Register</Button>
+              </div>
+            </div>
+          </form>
+        </Modal>
+      )}
 
       <div style={{ width: "1100px", margin: "0 auto" }}>
         <Divider>Skeleton</Divider>
