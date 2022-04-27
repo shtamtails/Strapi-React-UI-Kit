@@ -12,7 +12,7 @@ export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
   return (
     <InputContainer>
       <InputLabel label={props.label} required={props.required} />
-      <InputMain loading={props.loading}>
+      <InputMain loading={props.loading} icon={props.sideIcon}>
         <input
           className={props.sideIcon ? "with-icon" : "default"}
           required={props.required && true}

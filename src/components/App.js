@@ -1,6 +1,6 @@
 import "../css/main.css";
 import React, { useRef, useState } from "react";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
 import {
   SkeletonContainer,
   Skeleton,
@@ -55,7 +55,12 @@ const App = () => {
               />
             </div>
             <div style={{ margin: "20px 0" }}>
-              <PasswordInput label="Password" required placeholder="Password" />
+              <PasswordInput
+                label="Password"
+                required
+                placeholder="Password"
+                sideIcon={<AiOutlineLock />}
+              />
             </div>
             <div style={{ margin: "20px 0" }}>
               <PasswordInput label="Confirm Password" required placeholder="Confirm Password" />
