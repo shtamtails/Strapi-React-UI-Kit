@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
 export const TextInput = React.forwardRef(({ ...props }, ref) => {
@@ -11,8 +12,13 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
       "Catched attempt to use controlled and uncotrolled component at one time. Delete or value prop or ref prop from component props"
     );
   }
+
+  const styles = [];
+  props.sideIcon ? styles.push("with-icon") : styles.push("default");
+  props.height && styles.push(props.height);
+
   return (
-    <InputContainer>
+    <InputContainer height={props.height}>
       <InputLabel label={props.label} required={props.required} />
       <InputMain
         loading={props.loading}
@@ -21,7 +27,7 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
         icon={props.sideIcon}
       >
         <input
-          className={props.sideIcon ? "with-icon" : "default"}
+          className={styles.join(" ")}
           value={props.value}
           ref={ref}
           required={props.required && true}
@@ -39,6 +45,7 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
 });
 
 TextInput.propTypes = {
+  height: PropTypes.oneOf(["xs", "sm", "md", "lg", "full"]),
   value: PropTypes.any,
   setValue: PropTypes.func,
   disabled: PropTypes.bool,

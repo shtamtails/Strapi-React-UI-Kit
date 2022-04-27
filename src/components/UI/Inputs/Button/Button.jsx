@@ -8,6 +8,7 @@ export const Button = (props) => {
 
   const buttonStyles = [""];
   buttonStyles.push(`btn-${props.variant}-${props.type}`);
+  props.height && buttonStyles.push(props.height);
 
   return (
     <button
@@ -26,6 +27,7 @@ Button.propTypes = {
   setValue: PropTypes.func.isRequired,
   type: PropTypes.oneOf(["success", "danger", "info"]),
   variant: PropTypes.oneOf(["filled", "outline", "light", "subtle"]),
+  height: PropTypes.oneOf(["xs", "sm", "md", "lg", "full"]),
   disabled: PropTypes.bool,
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const InputContainer = React.forwardRef(({ children }, ref) => {
   return (
@@ -7,5 +8,11 @@ export const InputContainer = React.forwardRef(({ children }, ref) => {
     </div>
   );
 });
+
+InputContainer.propTypes = {
+  children: PropTypes.any.isRequired,
+};
+
+InputContainer.defaultProps = {};
 
 export default InputContainer;

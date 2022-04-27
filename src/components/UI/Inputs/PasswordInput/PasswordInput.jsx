@@ -9,12 +9,16 @@ export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
   }
   const [passwordVisibility, setPasswordVisibility] = useState(true);
 
+  const styles = [];
+  props.sideIcon ? styles.push("with-icon") : styles.push("default");
+  props.height && styles.push(props.height);
+
   return (
-    <InputContainer>
+    <InputContainer height={props.height}>
       <InputLabel label={props.label} required={props.required} />
       <InputMain loading={props.loading} icon={props.sideIcon}>
         <input
-          className={props.sideIcon ? "with-icon" : "default"}
+          className={styles.join(" ")}
           required={props.required && true}
           disabled={props.disabled && true}
           type={`${!passwordVisibility ? "text" : "password"}`}

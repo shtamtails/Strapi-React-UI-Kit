@@ -8,7 +8,7 @@ export const TextArea = React.forwardRef(({ ...props }, ref) => {
   }
 
   return (
-    <InputContainer>
+    <InputContainer height={props.height}>
       <InputLabel label={props.label} required={props.required} />
       <InputMain loading={props.loading} icon={props.sideIcon}>
         <textarea

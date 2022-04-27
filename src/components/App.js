@@ -14,13 +14,10 @@ import {
   Modal,
   PasswordInput,
   Checkbox,
-  Affix,
 } from "./UI/";
 
 // TODO's
-// ! ADD HEIGHT PROP TO INPUTS
-// ! ADD LEFT ICON TO INPUTS
-// ! Add cursor pointer to clickable elements
+// ! DEBUG AND ADD HEIGHT PROP TO textarea
 
 const App = () => {
   const [value, setValue] = useState("FS6485SPZLR69KX9VBH6GZSREV4P39");
@@ -31,17 +28,17 @@ const App = () => {
 
   return (
     <>
-      <Affix />
+      {/* <Affix /> */}
       {modal && (
         <Modal title="Modal title" modal={modal} setModal={setModal}>
           <form>
             <div style={{ margin: "10px 0" }}>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div style={{ width: "100%", marginRight: "5px" }}>
-                  <TextInput label="First Name" placeholder="John" height="" />
+                  <TextInput label="First Name" placeholder="John" />
                 </div>
                 <div style={{ width: "100%", marginLeft: "5px" }}>
-                  <TextInput label="Last Name" placeholder="Doe" height="" />
+                  <TextInput label="Last Name" placeholder="Doe" />
                 </div>
               </div>
             </div>
@@ -63,7 +60,12 @@ const App = () => {
               />
             </div>
             <div style={{ margin: "20px 0" }}>
-              <PasswordInput label="Confirm Password" required placeholder="Confirm Password" />
+              <PasswordInput
+                label="Confirm Password"
+                required
+                placeholder="Confirm Password"
+                sideIcon={<AiOutlineLock />}
+              />
             </div>
             <div style={{ margin: "20px 0" }}>
               <Checkbox
@@ -78,7 +80,9 @@ const App = () => {
                 alignItems: "center",
               }}
             >
-              <div style={{ width: "60%" }}>I already have an account</div>
+              <div style={{ width: "60%", fontSize: "14px" }}>
+                <a href="">I already have an account</a>
+              </div>
               <div style={{ width: "40%", height: "38px" }}>
                 <Button submit>Register</Button>
               </div>
@@ -108,6 +112,7 @@ const App = () => {
               onClick={() => {
                 console.log(ref.current.value);
               }}
+              height="md"
             >
               Click
             </Button>
@@ -156,7 +161,7 @@ const App = () => {
                 activities on and around the fjords of Norway
               </Card.Text>
               <Card.Footer>
-                <Button variant="light" type="info">
+                <Button variant="light" type="info" height="md">
                   Book classic tour
                 </Button>
               </Card.Footer>
