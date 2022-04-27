@@ -14,6 +14,7 @@ export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
       <InputLabel label={props.label} required={props.required} />
       <InputMain loading={props.loading}>
         <input
+          className={props.sideIcon ? "with-icon" : "default"}
           required={props.required && true}
           disabled={props.disabled && true}
           type={`${!passwordVisibility ? "text" : "password"}`}

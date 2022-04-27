@@ -355,7 +355,6 @@ textarea[type="text"] {
   min-height: 32px;
   border-radius: 4px;
   border: solid 1px #dcdce4;
-  padding-left: 12px;
 }
 
 input[type="text"]::-webkit-input-placeholder,
@@ -459,6 +458,21 @@ textarea[type="text"]:disabled::placeholder {
   margin-left: -30px;
 }
 
+.input-sideicon {
+  position: absolute;
+  left: 10px;
+}
+
+.input-sideicon svg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 17px;
+  height: auto;
+  color: #8e8ea9;
+  margin-right: -30px;
+}
+
 .input-disabled {
   background-color: #dcdce4 !important;
   color: #666687 !important;
@@ -482,12 +496,21 @@ textarea[type="text"]:disabled::placeholder {
 }
 
 .text-input {
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.text-input .default {
+  padding-left: 12px;
+}
+
+.text-input .with-icon {
+  padding-left: 34px;
 }
 
 .password-visibility-btn svg {

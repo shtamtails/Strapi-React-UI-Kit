@@ -23,3 +23,4 @@ export { Kbd } from "./DataDisplay/Kbd/Kbd";
 export { Card } from "./DataDisplay/Card/Card";
 // Overlay
 export { Modal } from "./Overlay/Modal/Modal";
+export { Affix } from "./Overlay/Affix/Affix";

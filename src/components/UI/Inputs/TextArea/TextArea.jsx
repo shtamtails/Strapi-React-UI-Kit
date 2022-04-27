@@ -12,6 +12,7 @@ export const TextArea = React.forwardRef(({ ...props }, ref) => {
       <InputLabel label={props.label} required={props.required} />
       <InputMain loading={props.loading}>
         <textarea
+          className={props.sideIcon ? "with-icon" : "default"}
           required={props.required && true}
           disabled={props.disabled && true}
           type="text"

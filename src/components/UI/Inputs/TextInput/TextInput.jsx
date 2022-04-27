@@ -14,8 +14,14 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
   return (
     <InputContainer>
       <InputLabel label={props.label} required={props.required} />
-      <InputMain loading={props.loading} copy={props.copy} value={props.value}>
+      <InputMain
+        loading={props.loading}
+        copy={props.copy}
+        value={props.value}
+        icon={props.sideIcon}
+      >
         <input
+          className={props.sideIcon ? "with-icon" : "default"}
           value={props.value}
           ref={ref}
           required={props.required && true}

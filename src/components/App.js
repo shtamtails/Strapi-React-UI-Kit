@@ -1,5 +1,6 @@
 import "../css/main.css";
 import React, { useRef, useState } from "react";
+import { AiOutlineMail } from "react-icons/ai";
 import {
   SkeletonContainer,
   Skeleton,
@@ -13,11 +14,13 @@ import {
   Modal,
   PasswordInput,
   Checkbox,
+  Affix,
 } from "./UI/";
 
 // TODO's
 // ! ADD HEIGHT PROP TO INPUTS
 // ! ADD LEFT ICON TO INPUTS
+// ! Add cursor pointer to clickable elements
 
 const App = () => {
   const [value, setValue] = useState("FS6485SPZLR69KX9VBH6GZSREV4P39");
@@ -28,6 +31,7 @@ const App = () => {
 
   return (
     <>
+      <Affix />
       {modal && (
         <Modal title="Modal title" modal={modal} setModal={setModal}>
           <form>
@@ -43,7 +47,12 @@ const App = () => {
             </div>
 
             <div style={{ margin: "20px 0" }}>
-              <TextInput label="Email" required placeholder="johndoe@mail.com" />
+              <TextInput
+                sideIcon={<AiOutlineMail />}
+                label="Email"
+                required
+                placeholder="johndoe@mail.com"
+              />
             </div>
             <div style={{ margin: "20px 0" }}>
               <PasswordInput label="Password" required placeholder="Password" />
@@ -76,7 +85,7 @@ const App = () => {
       <div style={{ width: "1100px", margin: "0 auto" }}>
         <Divider>Skeleton</Divider>
         <SkeletonContainer>
-          <Skeleton circle width="50px" height="50px" style={{ marginTop: "50px" }} />
+          <Skeleton circle width="50px" height="50px" />
           <Skeleton />
           <Skeleton />
           <Skeleton />
@@ -102,9 +111,8 @@ const App = () => {
         <Divider> Accordion </Divider>
         <Accordion>
           <AccordionItem title="Aperiam porro dolorum dignissimos. Saepe, alias nihil.">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima quas cum est.
-            Optio, earum possimus! Veritatis voluptatibus suscipit iusto! Ipsa et eligendi dolorum
-            deleniti itaque quae officiis ut neque!
+            Press <Kbd>Command</Kbd> + <Kbd>C</Kbd> to copy something and <Kbd>Command</Kbd> +{" "}
+            <Kbd>V</Kbd> to paste it.
           </AccordionItem>
           <AccordionItem title="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quas, voluptates sint
@@ -114,7 +122,16 @@ const App = () => {
           <AccordionItem title="Repellendus dolor repudiandae officiis sequi quia!">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et voluptate perspiciatis
             voluptatum molestiae natus possimus magnam dolores cumque praesentium fuga ad,
-            architecto nisi id ea ipsum dolorum delectus temporibus similique.
+            architecto nisi id ea ipsum dolorum delectus temporibus similique. Lorem ipsum dolor sit
+            amet consectetur, adipisicing elit. Maxime corrupti culpa ex ab, explicabo dolores velit
+            in quibusdam ad exercitationem nisi nobis cum labore! Labore quae ex debitis architecto
+            vitae veniam quo eaque, dolorum cumque. Debitis ea numquam consequatur quas minus eius
+            voluptate, itaque inventore, saepe enim unde fugit placeat! Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Ratione ea labore quos ut veritatis inventore
+            consequuntur voluptatem natus iusto unde perferendis tempore dolore, fugiat, sint
+            obcaecati eius, delectus asperiores! Itaque temporibus autem tenetur consequuntur iste
+            odio voluptate doloremque nostrum saepe iure. Alias nostrum consequuntur sequi quod
+            accusamus omnis consectetur cumque.
           </AccordionItem>
         </Accordion>
         <Divider> Kbd </Divider>
