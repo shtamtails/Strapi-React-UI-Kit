@@ -582,8 +582,8 @@ textarea[type="text"]:disabled::placeholder {
 .select-option-container {
   max-height: 200px;
   overflow-y: overlay;
-  position: fixed;
-  z-index: 999;
+  position: absolute;
+  z-index: 1000;
   font-size: 14px;
   margin-top: 5px;
   background-color: #fff;

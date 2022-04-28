@@ -53,8 +53,8 @@
   &::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 0, 0.3);
   }
-  position: fixed;
-  z-index: 999;
+  position: absolute;
+  z-index: 1000;
   font-size: 14px;
   margin-top: 5px;
   background-color: #fff;

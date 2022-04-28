@@ -1,6 +1,7 @@
 import "../css/main.css";
 import React, { useRef, useState } from "react";
 import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
+import { useUniqueId } from "../Hooks";
 import {
   SkeletonContainer,
   Skeleton,
@@ -14,6 +15,7 @@ import {
   Modal,
   PasswordInput,
   Checkbox,
+  Autocomplete,
 } from "./UI/";
 
 // TODO's
@@ -21,10 +23,17 @@ import {
 
 const App = () => {
   const [value, setValue] = useState("FS6485SPZLR69KX9VBH6GZSREV4P39");
+  const [value1, setValue1] = useState("");
   const [btn, setBtn] = useState(false);
   const [modal, setModal] = useState(false);
   const [checkbox, setCheckbox] = useState(false);
   const ref = useRef(null);
+
+  const options = [
+    { id: useUniqueId(), text: "text1", value: "value1" },
+    { id: useUniqueId(), text: "text2", value: "value2" },
+    { id: useUniqueId(), text: "text3", value: "value3" },
+  ];
 
   return (
     <>
@@ -220,6 +229,8 @@ const App = () => {
             Open modal
           </Button>
         </div>
+        <Divider> Autocomplete </Divider>
+        <Autocomplete optionsList={options} value={value1} setValue={setValue1} />
         <Divider></Divider>
       </div>
     </>
