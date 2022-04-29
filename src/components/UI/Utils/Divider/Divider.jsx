@@ -1,21 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import DividerLine from "./Components/DividerLine";
-import DividerLabel from "./Components/DividerLabel";
-import DividerContainer from "./Components/DividerContainer";
-export const Divider = (props) => {
+
+export const Divider = ({ padding, width, children, height, variant, color }) => {
+  const lineStyle = { borderTop: `${height} ${variant} ${color}` };
+  const dividerStyle = { padding: `${padding}`, width: `${width}` };
+
   return (
-    <DividerContainer padding={`${props.padding} 0`} width={props.width}>
-      {props.children ? (
+    <div className="divider" style={dividerStyle}>
+      {children ? (
         <>
-          <DividerLine height={props.height} variant={props.variant} color={props.color} />
-          <DividerLabel children={props.children} />
-          <DividerLine height={props.height} variant={props.variant} color={props.color} />
+          <div className={`line`} style={lineStyle}></div>
+          <div className="label">{children}</div>
+          <div className={`line`} style={lineStyle}></div>
         </>
       ) : (
-        <DividerLine height={props.height} variant={props.variant} color={props.color} />
+        <div className={`line`} style={lineStyle}></div>
       )}
-    </DividerContainer>
+    </div>
   );
 };
 
@@ -24,15 +25,15 @@ Divider.defaultProps = {
   variant: "solid",
   color: "#dcdce4",
   width: "100%",
-  padding: "10px",
+  padding: "10px 0px",
 };
 
 Divider.propTypes = {
   variant: PropTypes.oneOf(["solid", "dashed", "dotted"]),
   height: PropTypes.string,
-  variant: PropTypes.string,
   color: PropTypes.string,
   margin: PropTypes.string,
+  children: PropTypes.string,
 };
 
 export default Divider;

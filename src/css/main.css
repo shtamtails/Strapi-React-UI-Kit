@@ -727,7 +727,7 @@ textarea[type="text"] {
   height: 80px;
 }
 
-.divider-container {
+.divider {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -740,13 +740,13 @@ textarea[type="text"] {
           align-items: center;
 }
 
-.divider-line {
+.divider .line {
   -webkit-box-flex: 1;
       -ms-flex: 1 0;
           flex: 1 0;
 }
 
-.divider-label {
+.divider .label {
   margin: 0 15px;
   color: #c0c0cf;
 }

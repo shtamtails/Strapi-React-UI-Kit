@@ -1,15 +1,14 @@
-.divider-container {
+.divider {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  .line {
+    flex: 1 0;
+  }
 
-.divider-line {
-  flex: 1 0;
-}
-
-.divider-label {
-  margin: 0 15px;
-  color: $neutral-300;
+  .label {
+    margin: 0 15px;
+    color: $neutral-300;
+  }
 }
