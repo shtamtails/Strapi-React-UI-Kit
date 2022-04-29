@@ -7,15 +7,9 @@ export const Divider = ({ padding, width, children, height, variant, color }) =>
 
   return (
     <div className="divider" style={dividerStyle}>
-      {children ? (
-        <>
-          <div className={`line`} style={lineStyle}></div>
-          <div className="label">{children}</div>
-          <div className={`line`} style={lineStyle}></div>
-        </>
-      ) : (
-        <div className={`line`} style={lineStyle}></div>
-      )}
+      <div className={`line`} style={lineStyle}></div>
+      {children && <div className="label">{children}</div>}
+      {children && <div className={`line`} style={lineStyle}></div>}
     </div>
   );
 };
