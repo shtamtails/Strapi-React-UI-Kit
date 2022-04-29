@@ -1,7 +1,7 @@
 .accordion {
   width: 100%;
   border-bottom: 1px solid $neutral-200;
-  .accordion-label {
+  .label {
     width: 100%;
     height: 60px;
     display: flex;
@@ -10,7 +10,7 @@
     &:hover {
       background-color: $neutral-150;
     }
-    .accordion-icon svg {
+    .icon svg {
       margin-left: 20px;
       display: flex;
       width: 26px;
@@ -23,11 +23,11 @@
       transform: rotate(-180deg);
       transition: transform 300ms ease;
     }
-    .accordion-title {
+    .title {
       margin-left: 10px;
     }
   }
-  .accordion-content {
+  .content {
     padding-left: 56px;
     height: 0;
     overflow: hidden;

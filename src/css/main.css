@@ -827,7 +827,7 @@ textarea[type="text"] {
   border-bottom: 1px solid #dcdce4;
 }
 
-.accordion .accordion-label {
+.accordion .label {
   width: 100%;
   height: 60px;
   display: -webkit-box;
@@ -839,11 +839,11 @@ textarea[type="text"] {
   cursor: pointer;
 }
 
-.accordion .accordion-label:hover {
+.accordion .label:hover {
   background-color: #eaeaef;
 }
 
-.accordion .accordion-label .accordion-icon svg {
+.accordion .label .icon svg {
   margin-left: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -859,7 +859,7 @@ textarea[type="text"] {
   transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
-.accordion .accordion-label .opened svg {
+.accordion .label .opened svg {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
   -webkit-transition: -webkit-transform 300ms ease;
@@ -868,11 +868,11 @@ textarea[type="text"] {
   transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
-.accordion .accordion-label .accordion-title {
+.accordion .label .title {
   margin-left: 10px;
 }
 
-.accordion .accordion-content {
+.accordion .content {
   padding-left: 56px;
   height: 0;
   overflow: hidden;

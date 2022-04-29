@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export const AccordionItem = ({ title, children, isOpened, onClick }) => {
-  const iconStyles = [""];
-  const contentStyles = [""];
+  // Styling
+  const iconStyles = ["icon"];
+  const contentStyles = ["content"];
   isOpened && iconStyles.push("opened");
   isOpened && contentStyles.push("displayed");
+  // Ref used to get content height
   const ref = useRef(null);
   const [height, setHeight] = useState(ref.current);
   useEffect(() => {
@@ -14,15 +16,15 @@ export const AccordionItem = ({ title, children, isOpened, onClick }) => {
 
   return (
     <div className="accordion">
-      <div className={`accordion-label`} onClick={onClick}>
-        <div className={`accordion-icon${iconStyles.join(" ")}`}>
+      <div className={`label`} onClick={onClick}>
+        <div className={iconStyles.join(" ")}>
           <MdOutlineKeyboardArrowDown />
         </div>
-        <div className="accordion-title">{title}</div>
+        <div className="title">{title}</div>
       </div>
       <div
         ref={ref}
-        className={`accordion-content${contentStyles.join(" ")}`}
+        className={contentStyles.join(" ")}
         style={{
           height: height,
         }}
