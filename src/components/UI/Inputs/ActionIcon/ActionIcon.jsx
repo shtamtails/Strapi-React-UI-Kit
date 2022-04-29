@@ -2,24 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Loader } from "../../";
 
-export const ActionIcon = ({ ...props }) => {
+export const ActionIcon = ({ disabled, loading, variant, size, children, onClick }) => {
+  // Styling
+  const styles = [variant];
+  (disabled || loading) && styles.push("disabled");
+  //
+
   const handleClick = (e) => {
-    !props.disabled && !props.loading && props.onClick();
+    !disabled && !loading && onClick();
   };
 
-  const containerStyles = [""];
-  const iconStyles = [""];
-
-  containerStyles.push(`action-${props.variant}`);
-  iconStyles.push(props.size);
-
-  props.disabled && containerStyles.push("action-disabled");
-  props.loading && containerStyles.push("action-disabled");
-
   return (
-    <div className={`action-icon-container${containerStyles.join(" ")}`} onClick={handleClick}>
-      <div className={`action-icon${iconStyles.join(" ")}`}>
-        {!props.loading ? props.children : <Loader />}
+    <div className={`action-icon-container icon-${size} `}>
+      <div className={styles.join(" ")} onClick={handleClick}>
+        <div className={`icon icon-${size}`}>{!loading ? children : <Loader />}</div>
       </div>
     </div>
   );

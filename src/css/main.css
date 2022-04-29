@@ -1,5 +1,4 @@
 .action-icon-container {
-  padding: 5px;
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,11 +12,8 @@
   cursor: pointer;
 }
 
-.action-icon-container:hover {
-  background-color: #dcdce4;
-}
-
-.action-icon {
+.action-icon-container .icon {
+  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,99 +25,118 @@
           align-items: center;
 }
 
-.action-icon svg {
+.action-icon-container .icon svg {
   color: #212134;
 }
 
-.action-filled {
+.action-icon-container .filled {
   background-color: #7b79ff;
 }
 
-.action-filled:hover {
+.action-icon-container .filled:hover {
   background-color: #4945ff;
 }
 
-.action-filled svg {
+.action-icon-container .filled svg {
   color: #fff;
 }
 
-.action-outline {
+.action-icon-container .outline {
   border: 1px solid #7b79ff;
 }
 
-.action-outline:hover {
+.action-icon-container .outline:hover {
   background-color: #f0f0ff;
 }
 
-.action-outline svg {
+.action-icon-container .outline svg {
   color: #7b79ff;
 }
 
-.action-transparent {
+.action-icon-container .transparent {
   background: none;
 }
 
-.action-transparent:hover {
+.action-icon-container .transparent:hover {
   background: none;
 }
 
-.action-transparent svg {
+.action-icon-container .transparent svg {
   color: #7b79ff;
 }
 
-.action-hover {
+.action-icon-container .hover {
   background: none;
 }
 
-.action-hover:hover {
+.action-icon-container .hover:hover {
   background: #d9d8ff;
 }
 
-.action-hover svg {
+.action-icon-container .hover svg {
   color: #4945ff;
 }
 
-.action-light {
+.action-icon-container .light {
   background: #d9d8ff;
 }
 
-.action-light:hover {
+.action-icon-container .light:hover {
   background: #d9d8ff;
 }
 
-.action-light svg {
+.action-icon-container .light svg {
+  color: #7b79ff;
+}
+
+.action-icon-container .light svg:hover {
   color: #4945ff;
 }
 
-.action-disabled {
+.action-icon-container .disabled {
   background-color: #dcdce4;
   cursor: not-allowed;
 }
 
-.action-disabled svg {
+.action-icon-container .disabled svg {
   color: #a5a5ba;
 }
 
-.action-disabled:hover {
+.action-icon-container .disabled:hover {
   background-color: #dcdce4;
 }
 
-.action-disabled:hover svg {
+.action-icon-container .disabled:hover svg {
   color: #a5a5ba;
 }
 
-.sm svg {
-  width: 14px;
+.icon-sm {
+  width: 14px !important;
   height: auto;
 }
 
-.md svg {
-  width: 26px;
+.icon-sm svg {
+  width: 14px !important;
   height: auto;
 }
 
-.lg svg {
-  width: 34px;
+.icon-md {
+  width: 26px !important;
+  height: auto;
+}
+
+.icon-md svg {
+  width: 26px !important;
+  height: auto;
+}
+
+.icon-lg {
+  width: 34px !important;
+  height: auto;
+}
+
+.icon-lg svg {
+  width: 34px !important;
   height: auto;
 }
 

@@ -17,6 +17,7 @@ import {
   Checkbox,
   Select,
   Autocomplete,
+  ActionIcon,
 } from "./UI/";
 
 // TODO's
@@ -234,6 +235,10 @@ const App = () => {
         <Autocomplete optionsList={options} value={value1} setValue={setValue1} />
         <Divider> Select </Divider>
         <Select optionsList={options} value={value1} setValue={setValue1} />
+        <Divider> Action Icon </Divider>
+        <ActionIcon variant="outline" size="md" disabled>
+          <AiOutlineLock />
+        </ActionIcon>
         <Divider></Divider>
       </div>
     </>

@@ -1,106 +1,111 @@
 .action-icon-container {
-  padding: 5px;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  &:hover {
-    background-color: $neutral-200;
-  }
-}
 
-.action-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  svg {
-    color: $neutral-900;
+  .icon {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      color: $neutral-900;
+    }
   }
-}
 
-.action-filled {
-  background-color: $primary-500;
-  &:hover {
-    background-color: $primary-600;
+  .filled {
+    background-color: $primary-500;
+    &:hover {
+      background-color: $primary-600;
+    }
+    svg {
+      color: #fff;
+    }
   }
-  svg {
-    color: #fff;
-  }
-}
 
-.action-outline {
-  border: 1px solid $primary-500;
-  &:hover {
-    background-color: $primary-100;
+  .outline {
+    border: 1px solid $primary-500;
+    &:hover {
+      background-color: $primary-100;
+    }
+    svg {
+      color: $primary-500;
+    }
   }
-  svg {
-    color: $primary-500;
-  }
-}
 
-.action-transparent {
-  background: none;
-  &:hover {
+  .transparent {
     background: none;
+    &:hover {
+      background: none;
+    }
+    svg {
+      color: $primary-500;
+    }
   }
-  svg {
-    color: $primary-500;
+
+  .hover {
+    background: none;
+
+    &:hover {
+      background: $primary-200;
+    }
+    svg {
+      color: $primary-600;
+    }
   }
-}
 
-.action-hover {
-  background: none;
-
-  &:hover {
+  .light {
     background: $primary-200;
+    &:hover {
+      background: $primary-200;
+    }
+    svg {
+      color: $primary-500;
+      &:hover {
+        color: $primary-600;
+      }
+    }
   }
-  svg {
-    color: $primary-600;
-  }
-}
 
-.action-light {
-  background: $primary-200;
-  &:hover {
-    background: $primary-200;
-  }
-  svg {
-    color: $primary-600;
-  }
-}
-
-.action-disabled {
-  background-color: $neutral-200;
-  cursor: not-allowed;
-  svg {
-    color: $neutral-400;
-  }
-  &:hover {
+  .disabled {
     background-color: $neutral-200;
+    cursor: not-allowed;
     svg {
       color: $neutral-400;
     }
+    &:hover {
+      background-color: $neutral-200;
+      svg {
+        color: $neutral-400;
+      }
+    }
   }
 }
-
-.sm {
+.icon-sm {
+  width: 14px !important;
+  height: auto;
   svg {
-    width: 14px;
+    width: 14px !important;
     height: auto;
   }
 }
 
-.md {
+.icon-md {
+  width: 26px !important;
+  height: auto;
   svg {
-    width: 26px;
+    width: 26px !important;
     height: auto;
   }
 }
 
-.lg {
+.icon-lg {
+  width: 34px !important;
+  height: auto;
   svg {
-    width: 34px;
+    width: 34px !important;
     height: auto;
   }
 }
