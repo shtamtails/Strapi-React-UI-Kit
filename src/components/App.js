@@ -83,6 +83,7 @@ const App = () => {
                 value={checkbox}
                 setValue={setCheckbox}
                 label="I agree to sell my privacy"
+                disabled
               />
             </div>
             <div

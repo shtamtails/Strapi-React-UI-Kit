@@ -172,7 +172,6 @@ const Demo = () => {
       // optional props
       disabled
       label="Input label"
-      labelBg
     />
   );
 };

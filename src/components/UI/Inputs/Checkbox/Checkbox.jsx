@@ -9,7 +9,6 @@ export const Checkbox = ({ value, setValue, label, disabled, ...props }) => {
 
   const checkboxStyles = ["checkbox"];
 
-  props.labelBg && label && disabled && checkboxStyles.push("checkbox-with-label-disabled");
   label && props.labelBg && checkboxStyles.push("checkbox-with-label");
 
   return (

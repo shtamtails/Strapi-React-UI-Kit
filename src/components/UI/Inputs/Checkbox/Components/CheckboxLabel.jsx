@@ -1,8 +1,7 @@
 import React from "react";
 
 export const CheckboxLabel = ({ label, disabled }) => {
-  const labelStyles = ["checkbox-label"];
-  disabled && labelStyles.push("status-disabled");
+  const labelStyles = ["label"];
 
   return <>{label && <div className={labelStyles.join(" ")}>{label}</div>}</>;
 };
