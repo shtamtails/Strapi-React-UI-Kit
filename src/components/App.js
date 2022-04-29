@@ -15,6 +15,7 @@ import {
   Modal,
   PasswordInput,
   Checkbox,
+  Select,
   Autocomplete,
 } from "./UI/";
 
@@ -230,7 +231,7 @@ const App = () => {
           </Button>
         </div>
         <Divider> Autocomplete </Divider>
-        <Autocomplete optionsList={options} value={value1} setValue={setValue1} />
+        <Select optionsList={options} value={value1} setValue={setValue1} />
         <Divider></Divider>
       </div>
     </>

@@ -8,7 +8,7 @@ export const ClearButton = ({ inputValue, setInputValue, loading, disabled }) =>
   return (
     <>
       {inputValue.length > 0 && !loading && !disabled && (
-        <div className="input-sidebutton" onClick={handleClick}>
+        <div className="right-button" onClick={handleClick}>
           <CgClose />
         </div>
       )}

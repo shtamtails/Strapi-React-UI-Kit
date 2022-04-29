@@ -14,7 +14,7 @@ export const AutocompleteMain = React.forwardRef(
 
     return (
       <>
-        <div className="select-input-container">
+        <div className="select">
           <input
             className={styles.join(" ")}
             ref={ref}

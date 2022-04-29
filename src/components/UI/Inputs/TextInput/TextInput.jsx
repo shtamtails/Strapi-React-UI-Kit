@@ -18,29 +18,31 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
   props.height && styles.push(props.height);
 
   return (
-    <InputContainer height={props.height}>
-      <InputLabel label={props.label} required={props.required} />
-      <InputMain
-        loading={props.loading}
-        copy={props.copy}
-        value={props.value}
-        icon={props.sideIcon}
-      >
-        <input
-          className={styles.join(" ")}
+    <>
+      <InputContainer height={props.height}>
+        <InputLabel label={props.label} required={props.required} />
+        <InputMain
+          loading={props.loading}
+          copy={props.copy}
           value={props.value}
-          ref={ref}
-          required={props.required && true}
-          disabled={props.disabled || props.loading}
-          type="text"
-          placeholder={props.placeholder && props.placeholder}
-          onChange={(e) => {
-            !ref && !props.copy && props.setValue(e.target.value);
-          }}
-        />
-      </InputMain>
-      <InputDescription description={props.description} />
-    </InputContainer>
+          icon={props.sideIcon}
+        >
+          <input
+            className={styles.join(" ")}
+            value={props.value}
+            ref={ref}
+            required={props.required && true}
+            disabled={props.disabled || props.loading}
+            type="text"
+            placeholder={props.placeholder && props.placeholder}
+            onChange={(e) => {
+              !ref && !props.copy && props.setValue(e.target.value);
+            }}
+          />
+        </InputMain>
+        <InputDescription description={props.description} />
+      </InputContainer>
+    </>
   );
 });
 

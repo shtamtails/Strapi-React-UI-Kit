@@ -30,72 +30,68 @@ textarea[type="text"] {
     }
   }
 }
-
 .input-container {
-  font-size: 14px;
-}
-
-.input-label {
-  font-weight: 600;
-  margin: 6px 0px;
-}
-
-.input-description {
-  font-size: 13px;
-  margin: 6px 0px;
-  font-weight: 400;
-  color: $neutral-600;
-}
-
-.required {
-  &::after {
-    margin-left: 5px;
-    color: $danger-500;
-    content: "*";
+  .input {
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    font-size: 14px;
   }
-}
 
-.input-sidebutton {
-  cursor: pointer;
-}
+  .label {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 6px 0px;
+  }
 
-.input-sidebutton svg {
-  margin-left: -30px;
-}
+  .description {
+    font-size: 13px;
+    margin: 6px 0px;
+    font-weight: 400;
+    color: $neutral-600;
+  }
+  .required {
+    &::after {
+      margin-left: 5px;
+      color: $danger-500;
+      content: "*";
+    }
+  }
+  .right-button {
+    cursor: pointer;
+  }
 
-.input-sideicon {
-  position: absolute;
-  left: 10px;
-}
+  .right-button svg {
+    margin-left: -30px;
+  }
 
-.input-sideicon svg {
-  display: flex;
-  width: 17px;
-  height: auto;
-  color: $neutral-500;
-  margin-right: -30px;
-}
+  .left-icon {
+    position: absolute;
+    left: 10px;
+  }
 
-.input-disabled {
-  background-color: $neutral-200 !important;
-  color: $neutral-600 !important;
-  cursor: not-allowed;
-  &::placeholder {
+  .left-icon svg {
+    display: flex;
+    width: 17px;
+    height: auto;
+    color: $neutral-500;
+    margin-right: -30px;
+  }
+  .disabled {
+    background-color: $neutral-200 !important;
     color: $neutral-600 !important;
+    cursor: not-allowed;
+    &::placeholder {
+      color: $neutral-600 !important;
+    }
   }
-}
 
-.text-input {
-  position: relative;
-  align-items: center;
-  display: flex;
-  height: 100%;
-}
+  .default {
+    padding-left: 12px !important;
+  }
 
-.default {
-  padding-left: 12px !important;
-}
-
-.with-icon {
-  padding-left: 34px !important;
+  .with-icon {
+    padding-left: 34px !important;
+  }
 }

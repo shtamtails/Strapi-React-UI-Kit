@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const InputLabel = ({ label, required }) => {
-  const labelStyle = [""];
+  const labelStyle = ["label"];
   required && labelStyle.push("required");
-  return <>{label && <div className={`input-label ${labelStyle.join(" ")}`}>{label}</div>}</>;
+  return <>{label && <div className={labelStyle.join(" ")}>{label}</div>}</>;
 };
 
 InputLabel.propTypes = {
