@@ -31,7 +31,7 @@ export const TextInput = React.forwardRef(({ ...props }, ref) => {
           value={props.value}
           ref={ref}
           required={props.required && true}
-          disabled={props.disabled && true}
+          disabled={props.disabled || props.loading}
           type="text"
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {

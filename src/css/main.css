@@ -508,12 +508,12 @@ textarea[type="text"]:disabled::placeholder {
   height: 100%;
 }
 
-.text-input .default {
-  padding-left: 12px;
+.default {
+  padding-left: 12px !important;
 }
 
-.text-input .with-icon {
-  padding-left: 34px;
+.with-icon {
+  padding-left: 34px !important;
 }
 
 .password-visibility-btn svg {

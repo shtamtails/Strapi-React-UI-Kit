@@ -40,6 +40,8 @@ export const Autocomplete = (props) => {
         dropDown={dropDown}
         setInputValue={setInputValue}
         inputValue={inputValue}
+        height={props.height}
+        sideIcon={props.sideIcon}
       />
       <AutocompleteDrop
         dropDown={dropDown}

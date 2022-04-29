@@ -90,11 +90,12 @@ textarea[type="text"] {
   align-items: center;
   display: flex;
   height: 100%;
-  .default {
-    padding-left: 12px;
-  }
+}
 
-  .with-icon {
-    padding-left: 34px;
-  }
+.default {
+  padding-left: 12px !important;
+}
+
+.with-icon {
+  padding-left: 34px !important;
 }

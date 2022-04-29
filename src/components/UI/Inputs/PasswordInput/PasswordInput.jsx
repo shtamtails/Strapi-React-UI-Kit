@@ -19,8 +19,8 @@ export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
       <InputMain loading={props.loading} icon={props.sideIcon}>
         <input
           className={styles.join(" ")}
-          required={props.required && true}
-          disabled={props.disabled && true}
+          required={props.required}
+          disabled={props.disabled || props.loading}
           type={`${!passwordVisibility ? "text" : "password"}`}
           placeholder={props.placeholder && props.placeholder}
           onChange={(e) => {
