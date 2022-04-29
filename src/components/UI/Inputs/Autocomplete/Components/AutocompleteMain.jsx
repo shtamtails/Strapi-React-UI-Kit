@@ -8,13 +8,13 @@ export const AutocompleteMain = React.forwardRef(
       setInputValue(e.target.value);
     };
 
-    const styles = [];
+    const styles = ["select-input"];
     sideIcon ? styles.push("with-icon") : styles.push("default");
     height && styles.push(height);
 
     return (
       <>
-        <div className="select">
+        <div className="select-container">
           <input
             className={styles.join(" ")}
             ref={ref}

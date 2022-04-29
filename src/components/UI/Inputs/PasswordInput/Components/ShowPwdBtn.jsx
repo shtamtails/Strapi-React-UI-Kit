@@ -1,26 +1,17 @@
 import React from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-export const ShowPwdBtn = ({
-  loading,
-  disabled,
-  passwordVisibility,
-  setPasswordVisibility,
-}) => {
+export const ShowPwdBtn = ({ loading, disabled, passwordVisibility, setPasswordVisibility }) => {
   return (
     <>
       {!loading && (
         <div
-          className="password-visibility-btn"
+          className="right-button"
           onClick={() => {
             setPasswordVisibility(!passwordVisibility);
           }}
         >
-          {passwordVisibility && !disabled ? (
-            <AiOutlineEyeInvisible />
-          ) : (
-            <AiOutlineEye />
-          )}
+          {passwordVisibility && !disabled ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
         </div>
       )}
     </>

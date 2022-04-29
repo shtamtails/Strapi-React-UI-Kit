@@ -231,6 +231,8 @@ const App = () => {
           </Button>
         </div>
         <Divider> Autocomplete </Divider>
+        <Autocomplete optionsList={options} value={value1} setValue={setValue1} />
+        <Divider> Select </Divider>
         <Select optionsList={options} value={value1} setValue={setValue1} />
         <Divider></Divider>
       </div>

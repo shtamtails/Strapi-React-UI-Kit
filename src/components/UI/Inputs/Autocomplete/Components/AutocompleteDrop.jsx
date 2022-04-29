@@ -15,7 +15,7 @@ export const AutocompleteDrop = ({
   return (
     <>
       {dropDown && !loading && !disabled && tempOptionsList.length > 0 && (
-        <div className="options-container" style={{ width: width }}>
+        <div className="select-options" style={{ width: width }}>
           {tempOptionsList.map((el) => {
             return (
               <option key={el.id} className="option" value={el.value} onClick={handleOptionClick}>

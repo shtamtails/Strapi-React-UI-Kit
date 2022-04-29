@@ -444,7 +444,7 @@ textarea[type="text"]:disabled::placeholder {
 
 .input-container .label {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   margin: 6px 0px;
 }
 
@@ -466,7 +466,14 @@ textarea[type="text"]:disabled::placeholder {
 }
 
 .input-container .right-button svg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 18px;
+  height: auto;
   margin-left: -30px;
+  cursor: pointer;
+  color: #8e8ea9;
 }
 
 .input-container .left-icon {
@@ -514,16 +521,6 @@ textarea[type="text"]:disabled::placeholder {
   padding-left: 34px !important;
 }
 
-.password-visibility-btn svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 18px;
-  height: auto;
-  margin-left: -36px;
-  cursor: pointer;
-}
-
 .select-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -546,7 +543,6 @@ textarea[type="text"]:disabled::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #8e8ea9;
   font-size: 14px;
   width: 100%;
   min-width: 242px;
