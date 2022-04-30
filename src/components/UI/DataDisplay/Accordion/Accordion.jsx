@@ -19,7 +19,7 @@ export const Accordion = ({ children, multiple }) => {
   };
 
   return (
-    <>
+    <div className="accordion-container">
       {children.map((item, index) => {
         return (
           <AccordionItem
@@ -32,7 +32,7 @@ export const Accordion = ({ children, multiple }) => {
           </AccordionItem>
         );
       })}
-    </>
+    </div>
   );
 };
 

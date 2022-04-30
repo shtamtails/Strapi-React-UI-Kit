@@ -7,7 +7,6 @@ export const Navbar = ({ children, width, collapsable, collapse, setCollapse }) 
 
   const btnStyles = ["collapse-btn"];
   const btnMargin = { left: `${!collapse ? `${width - 40}px` : `50px`}` };
-  console.log(btnMargin);
   collapse && btnStyles.push("collapse-btn-opened");
   const handleCollapseClick = () => {
     setCollapse(!collapse);

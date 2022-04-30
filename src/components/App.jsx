@@ -3,6 +3,23 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { useState } from "react";
 import { AppShell, Navbar, NavbarLogo } from "./UI";
 import { NavbarContent } from "./NavbarContent";
+import {
+  SkeletonContainer,
+  Skeleton,
+  Divider,
+  TextInput,
+  Button,
+  Kbd,
+  Accordion,
+  AccordionItem,
+  Card,
+  Modal,
+  PasswordInput,
+  Checkbox,
+  Select,
+  Autocomplete,
+  ActionIcon,
+} from "./UI/";
 
 const logo = (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,20 +56,19 @@ const logo = (
 // ! DEBUG AND ADD HEIGHT PROP TO textarea
 
 const App = () => {
-  const [collapse, setCollapse] = useState(false);
   return (
     <>
       <AppShell
         navbar={
-          <Navbar width={260} collapsable collapse={collapse} setCollapse={setCollapse}>
-            <Navbar.Logo logo={logo} text="UI-Kit" subtext="documentation" collapse={collapse} />
+          <Navbar width={260}>
+            <Navbar.Logo logo={logo} text="UI-Kit" subtext="documentation" />
             <div className="navbar-items">
               <NavbarContent />
             </div>
           </Navbar>
         }
       >
-        Hello
+        Content
       </AppShell>
     </>
   );
