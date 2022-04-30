@@ -9,6 +9,7 @@ export { TextArea } from "./Inputs/TextArea/TextArea";
 export { ActionIcon } from "./Inputs/ActionIcon/ActionIcon";
 export { Autocomplete } from "./Inputs/Autocomplete/Autocomplete";
 // Layout
+export { AppShell } from "./Layout/AppShell/AppShell";
 export { Navbar } from "./Layout/Navbar/Navbar";
 // Utils
 export { Loader } from "./Utils/Loader/Loader";
