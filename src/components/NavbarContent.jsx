@@ -1,57 +1,58 @@
 import React from "react";
 import { Navbar } from "./UI";
+import { Link } from "react-router-dom";
 
 export const NavbarContent = () => {
   return (
     <>
       <Navbar.Accordion>
         <Navbar.AccordionItem title="INPUTS">
-          <a href="#">
+          <Link to="#">
             <div className="link current">Action Icon</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Autocomplete</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Select</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Button</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Checkbox</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Switch</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Password Input</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Text Input</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Text Area</div>
-          </a>
+          </Link>
         </Navbar.AccordionItem>
         <Navbar.AccordionItem title="Data Display">
-          <a href="#">
+          <Link to="/accordion">
             <div className="link">Accordion</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="/card">
             <div className="link">Card</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Kbd</div>
-          </a>
+          </Link>
         </Navbar.AccordionItem>
         <Navbar.AccordionItem title="Overlay">
-          <a href="#">
+          <Link to="#">
             <div className="link">Affix</div>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <div className="link">Modal</div>
-          </a>
+          </Link>
         </Navbar.AccordionItem>
       </Navbar.Accordion>
     </>

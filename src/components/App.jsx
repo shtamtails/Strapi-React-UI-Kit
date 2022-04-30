@@ -1,9 +1,9 @@
 import "../css/main.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 import { AppShell, Navbar, NavbarLogo } from "./UI";
 import { NavbarContent } from "./NavbarContent";
-import { AccordionPage } from "./Pages";
+import { AccordionPage, CardPage } from "./Pages";
+import { Routes, Route, Link } from "react-router-dom";
 
 const logo = (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,20 +41,21 @@ const logo = (
 
 const App = () => {
   return (
-    <>
-      <AppShell
-        navbar={
-          <Navbar width={260}>
-            <Navbar.Logo logo={logo} text="UI-Kit" subtext="documentation" />
-            <div className="navbar-items">
-              <NavbarContent />
-            </div>
-          </Navbar>
-        }
-      >
-        <AccordionPage />
-      </AppShell>
-    </>
+    <AppShell
+      navbar={
+        <Navbar width={260}>
+          <Navbar.Logo logo={logo} text="UI-Kit" subtext="documentation" />
+          <div className="navbar-items">
+            <NavbarContent />
+          </div>
+        </Navbar>
+      }
+    >
+      <Routes>
+        <Route path="/card" element={<CardPage />} />
+        <Route path="/accordion" element={<AccordionPage />} />
+      </Routes>
+    </AppShell>
   );
 };
 

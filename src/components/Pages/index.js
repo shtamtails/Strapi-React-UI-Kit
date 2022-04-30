@@ -17,6 +17,6 @@
 export { AccordionPage } from "./UI/DataDisplay/Accordion/AccordionPage";
 // export { AccordionItem } from "./UI/DataDisplay/Accordion/Components";
 // export { Kbd } from "./UI/DataDisplay/Kbd/Kbd";
-// export { Card } from "./UI/DataDisplay/Card/Card";
+export { CardPage } from "./UI/DataDisplay/Card/CardPage";
 // export { Modal } from "./UI/Overlay/Modal/Modal";
 // export { Affix } from "./UI/Overlay/Affix/Affix";
