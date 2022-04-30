@@ -1,25 +1,9 @@
 import "../css/main.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 import { AppShell, Navbar, NavbarLogo } from "./UI";
 import { NavbarContent } from "./NavbarContent";
-import {
-  SkeletonContainer,
-  Skeleton,
-  Divider,
-  TextInput,
-  Button,
-  Kbd,
-  Accordion,
-  AccordionItem,
-  Card,
-  Modal,
-  PasswordInput,
-  Checkbox,
-  Select,
-  Autocomplete,
-  ActionIcon,
-} from "./UI/";
+import { AccordionPage } from "./Pages";
 
 const logo = (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +52,7 @@ const App = () => {
           </Navbar>
         }
       >
-        Content
+        <AccordionPage />
       </AppShell>
     </>
   );

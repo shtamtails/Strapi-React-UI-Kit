@@ -7,11 +7,7 @@ export const SwitchStatus = ({ showStatus, value, disabled }) => {
 
   return (
     <>
-      {showStatus && (
-        <div className={statusStyles.join(" ")}>
-          {value ? "Enabled" : "Disabled"}
-        </div>
-      )}
+      {showStatus && <div className={statusStyles.join(" ")}>{value ? "Enabled" : "Disabled"}</div>}
     </>
   );
 };

@@ -36,4 +36,6 @@ export const Accordion = ({ children, multiple }) => {
   );
 };
 
+Accordion.Item = AccordionItem;
+
 export default Accordion;
