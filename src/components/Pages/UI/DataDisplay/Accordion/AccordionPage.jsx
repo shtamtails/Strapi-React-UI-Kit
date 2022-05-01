@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Accordion, Kbd, Switch } from "../../../../UI";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import github from "prism-react-renderer/themes/github";
+import { About, Code } from "../../../Template/";
 
 export const AccordionPage = () => {
   const [multiple, setMultiple] = useState(true);
-  const importCode = `import { Accordion } from './UI/';`;
   const exampleCode = `
-  import { Accordion } from './UI/';
+import { Accordion } from './UI/';
   
   function Demo() {
     return (
@@ -36,42 +36,13 @@ export const AccordionPage = () => {
 `;
   return (
     <div className="documentation">
-      <div className="about">
-        <div className="container">
-          <div className="name">
-            <h1> Accordion </h1>
-          </div>
-          <div className="info">Divide content into collapsible sections</div>
-          <div className="source-container">
-            <div className="source">
-              <div className="text">Import</div>
-              <div className="path">
-                <Highlight {...defaultProps} code={importCode} language="jsx" theme={github}>
-                  {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                    <pre className={className} style={style}>
-                      {tokens.map((line, i) => (
-                        <div {...getLineProps({ line, key: i })}>
-                          {line.map((token, key) => (
-                            <span {...getTokenProps({ token, key })} />
-                          ))}
-                        </div>
-                      ))}
-                    </pre>
-                  )}
-                </Highlight>
-              </div>
-            </div>
-            <div className="source">
-              <div className="text">Source</div>
-              <div className="path">View Source code</div>
-            </div>
-            <div className="source">
-              <div className="text">Package</div>
-              <div className="path">@UI/core</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <About
+        name="Accordion"
+        info="Divide content into collapsible sections"
+        importCode={`import { Accordion } from './UI/';`}
+        sourceLink=""
+        packageLink=""
+      />
       <div className="container">
         <div className="main">
           <div className="subtitle">
@@ -105,19 +76,7 @@ export const AccordionPage = () => {
               </div>
             </div>
           </div>
-          <Highlight {...defaultProps} code={exampleCode} language="jsx" theme={github}>
-            {({ className, style, tokens, getLineProps, getTokenProps }) => (
-              <pre className={className} style={style}>
-                {tokens.map((line, i) => (
-                  <div {...getLineProps({ line, key: i })}>
-                    {line.map((token, key) => (
-                      <span {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                ))}
-              </pre>
-            )}
-          </Highlight>
+          <Code code={exampleCode} />
         </div>
       </div>
     </div>
