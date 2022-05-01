@@ -2,7 +2,7 @@ import "../css/main.css";
 import React from "react";
 import { AppShell, Navbar, NavbarLogo } from "./UI";
 import { NavbarContent } from "./NavbarContent";
-import { AccordionPage, CardPage } from "./Pages";
+import { AccordionPage, CardPage, KbdPage } from "./Pages";
 import { Routes, Route, Link } from "react-router-dom";
 
 const logo = (
@@ -54,6 +54,7 @@ const App = () => {
       <Routes>
         <Route path="/card" element={<CardPage />} />
         <Route path="/accordion" element={<AccordionPage />} />
+        <Route path="/kbd" element={<KbdPage />} />
       </Routes>
     </AppShell>
   );

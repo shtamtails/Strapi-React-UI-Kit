@@ -2,9 +2,9 @@ import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import github from "prism-react-renderer/themes/github";
 
-export const Code = ({ code }) => {
+export const Code = ({ children }) => {
   return (
-    <Highlight {...defaultProps} code={code} language="jsx" theme={github}>
+    <Highlight {...defaultProps} code={children} language="jsx" theme={github}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>
           {tokens.map((line, i) => (

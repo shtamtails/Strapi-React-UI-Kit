@@ -16,7 +16,7 @@
 // export { Divider } from "./UI/Utils/Divider/Divider";
 export { AccordionPage } from "./UI/DataDisplay/Accordion/AccordionPage";
 // export { AccordionItem } from "./UI/DataDisplay/Accordion/Components";
-// export { Kbd } from "./UI/DataDisplay/Kbd/Kbd";
+export { KbdPage } from "./UI/DataDisplay/Kbd/KbdPage";
 export { CardPage } from "./UI/DataDisplay/Card/CardPage";
 // export { Modal } from "./UI/Overlay/Modal/Modal";
 // export { Affix } from "./UI/Overlay/Affix/Affix";

@@ -6,7 +6,11 @@ export const Card = ({ children, shadow }) => {
     <>
       <div
         className="card"
-        style={shadow && { boxShadow: "0px 5px 12px 0px rgba(34, 60, 80, 0.2)" }}
+        style={
+          shadow
+            ? { boxShadow: "0px 5px 12px 0px rgba(34, 60, 80, 0.2)" }
+            : { border: "1px solid #dcdce4" }
+        }
       >
         {children}
       </div>

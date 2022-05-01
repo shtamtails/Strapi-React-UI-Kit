@@ -6,7 +6,7 @@ export const ComponentPreview = ({ component, settings, height }) => {
       <div className="component" style={{ height: `${height}px` }}>
         {component}
       </div>
-      <div className="settings">{settings}</div>
+      {settings && <div className="settings">{settings}</div>}
     </div>
   );
 };
