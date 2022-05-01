@@ -1,58 +1,72 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar } from "./UI";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const NavbarContent = () => {
+  const handleClick = (e) => {
+    console.log(e.target.classList.add("current"));
+  };
+  const activePage = {
+    backgroundColor: "#f0f0ff",
+    borderLeft: "1px solid #7b79ff",
+  };
   return (
     <>
       <Navbar.Accordion>
         <Navbar.AccordionItem title="INPUTS">
-          <Link to="#">
-            <div className="link current">Action Icon</div>
-          </Link>
-          <Link to="#">
-            <div className="link">Autocomplete</div>
-          </Link>
-          <Link to="#">
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/actionicon">
+            <div className="link" onSelect={handleClick}>
+              Action Icon
+            </div>
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/autocomplete">
+            <div className="link" onSelect={handleClick}>
+              Autocomplete
+            </div>
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/select">
             <div className="link">Select</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/button">
             <div className="link">Button</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/checkbox">
             <div className="link">Checkbox</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/switch">
             <div className="link">Switch</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activePage : undefined)}
+            to="/passwordinput"
+          >
             <div className="link">Password Input</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/textinput">
             <div className="link">Text Input</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/textarea">
             <div className="link">Text Area</div>
-          </Link>
+          </NavLink>
         </Navbar.AccordionItem>
         <Navbar.AccordionItem title="Data Display">
-          <Link to="/accordion">
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/accordion">
             <div className="link">Accordion</div>
-          </Link>
-          <Link to="/card">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/card">
             <div className="link">Card</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/kbd">
             <div className="link">Kbd</div>
-          </Link>
+          </NavLink>
         </Navbar.AccordionItem>
         <Navbar.AccordionItem title="Overlay">
-          <Link to="#">
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/affix">
             <div className="link">Affix</div>
-          </Link>
-          <Link to="#">
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/modal">
             <div className="link">Modal</div>
-          </Link>
+          </NavLink>
         </Navbar.AccordionItem>
       </Navbar.Accordion>
     </>

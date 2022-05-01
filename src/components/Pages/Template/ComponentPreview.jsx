@@ -1,9 +1,11 @@
 import React from "react";
 
-export const ComponentPreview = ({ component, settings }) => {
+export const ComponentPreview = ({ component, settings, height }) => {
   return (
     <div className="component-preview">
-      <div className="component">{component}</div>
+      <div className="component" style={{ height: `${height}px` }}>
+        {component}
+      </div>
       <div className="settings">{settings}</div>
     </div>
   );

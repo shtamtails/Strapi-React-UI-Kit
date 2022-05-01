@@ -1,39 +1,9 @@
 import React, { useState } from "react";
 import { Accordion, Kbd, Switch } from "../../../../UI";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import github from "prism-react-renderer/themes/github";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
 
 export const AccordionPage = () => {
   const [multiple, setMultiple] = useState(true);
-  const exampleCode = `
-import { Accordion } from './UI/';
-  
-  function Demo() {
-    return (
-      <Accordion multiple={${multiple}}>
-        <Accordion.Item title="Customization">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsum fugit,
-          explicabo illum sequi aut?
-        </Accordion.Item>
-    
-        <Accordion.Item title="Flexibility">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id nesciunt totam
-          veritatis fugit, corrupti eligendi quas deserunt aperiam omnis maxime excepturi,
-          tempore consequuntur veniam placeat?
-        </Accordion.Item>
-
-        <Accordion.Item title="Something else">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque voluptates,
-          dolorum consequuntur fugit at perspiciatis nam in fuga. Placeat quisquam molestias
-          maxime, ipsa adipisci eum sit, iure est nesciunt quasi nihil odit quis consectetur
-          suscipit! Delectus culpa ut est laboriosam deserunt et quam facilis debitis esse
-          aperiam, exercitationem ducimus? Obcaecati.
-        </Accordion.Item>
-      </Accordion>
-    )
-  }
-`;
   return (
     <div className="documentation">
       <About
@@ -73,7 +43,36 @@ import { Accordion } from './UI/';
             </div>
           }
         />
-        <Code code={exampleCode} />
+        <Code
+          code={`
+import { Accordion } from './UI/';
+  
+function Demo() {
+  return (
+     <Accordion multiple={${multiple}}>
+      <Accordion.Item title="Customization">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsum fugit,
+        explicabo illum sequi aut?
+      </Accordion.Item>
+    
+      <Accordion.Item title="Flexibility">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id nesciunt totam
+        veritatis fugit, corrupti eligendi quas deserunt aperiam omnis maxime excepturi,
+        tempore consequuntur veniam placeat?
+      </Accordion.Item>
+
+       <Accordion.Item title="Something else">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque voluptates,
+        dolorum consequuntur fugit at perspiciatis nam in fuga. Placeat quisquam molestias
+        maxime, ipsa adipisci eum sit, iure est nesciunt quasi nihil odit quis consectetur
+        suscipit! Delectus culpa ut est laboriosam deserunt et quam facilis debitis esse
+        aperiam, exercitationem ducimus? Obcaecati.
+      </Accordion.Item>
+    </Accordion>
+  )
+}
+`}
+        />
       </Main>
     </div>
   );
