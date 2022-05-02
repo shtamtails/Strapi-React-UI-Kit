@@ -1,9 +1,12 @@
 import "../css/main.css";
-import React from "react";
-import { AppShell, Navbar, NavbarLogo } from "./UI";
+import React, { useEffect, useState } from "react";
+import { AppShell, Navbar } from "./UI";
 import { NavbarContent } from "./NavbarContent";
 import { AccordionPage, CardPage, KbdPage } from "./Pages";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { useUniqueId } from "../Hooks";
+import { AiFillInfoCircle, AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
+import { Notification, Button } from "./UI";
 
 const logo = (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,23 +43,78 @@ const logo = (
 // ! DEBUG AND ADD HEIGHT PROP TO textarea
 
 const App = () => {
+  const alerts = [
+    {
+      id: useUniqueId(),
+      title: "Default notification",
+      body: "This is default notification with title and body",
+      icon: <AiFillInfoCircle />,
+      type: "info",
+    },
+    {
+      id: useUniqueId(),
+      title: "Warning notification",
+      body: "This is second default notification with title and body",
+      icon: <AiFillWarning />,
+      type: "danger",
+    },
+    {
+      id: useUniqueId(),
+      title: "Success notification",
+      body: "This is third default notification with title and body",
+      icon: <AiFillCheckCircle />,
+      type: "success",
+    },
+    {
+      id: useUniqueId(),
+      title: "Loading notification",
+      body: "This is third default notification with title and body",
+      icon: "",
+      type: "loading",
+    },
+  ];
+  const [notifications, setNotifications] = useState([]);
+
+  const id = useUniqueId();
+  const newNotification = (notification) => {
+    setNotifications([...notifications, notification]);
+  };
+
   return (
-    <AppShell
-      navbar={
-        <Navbar width={260}>
-          <Navbar.Logo logo={logo} text="UI-Kit" subtext="documentation" />
-          <div className="navbar-items">
-            <NavbarContent />
-          </div>
-        </Navbar>
-      }
-    >
-      <Routes>
-        <Route path="/card" element={<CardPage />} />
-        <Route path="/accordion" element={<AccordionPage />} />
-        <Route path="/kbd" element={<KbdPage />} />
-      </Routes>
-    </AppShell>
+    <>
+      <Notification.Container notifications={notifications} setNotifications={setNotifications} />
+      <AppShell
+        navbar={
+          <Navbar width={260}>
+            <Navbar.Logo logo={logo} text="UI-Kit" subtext="documentation" />
+            <div className="navbar-items">
+              <NavbarContent />
+            </div>
+          </Navbar>
+        }
+      >
+        <div className="div" style={{ width: "200px" }}>
+          <Button
+            onClick={() =>
+              newNotification({
+                id: id,
+                title: "title",
+                body: "body",
+                icon: "",
+                type: "loading",
+              })
+            }
+          >
+            Add notification
+          </Button>
+        </div>
+        <Routes>
+          <Route path="/card" element={<CardPage />} />
+          <Route path="/accordion" element={<AccordionPage />} />
+          <Route path="/kbd" element={<KbdPage />} />
+        </Routes>
+      </AppShell>
+    </>
   );
 };
 

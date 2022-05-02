@@ -1,0 +1,87 @@
+.notifications {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  transition: all ease 500ms;
+}
+.notification {
+  right: -600px;
+  transition: right 500ms ease;
+  border-radius: 4px;
+  position: relative;
+  margin: 5px 0;
+  min-height: 60px;
+  width: 400px;
+  border: 1px solid $neutral-200;
+  background-color: #fff;
+  display: flex;
+  padding: 5px;
+  filter: drop-shadow(0px 2px 2px rgba(33, 33, 52, 0.05));
+  .notification-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .notification-success {
+    color: $success-500;
+  }
+
+  .notification-danger {
+    color: $danger-500;
+  }
+
+  .notification-info {
+    color: $primary-500;
+  }
+
+  .notification-loading {
+    margin: 0 14px;
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .notification-content {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 14px;
+    .notification-title {
+      font-weight: 500;
+    }
+    .notification-body {
+      margin-top: 2px;
+      color: $neutral-600;
+      margin-bottom: 10px;
+    }
+  }
+
+  .notification-close-btn {
+    padding: 5px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      padding: 5px;
+      cursor: pointer;
+    }
+  }
+}
+.notification-body-success {
+  background-color: $success-100;
+}
+
+.notification-body-danger {
+  background-color: $danger-100;
+}
+
+.notification-body-info {
+  background-color: $primary-100;
+}

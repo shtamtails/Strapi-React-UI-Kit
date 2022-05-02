@@ -22,6 +22,7 @@ export { Accordion } from "./DataDisplay/Accordion/Accordion";
 export { AccordionItem } from "./DataDisplay/Accordion/Components";
 export { Kbd } from "./DataDisplay/Kbd/Kbd";
 export { Card } from "./DataDisplay/Card/Card";
+export { Notification } from "./DataDisplay/Notification/Notification";
 // Overlay
 export { Modal } from "./Overlay/Modal/Modal";
 export { Affix } from "./Overlay/Affix/Affix";
