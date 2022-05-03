@@ -2,11 +2,9 @@ import "../css/main.css";
 import React, { useEffect, useState } from "react";
 import { AppShell, Navbar } from "./UI";
 import { NavbarContent } from "./NavbarContent";
-import { AccordionPage, CardPage, KbdPage } from "./Pages";
+import { AccordionPage, CardPage, KbdPage, NotificationsPage } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
-import { AiFillInfoCircle, AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
-import { Notification, Button } from "./UI";
 
 const logo = (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,50 +37,14 @@ const logo = (
   </svg>
 );
 
-// TODO's
-// ! DEBUG AND ADD HEIGHT PROP TO textarea
+// TODO
+// ? NOTIFICATIONS
+// add notification loading on load functionality
+// add notification autoclose functionality
 
 const App = () => {
-  const alerts = [
-    {
-      id: useUniqueId(),
-      title: "Default notification",
-      body: "This is default notification with title and body",
-      icon: <AiFillInfoCircle />,
-      type: "info",
-    },
-    {
-      id: useUniqueId(),
-      title: "Warning notification",
-      body: "This is second default notification with title and body",
-      icon: <AiFillWarning />,
-      type: "danger",
-    },
-    {
-      id: useUniqueId(),
-      title: "Success notification",
-      body: "This is third default notification with title and body",
-      icon: <AiFillCheckCircle />,
-      type: "success",
-    },
-    {
-      id: useUniqueId(),
-      title: "Loading notification",
-      body: "This is third default notification with title and body",
-      icon: "",
-      type: "loading",
-    },
-  ];
-  const [notifications, setNotifications] = useState([]);
-
-  const id = useUniqueId();
-  const newNotification = (notification) => {
-    setNotifications([...notifications, notification]);
-  };
-
   return (
     <>
-      <Notification.Container notifications={notifications} setNotifications={setNotifications} />
       <AppShell
         navbar={
           <Navbar width={260}>
@@ -93,25 +55,25 @@ const App = () => {
           </Navbar>
         }
       >
-        <div className="div" style={{ width: "200px" }}>
+        {/* <div className="div" style={{ width: "200px" }}>
           <Button
-            onClick={() =>
-              newNotification({
+            onClick={() => {
+              createNotification({
                 id: id,
                 title: "title",
                 body: "body",
-                icon: "",
                 type: "loading",
-              })
-            }
+              });
+            }}
           >
             Add notification
           </Button>
-        </div>
+        </div> */}
         <Routes>
           <Route path="/card" element={<CardPage />} />
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/kbd" element={<KbdPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
         </Routes>
       </AppShell>
     </>

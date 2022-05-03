@@ -59,6 +59,12 @@ export const NavbarContent = () => {
           <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/kbd">
             <div className="link">Kbd</div>
           </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activePage : undefined)}
+            to="/notifications"
+          >
+            <div className="link">Notifications</div>
+          </NavLink>
         </Navbar.AccordionItem>
         <Navbar.AccordionItem title="Overlay">
           <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/affix">

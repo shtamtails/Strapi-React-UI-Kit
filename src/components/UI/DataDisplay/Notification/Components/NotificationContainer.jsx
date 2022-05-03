@@ -1,8 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useUniqueId } from "../../../../../Hooks";
+import React from "react";
 import { Notification } from "../Notification";
 
 export const NotificationContainer = ({ notifications, setNotifications }) => {
+  const clearNotification = (id) => {
+    setTimeout(() => {
+      setNotifications(
+        notifications.filter((el) => {
+          return el.id !== id;
+        })
+      );
+    }, 300);
+  };
+
   return (
     <>
       <div className="notifications">
@@ -16,8 +25,7 @@ export const NotificationContainer = ({ notifications, setNotifications }) => {
                 body={el.body}
                 icon={el.icon}
                 type={el.type}
-                notifications={notifications}
-                setNotifications={setNotifications}
+                clearNotification={clearNotification}
               />
             );
           })}

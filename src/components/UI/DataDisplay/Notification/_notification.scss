@@ -4,11 +4,12 @@
   bottom: 10px;
   display: flex;
   flex-direction: column-reverse;
-  transition: all ease 500ms;
+  z-index: 99999;
 }
 .notification {
+  max-height: 400px;
   right: -600px;
-  transition: right 500ms ease;
+  transition: right 500ms cubic-bezier(0.51, 0.3, 0, 1.21);
   border-radius: 4px;
   position: relative;
   margin: 5px 0;

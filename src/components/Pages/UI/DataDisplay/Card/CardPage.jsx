@@ -19,8 +19,8 @@ export const CardPage = () => {
         <ComponentPreview
           component={
             <>
-              <div style={{ display: "flex", alignItems: "stretch" }}>
-                <div style={{ margin: "0 10px", display: "flex" }}>
+              <div className="card-component-preview">
+                <div style={{ margin: "10px 10px", display: "flex" }}>
                   <Card shadow={shadow}>
                     <Card.Image
                       height={`${imageHeight}px`}
@@ -39,7 +39,7 @@ export const CardPage = () => {
                     </Card.Footer>
                   </Card>
                 </div>
-                <div style={{ margin: "0 10px", display: "flex" }}>
+                <div style={{ margin: "10px 10px", display: "flex" }}>
                   <Card shadow={shadow}>
                     <Card.Image
                       height={`${imageHeight}px`}
