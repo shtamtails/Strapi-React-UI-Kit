@@ -1,5 +1,7 @@
-.action-icon-container {
+.action-icon {
   border-radius: 4px;
+  width: 28px;
+  height: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,135 +11,437 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
+  -webkit-transition: background-color 100ms ease;
+  transition: background-color 100ms ease;
+  padding: 0;
 }
 
-.action-icon-container .icon {
-  padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.action-icon:hover {
+  -webkit-transition: background-color 100ms ease;
+  transition: background-color 100ms ease;
 }
 
-.action-icon-container .icon svg {
-  color: #212134;
+.action-icon svg {
+  height: 16px;
+  width: 16px;
 }
 
-.action-icon-container .filled {
-  background-color: #7b79ff;
+.action-icon-disabled {
+  background-color: #f6f6f9 !important;
+  border: 1px solid #f6f6f9 !important;
 }
 
-.action-icon-container .filled:hover {
-  background-color: #4945ff;
+.action-icon-disabled svg {
+  color: #c0c0cf !important;
 }
 
-.action-icon-container .filled svg {
-  color: #fff;
+.action-icon-disabled:hover {
+  background-color: #f6f6f9 !important;
+  border: 1px solid #f6f6f9 !important;
 }
 
-.action-icon-container .outline {
-  border: 1px solid #7b79ff;
-}
-
-.action-icon-container .outline:hover {
-  background-color: #f0f0ff;
-}
-
-.action-icon-container .outline svg {
-  color: #7b79ff;
-}
-
-.action-icon-container .transparent {
-  background: none;
-}
-
-.action-icon-container .transparent:hover {
-  background: none;
-}
-
-.action-icon-container .transparent svg {
-  color: #7b79ff;
-}
-
-.action-icon-container .hover {
-  background: none;
-}
-
-.action-icon-container .hover:hover {
-  background: #d9d8ff;
-}
-
-.action-icon-container .hover svg {
-  color: #4945ff;
-}
-
-.action-icon-container .light {
-  background: #d9d8ff;
-}
-
-.action-icon-container .light:hover {
-  background: #d9d8ff;
-}
-
-.action-icon-container .light svg {
-  color: #7b79ff;
-}
-
-.action-icon-container .light svg:hover {
-  color: #4945ff;
-}
-
-.action-icon-container .disabled {
-  background-color: #dcdce4;
-  cursor: not-allowed;
-}
-
-.action-icon-container .disabled svg {
-  color: #a5a5ba;
-}
-
-.action-icon-container .disabled:hover {
-  background-color: #dcdce4;
-}
-
-.action-icon-container .disabled:hover svg {
-  color: #a5a5ba;
+.action-icon-disabled:hover svg {
+  color: #c0c0cf !important;
 }
 
 .icon-sm {
-  width: 14px !important;
-  height: auto;
+  width: 24px;
+  height: 24px;
 }
 
 .icon-sm svg {
-  width: 14px !important;
-  height: auto;
+  width: 14px;
+  height: 14px;
 }
 
 .icon-md {
-  width: 26px !important;
-  height: auto;
+  width: 28px;
+  height: 28px;
 }
 
 .icon-md svg {
-  width: 26px !important;
-  height: auto;
+  width: 16px;
+  height: 16px;
 }
 
 .icon-lg {
-  width: 34px !important;
-  height: auto;
+  width: 32px;
+  height: 32px;
 }
 
 .icon-lg svg {
-  width: 34px !important;
-  height: auto;
+  width: 18px;
+  height: 18px;
+}
+
+.icon-xl {
+  width: 36px;
+  height: 36px;
+}
+
+.icon-xl svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-transparent-neutral {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-neutral svg {
+  color: #666687;
+}
+
+.icon-transparent-neutral:hover {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-neutral:hover svg {
+  color: #666687;
+}
+
+.icon-transparent-success {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-success svg {
+  color: #328048;
+}
+
+.icon-transparent-success:hover {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-success:hover svg {
+  color: #328048;
+}
+
+.icon-transparent-danger {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-danger svg {
+  color: #d02b20;
+}
+
+.icon-transparent-danger:hover {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-danger:hover svg {
+  color: #d02b20;
+}
+
+.icon-transparent-primary {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-primary svg {
+  color: #4945ff;
+}
+
+.icon-transparent-primary:hover {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-transparent-primary:hover svg {
+  color: #4945ff;
+}
+
+.icon-hover-neutral {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-hover-neutral svg {
+  color: #666687;
+}
+
+.icon-hover-neutral:hover {
+  background-color: #f6f6f9;
+  border: 1px solid transparent;
+}
+
+.icon-hover-neutral:hover svg {
+  color: #666687;
+}
+
+.icon-hover-success {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-hover-success svg {
+  color: #328048;
+}
+
+.icon-hover-success:hover {
+  background-color: #eafbe7;
+  border: 1px solid transparent;
+}
+
+.icon-hover-success:hover svg {
+  color: #328048;
+}
+
+.icon-hover-danger {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-hover-danger svg {
+  color: #d02b20;
+}
+
+.icon-hover-danger:hover {
+  background-color: #fcecea;
+  border: 1px solid transparent;
+}
+
+.icon-hover-danger:hover svg {
+  color: #d02b20;
+}
+
+.icon-hover-primary {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-hover-primary svg {
+  color: #4945ff;
+}
+
+.icon-hover-primary:hover {
+  background-color: #f0f0ff;
+  border: 1px solid transparent;
+}
+
+.icon-hover-primary:hover svg {
+  color: #4945ff;
+}
+
+.icon-filled-neutral {
+  background-color: #666687;
+  border: 1px solid transparent;
+}
+
+.icon-filled-neutral svg {
+  color: #fff;
+}
+
+.icon-filled-neutral:hover {
+  background-color: #4a4a6a;
+  border: 1px solid transparent;
+}
+
+.icon-filled-neutral:hover svg {
+  color: #fff;
+}
+
+.icon-filled-success {
+  background-color: #328048;
+  border: 1px solid transparent;
+}
+
+.icon-filled-success svg {
+  color: #fff;
+}
+
+.icon-filled-success:hover {
+  background-color: #2f6846;
+  border: 1px solid transparent;
+}
+
+.icon-filled-success:hover svg {
+  color: #fff;
+}
+
+.icon-filled-danger {
+  background-color: #d02b20;
+  border: 1px solid transparent;
+}
+
+.icon-filled-danger svg {
+  color: #fff;
+}
+
+.icon-filled-danger:hover {
+  background-color: #b72b1a;
+  border: 1px solid transparent;
+}
+
+.icon-filled-danger:hover svg {
+  color: #fff;
+}
+
+.icon-filled-primary {
+  background-color: #4945ff;
+  border: 1px solid transparent;
+}
+
+.icon-filled-primary svg {
+  color: #fff;
+}
+
+.icon-filled-primary:hover {
+  background-color: #271fe0;
+  border: 1px solid transparent;
+}
+
+.icon-filled-primary:hover svg {
+  color: #fff;
+}
+
+.icon-light-neutral {
+  background-color: #f6f6f9;
+  border: 1px solid transparent;
+}
+
+.icon-light-neutral svg {
+  color: #666687;
+}
+
+.icon-light-neutral:hover {
+  background-color: #dcdce4;
+  border: 1px solid transparent;
+}
+
+.icon-light-neutral:hover svg {
+  color: #666687;
+}
+
+.icon-light-success {
+  background-color: #eafbe7;
+  border: 1px solid transparent;
+}
+
+.icon-light-success svg {
+  color: #328048;
+}
+
+.icon-light-success:hover {
+  background-color: #c6f0c2;
+  border: 1px solid transparent;
+}
+
+.icon-light-success:hover svg {
+  color: #328048;
+}
+
+.icon-light-danger {
+  background-color: #fcecea;
+  border: 1px solid transparent;
+}
+
+.icon-light-danger svg {
+  color: #d02b20;
+}
+
+.icon-light-danger:hover {
+  background-color: #f5c0b8;
+  border: 1px solid transparent;
+}
+
+.icon-light-danger:hover svg {
+  color: #d02b20;
+}
+
+.icon-light-primary {
+  background-color: #f0f0ff;
+  border: 1px solid transparent;
+}
+
+.icon-light-primary svg {
+  color: #4945ff;
+}
+
+.icon-light-primary:hover {
+  background-color: #d9d8ff;
+  border: 1px solid transparent;
+}
+
+.icon-light-primary:hover svg {
+  color: #4945ff;
+}
+
+.icon-outline-neutral {
+  background-color: transparent;
+  border: 1px solid #666687;
+}
+
+.icon-outline-neutral svg {
+  color: #666687;
+}
+
+.icon-outline-neutral:hover {
+  background-color: #f6f6f9;
+  border: 1px solid #666687;
+}
+
+.icon-outline-neutral:hover svg {
+  color: #666687;
+}
+
+.icon-outline-success {
+  background-color: transparent;
+  border: 1px solid #328048;
+}
+
+.icon-outline-success svg {
+  color: #328048;
+}
+
+.icon-outline-success:hover {
+  background-color: #eafbe7;
+  border: 1px solid #328048;
+}
+
+.icon-outline-success:hover svg {
+  color: #328048;
+}
+
+.icon-outline-danger {
+  background-color: transparent;
+  border: 1px solid #d02b20;
+}
+
+.icon-outline-danger svg {
+  color: #d02b20;
+}
+
+.icon-outline-danger:hover {
+  background-color: #fcecea;
+  border: 1px solid #d02b20;
+}
+
+.icon-outline-danger:hover svg {
+  color: #d02b20;
+}
+
+.icon-outline-primary {
+  background-color: transparent;
+  border: 1px solid #4945ff;
+}
+
+.icon-outline-primary svg {
+  color: #4945ff;
+}
+
+.icon-outline-primary:hover {
+  background-color: #f0f0ff;
+  border: 1px solid #4945ff;
+}
+
+.icon-outline-primary:hover svg {
+  color: #4945ff;
 }
 
 .btn {
@@ -445,6 +749,10 @@ textarea[type="text"]:disabled::placeholder {
   color: #666687 !important;
 }
 
+.input-container {
+  width: 100%;
+}
+
 .input-container .input {
   position: relative;
   -webkit-box-align: center;
@@ -543,11 +851,12 @@ textarea[type="text"]:disabled::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .select-container .select-input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  height: 42px;
+  height: 28px;
   border-radius: 4px;
   border: solid 1px #dcdce4;
   padding-left: 12px;
@@ -560,7 +869,6 @@ textarea[type="text"]:disabled::placeholder {
           align-items: center;
   font-size: 14px;
   width: 100%;
-  min-width: 242px;
 }
 
 .select-container .arrow svg {
@@ -1566,4 +1874,18 @@ h2 {
 .notification-component-preview .notification-component-preview-buttons {
   max-width: 200px;
   margin: 10px;
+}
+
+.action-icon-component-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
 }

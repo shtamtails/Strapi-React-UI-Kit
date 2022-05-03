@@ -7,7 +7,7 @@ import { useClickOutside, useElementWidth } from "../../../../Hooks";
 
 export const Select = (props) => {
   const [select, setSelect] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(props.value);
   const [width, setWidth] = useState(0);
 
   const handleSelectClick = (e) => {
@@ -51,8 +51,8 @@ export const Select = (props) => {
 };
 
 Select.propTypes = {
-  value: PropTypes.string.isRequired,
-  setValue: PropTypes.func.isRequired,
+  value: PropTypes.string,
+  setValue: PropTypes.func,
   optionsList: PropTypes.array.isRequired,
   disabled: PropTypes.bool,
   required: PropTypes.bool,

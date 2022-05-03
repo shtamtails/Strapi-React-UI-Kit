@@ -8,7 +8,7 @@ export const Switch = (props) => {
     !props.disabled && props.setValue(!props.value);
   };
   return (
-    <InputContainer>
+    <>
       <InputLabel label={props.label} required={props.required} />
       <div className="switch-container">
         <SwitchMain
@@ -19,7 +19,7 @@ export const Switch = (props) => {
         <SwitchStatus value={props.value} disabled={props.disabled} showStatus={props.showStatus} />
       </div>
       <InputDescription description={props.description} />
-    </InputContainer>
+    </>
   );
 };
 

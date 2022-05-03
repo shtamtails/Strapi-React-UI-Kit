@@ -2,7 +2,7 @@ import "../css/main.css";
 import React, { useEffect, useState } from "react";
 import { AppShell, Navbar } from "./UI";
 import { NavbarContent } from "./NavbarContent";
-import { AccordionPage, CardPage, KbdPage, NotificationsPage } from "./Pages";
+import { AccordionPage, ActionIconPage, CardPage, KbdPage, NotificationsPage } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
 
@@ -74,6 +74,7 @@ const App = () => {
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/kbd" element={<KbdPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/actionicon" element={<ActionIconPage />} />
         </Routes>
       </AppShell>
     </>

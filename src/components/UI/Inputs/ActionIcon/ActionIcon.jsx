@@ -1,36 +1,24 @@
 import React from "react";
+import Loader from "../../Utils/Loader/Loader";
 import PropTypes from "prop-types";
-import { Loader } from "../../";
 
-export const ActionIcon = ({ disabled, loading, variant, size, children, onClick }) => {
-  // Styling
-  const styles = [variant];
-  (disabled || loading) && styles.push("disabled");
-  //
-
-  const handleClick = (e) => {
-    !disabled && !loading && onClick();
-  };
-
+export const ActionIcon = ({ children, size, type, color, loading, disabled }) => {
+  console.log(size);
+  const styles = ["action-icon"];
+  (loading || disabled) && styles.push("action-icon-disabled");
+  size && styles.push(`icon-${size}`);
+  type && styles.push(`icon-${type}-${color}`);
   return (
-    <div className={`action-icon-container icon-${size} `}>
-      <div className={styles.join(" ")} onClick={handleClick}>
-        <div className={`icon icon-${size}`}>{!loading ? children : <Loader />}</div>
-      </div>
-    </div>
+    <>
+      <button className={styles.join(" ")}>{loading ? <Loader /> : children}</button>
+    </>
   );
 };
 
-ActionIcon.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.object.isRequired,
-  variant: PropTypes.oneOf(["filled", "outline", "transparent", "hover", "light"]),
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
-};
-
 ActionIcon.defaultProps = {
-  variant: "hover",
   size: "md",
+  type: "light",
+  color: "primary",
 };
 
 export default ActionIcon;

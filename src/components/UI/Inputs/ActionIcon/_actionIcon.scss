@@ -1,111 +1,146 @@
-.action-icon-container {
+.action-icon {
   border-radius: 4px;
+  width: 28px;
+  height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-
-  .icon {
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    svg {
-      color: $neutral-900;
-    }
+  transition: background-color 100ms ease;
+  padding: 0;
+  &:hover {
+    transition: background-color 100ms ease;
   }
-
-  .filled {
-    background-color: $primary-500;
-    &:hover {
-      background-color: $primary-600;
-    }
-    svg {
-      color: #fff;
-    }
+  svg {
+    height: 16px;
+    width: 16px;
   }
+}
 
-  .outline {
-    border: 1px solid $primary-500;
-    &:hover {
-      background-color: $primary-100;
-    }
-    svg {
-      color: $primary-500;
-    }
+.action-icon-disabled {
+  background-color: $neutral-100 !important;
+  border: 1px solid $neutral-100 !important;
+  svg {
+    color: $neutral-300 !important;
   }
-
-  .transparent {
-    background: none;
-    &:hover {
-      background: none;
-    }
+  &:hover {
+    background-color: $neutral-100 !important;
+    border: 1px solid $neutral-100 !important;
     svg {
-      color: $primary-500;
-    }
-  }
-
-  .hover {
-    background: none;
-
-    &:hover {
-      background: $primary-200;
-    }
-    svg {
-      color: $primary-600;
-    }
-  }
-
-  .light {
-    background: $primary-200;
-    &:hover {
-      background: $primary-200;
-    }
-    svg {
-      color: $primary-500;
-      &:hover {
-        color: $primary-600;
-      }
-    }
-  }
-
-  .disabled {
-    background-color: $neutral-200;
-    cursor: not-allowed;
-    svg {
-      color: $neutral-400;
-    }
-    &:hover {
-      background-color: $neutral-200;
-      svg {
-        color: $neutral-400;
-      }
+      color: $neutral-300 !important;
     }
   }
 }
+
 .icon-sm {
-  width: 14px !important;
-  height: auto;
+  width: 24px;
+  height: 24px;
   svg {
-    width: 14px !important;
-    height: auto;
+    width: 14px;
+    height: 14px;
   }
 }
 
 .icon-md {
-  width: 26px !important;
-  height: auto;
+  width: 28px;
+  height: 28px;
   svg {
-    width: 26px !important;
-    height: auto;
+    width: 16px;
+    height: 16px;
   }
 }
 
 .icon-lg {
-  width: 34px !important;
-  height: auto;
+  width: 32px;
+  height: 32px;
   svg {
-    width: 34px !important;
-    height: auto;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.icon-xl {
+  width: 36px;
+  height: 36px;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+$types: "transparent", "hover", "filled", "light", "outline";
+$colors: "neutral", "success", "danger", "primary";
+
+@mixin icon($bgc, $color, $border, $hbgc, $hcolor, $hborder) {
+  background-color: $bgc;
+  svg {
+    color: $color;
+  }
+  border: 1px solid $border;
+  &:hover {
+    background-color: $hbgc;
+    svg {
+      color: $hcolor;
+    }
+    border: 1px solid $hborder;
+  }
+}
+@each $type in $types {
+  @each $color in $colors {
+    $color-100: "";
+    $color-200: "";
+    $color-300: "";
+    $color-400: "";
+    $color-500: "";
+    $color-600: "";
+    $color-700: "";
+    $color-800: "";
+    @if $color == "neutral" {
+      $color-100: $neutral-100;
+      $color-200: $neutral-200;
+      $color-300: $neutral-300;
+      $color-400: $neutral-400;
+      $color-500: $neutral-500;
+      $color-600: $neutral-600;
+      $color-700: $neutral-700;
+      $color-800: $neutral-800;
+    }
+    @if $color == "success" {
+      $color-100: $success-100;
+      $color-200: $success-200;
+      $color-500: $success-500;
+      $color-600: $success-600;
+      $color-700: $success-700;
+    }
+    @if $color == "danger" {
+      $color-100: $danger-100;
+      $color-200: $danger-200;
+      $color-500: $danger-500;
+      $color-600: $danger-600;
+      $color-700: $danger-700;
+    }
+    @if $color == "primary" {
+      $color-100: $primary-100;
+      $color-200: $primary-200;
+      $color-500: $primary-500;
+      $color-600: $primary-600;
+      $color-700: $primary-700;
+    }
+    .icon-#{$type}-#{$color} {
+      @if $type == "transparent" {
+        @include icon(transparent, $color-600, transparent, transparent, $color-600, transparent);
+      }
+      @if $type == "hover" {
+        @include icon(transparent, $color-600, transparent, $color-100, $color-600, transparent);
+      }
+      @if $type == "filled" {
+        @include icon($color-600, #fff, transparent, $color-700, #fff, transparent);
+      }
+      @if $type == "light" {
+        @include icon($color-100, $color-600, transparent, $color-200, $color-600, transparent);
+      }
+      @if $type == "outline" {
+        @include icon(transparent, $color-600, $color-600, $color-100, $color-600, $color-600);
+      }
+    }
   }
 }
