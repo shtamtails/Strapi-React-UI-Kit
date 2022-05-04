@@ -41,6 +41,7 @@ const logo = (
 // ? NOTIFICATIONS
 // add notification loading on load functionality
 // add notification autoclose functionality
+// ! Action Icon Page add code
 
 const App = () => {
   return (

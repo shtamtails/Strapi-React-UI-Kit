@@ -84,6 +84,27 @@ export const ActionIconPage = () => {
             </>
           }
         />
+        <Code>
+          {`
+ import { ActionIcon } from "./UI/";
+ import { FiSettings } from "react-icons/fi";
+
+ const Demo = () => {
+   return (
+    <ActionIcon
+      variant="filled"
+      loading={${loading}}
+      disabled={${disabled}}
+      size={${size}}
+      type={${type}}
+      color={${color}}
+    >
+      <FiSettings />
+    </ActionIcon>
+   )
+ }
+`}
+        </Code>
       </Main>
     </div>
   );
