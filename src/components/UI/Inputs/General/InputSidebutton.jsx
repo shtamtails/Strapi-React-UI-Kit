@@ -8,13 +8,13 @@ export const InputSidebutton = ({ loading, copy, onClick, ...props }) => {
   return (
     <>
       {loading && (
-        <div className="right_button">
+        <div className="right-button">
           <Loader />
         </div>
       )}
       {copy && !loading && (
         <div
-          className="right_button"
+          className="right-button"
           onClick={() => {
             clipboard.copy(props.value);
           }}

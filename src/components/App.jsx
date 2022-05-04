@@ -2,7 +2,14 @@ import "../css/main.css";
 import React, { useEffect, useState } from "react";
 import { AppShell, Navbar } from "./UI";
 import { NavbarContent } from "./NavbarContent";
-import { AccordionPage, ActionIconPage, CardPage, KbdPage, NotificationsPage } from "./Pages";
+import {
+  AccordionPage,
+  ActionIconPage,
+  AutocompletePage,
+  CardPage,
+  KbdPage,
+  NotificationsPage,
+} from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
 
@@ -41,7 +48,8 @@ const logo = (
 // ? NOTIFICATIONS
 // add notification loading on load functionality
 // add notification autoclose functionality
-// ! Action Icon Page add code
+// ? Autocomplete / Select
+// add default option and its value is text but not value prop
 
 const App = () => {
   return (
@@ -56,26 +64,13 @@ const App = () => {
           </Navbar>
         }
       >
-        {/* <div className="div" style={{ width: "200px" }}>
-          <Button
-            onClick={() => {
-              createNotification({
-                id: id,
-                title: "title",
-                body: "body",
-                type: "loading",
-              });
-            }}
-          >
-            Add notification
-          </Button>
-        </div> */}
         <Routes>
           <Route path="/card" element={<CardPage />} />
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/kbd" element={<KbdPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/actionicon" element={<ActionIconPage />} />
+          <Route path="/autocomplete" element={<AutocompletePage />} />
         </Routes>
       </AppShell>
     </>

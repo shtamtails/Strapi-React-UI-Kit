@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { InputSidebutton } from "../../General";
+import { InputSidebutton, InputSideIcon } from "../../General";
 import ClearButton from "./ClearButton";
 
 export const AutocompleteMain = React.forwardRef(
@@ -15,6 +15,7 @@ export const AutocompleteMain = React.forwardRef(
     return (
       <>
         <div className="select-container">
+          <InputSideIcon icon={sideIcon} />
           <input
             className={styles.join(" ")}
             ref={ref}
