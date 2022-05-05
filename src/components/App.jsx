@@ -9,6 +9,7 @@ import {
   CardPage,
   KbdPage,
   NotificationsPage,
+  SelectPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -50,6 +51,7 @@ const logo = (
 // add notification autoclose functionality
 // ? Autocomplete / Select
 // add default option and its value is text but not value prop
+// Autocomplete value verify, maybe use the same method as the select component
 
 const App = () => {
   return (
@@ -71,6 +73,7 @@ const App = () => {
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/actionicon" element={<ActionIconPage />} />
           <Route path="/autocomplete" element={<AutocompletePage />} />
+          <Route path="/select" element={<SelectPage />} />
         </Routes>
       </AppShell>
     </>

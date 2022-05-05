@@ -1,16 +1,27 @@
 import React from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { InputSidebutton } from "../../General";
+import { InputSidebutton, InputSideIcon } from "../../General";
 
-export const SelectMain = ({ handleSelectClick, inputValue, loading, disabled, select }) => {
-  const inputStyles = ["select-input"];
+export const SelectMain = ({
+  handleSelectClick,
+  inputValue,
+  loading,
+  disabled,
+  select,
+  sideIcon,
+  height,
+}) => {
+  const styles = ["select-input"];
   const arrorStyles = ["arrow"];
-  (loading || disabled) && inputStyles.push("disabled");
+  (loading || disabled) && styles.push("disabled");
   select && arrorStyles.push("opened");
+  height && styles.push(height);
 
   return (
     <div className="select-container" onClick={handleSelectClick}>
-      <div className={inputStyles.join(" ")}>{inputValue}</div>
+      <InputSideIcon icon={sideIcon} />
+
+      <div className={styles.join(" ")}>{inputValue}</div>
       <InputSidebutton loading={loading} />
       {!loading && (
         <div className={arrorStyles.join(" ")}>

@@ -88,7 +88,7 @@ export const ActionIconPage = () => {
           {`
  import { ActionIcon } from "./UI/";
  import { FiSettings } from "react-icons/fi";
-
+ 
  const Demo = () => {
    return (
     <ActionIcon

@@ -38,6 +38,8 @@ export const Select = (props) => {
         loading={props.loading}
         disabled={props.disabled}
         select={select}
+        height={props.height}
+        sideIcon={props.sideIcon}
       />
       <SelectDrop
         select={select}

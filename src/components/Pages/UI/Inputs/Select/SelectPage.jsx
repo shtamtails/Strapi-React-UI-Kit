@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { ComponentPreview, Subtitle, About, Main, Code } from "../../../Template";
+import { Select, Switch } from "../../../../UI";
 import { useUniqueId } from "../../../../../Hooks";
-import { Autocomplete, Switch, Select } from "../../../../UI";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
 import { GrCodeSandbox } from "react-icons/gr";
-export const AutocompletePage = () => {
-  const [value, setValue] = useState("");
+
+export const SelectPage = () => {
   const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [sideIcon, setSideIcon] = useState(true);
+  const [value, setValue] = useState(null);
   const [height, setHeight] = useState("md");
+  const [sideIcon, setSideIcon] = useState(true);
+
   const options = [
     { id: useUniqueId(), text: "React", value: "react" },
     { id: useUniqueId(), text: "Angular", value: "angular" },
@@ -22,9 +24,9 @@ export const AutocompletePage = () => {
   return (
     <div className="documentation">
       <About
-        name="Autocomplete"
-        info="Autocomplete user input with any list of options"
-        importCode={`import { Autocomplete } from './UI/';`}
+        name="Select"
+        info="Get user input from list of options"
+        importCode={`import { Select } from './UI/';`}
         sourceLink=""
         packageLink=""
       />
@@ -34,14 +36,14 @@ export const AutocompletePage = () => {
           height={250}
           component={
             <div className="autocomplete-component-preview">
-              <Autocomplete
-                label="Chose your favourite framework"
+              <Select
+                label="Chose your favourite javascript framework/library"
                 optionsList={options}
                 value={value}
                 setValue={setValue}
-                description="Try to search for some option"
                 disabled={disabled}
                 loading={loading}
+                description="Listen to your heart..."
                 sideIcon={sideIcon && <GrCodeSandbox />}
                 height={height}
               />
@@ -74,7 +76,7 @@ export const AutocompletePage = () => {
         />
         <Code>
           {`
- import { Autocomplete } from "./UI/";
+ import { Select } from "./UI/";
  import { useState } from "react";
  import { useUniqueId } from "./Hooks/";
 
@@ -87,15 +89,13 @@ export const AutocompletePage = () => {
     }]
     return (
         <Autocomplete
-            label="Chose your favourite framework"
+            label="Chose your favourite javascript framework/library"
             optionsList={options}
             value={value}
             setValue={setValue}
-            description="Try to search for some option"
+            description="Listen to your heart..."
             disabled={${disabled}}
             loading={${loading}}
-            ${sideIcon ? `sideIcon={<GrCodeSandbox />}` : ``}
-            ${height ? `height="${height}"` : ``}
         />
     )
  }
@@ -106,4 +106,4 @@ export const AutocompletePage = () => {
   );
 };
 
-export default AutocompletePage;
+export default SelectPage;
