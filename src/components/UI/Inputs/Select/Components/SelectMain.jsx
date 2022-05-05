@@ -16,6 +16,7 @@ export const SelectMain = ({
   (loading || disabled) && styles.push("disabled");
   select && arrorStyles.push("opened");
   height && styles.push(height);
+  sideIcon ? styles.push("with-icon") : styles.push("default");
 
   return (
     <div className="select-container" onClick={handleSelectClick}>
