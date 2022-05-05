@@ -46,7 +46,7 @@ export const ActionIconPage = () => {
           component={
             <div className="action-icon-component-preview">
               <ActionIcon
-                variant="filled"
+                type="filled"
                 loading={loading}
                 disabled={disabled}
                 size={size}
@@ -92,7 +92,7 @@ export const ActionIconPage = () => {
  const Demo = () => {
    return (
     <ActionIcon
-      variant="filled"
+      type="filled"
       loading={${loading}}
       disabled={${disabled}}
       size={${size}}

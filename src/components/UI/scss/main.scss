@@ -53,12 +53,13 @@ a {
   height: 100% !important;
 }
 
-//
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
-}
-h2 {
-  margin: 0;
+  padding: 0;
 }
 
 .documentation {
@@ -181,4 +182,18 @@ h2 {
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+.button-component-preview {
+  display: flex;
+  flex-direction: column;
+  .preview-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .button-component-preview-button {
+      width: 150px;
+      margin: 10px;
+    }
+  }
 }

@@ -10,6 +10,7 @@ import {
   KbdPage,
   NotificationsPage,
   SelectPage,
+  ButtonPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -74,6 +75,7 @@ const App = () => {
           <Route path="/actionicon" element={<ActionIconPage />} />
           <Route path="/autocomplete" element={<AutocompletePage />} />
           <Route path="/select" element={<SelectPage />} />
+          <Route path="/button" element={<ButtonPage />} />
         </Routes>
       </AppShell>
     </>

@@ -33,7 +33,7 @@ export const CardPage = () => {
                       tours and activities on and around the fjords of Norway
                     </Card.Text>
                     <Card.Footer>
-                      <Button variant="light" type="info" height="md">
+                      <Button color="success" variant="light">
                         Book classic tour
                       </Button>
                     </Card.Footer>
@@ -52,7 +52,7 @@ export const CardPage = () => {
                       tours and activities on and around the fjords of Norway
                     </Card.Text>
                     <Card.Footer>
-                      <Button variant="light" type="info">
+                      <Button color="success" variant="light">
                         Book classic tour
                       </Button>
                     </Card.Footer>
@@ -92,7 +92,7 @@ export const CardPage = () => {
       tours and activities on and around the fjords of Norway
     </Card.Text>
     <Card.Footer>
-      <Button variant="light" type="info" height="md">
+      <Button type="light" type="info" height="md">
         Book classic tour
       </Button>
     </Card.Footer>

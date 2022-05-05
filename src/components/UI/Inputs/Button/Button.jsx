@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 export const Button = (props) => {
   const handleBtnClick = (e) => {
-    props.onClick();
+    props.onClick(e);
   };
 
   const buttonStyles = [""];
-  buttonStyles.push(`btn-${props.variant}-${props.type}`);
+  buttonStyles.push(`btn-${props.variant}-${props.color}`);
   props.height && buttonStyles.push(props.height);
 
   return (
@@ -23,17 +23,10 @@ export const Button = (props) => {
 };
 
 Button.propTypes = {
-  value: PropTypes.bool.isRequired,
-  setValue: PropTypes.func.isRequired,
-  type: PropTypes.oneOf(["success", "danger", "info"]),
+  color: PropTypes.oneOf(["success", "danger", "info"]),
   variant: PropTypes.oneOf(["filled", "outline", "light", "subtle"]),
   height: PropTypes.oneOf(["xs", "sm", "md", "lg", "full"]),
   disabled: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  type: "success",
-  variant: "light",
 };
 
 export default Button;

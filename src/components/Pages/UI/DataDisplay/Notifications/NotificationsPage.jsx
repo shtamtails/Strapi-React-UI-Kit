@@ -39,7 +39,7 @@ export const NotificationsPage = () => {
                         });
                       }}
                       variant="light"
-                      type="danger"
+                      color="danger"
                     >
                       Danger notification
                     </Button>
@@ -56,7 +56,7 @@ export const NotificationsPage = () => {
                         });
                       }}
                       variant="light"
-                      type="success"
+                      color="success"
                     >
                       Success notification
                     </Button>
@@ -73,7 +73,7 @@ export const NotificationsPage = () => {
                         });
                       }}
                       variant="light"
-                      type="info"
+                      color="info"
                     >
                       Default notification
                     </Button>
@@ -89,7 +89,7 @@ export const NotificationsPage = () => {
                         });
                       }}
                       variant="outline"
-                      type="info"
+                      color="info"
                     >
                       Loading notification
                     </Button>
@@ -151,10 +151,10 @@ export const NotificationsPage = () => {
         return (
             <>
             <Notification.Container notifications={notifications} setNotifications={setNotifications} />
-            <Button type="success" variant="light" onClick={showSuccessNotification} />
-            <Button type="danger" variant="light" onClick={showDangerNotification} />
-            <Button type="info" variant="light" onClick={showDefaultNotification} />
-            <Button type="info" variant="outline" onClick={showLoadingNotification} />
+            <Button color="success" type="light" onClick={showSuccessNotification} />
+            <Button color="danger" type="light" onClick={showDangerNotification} />
+            <Button color="info" type="light" onClick={showDefaultNotification} />
+            <Button color="info" type="outline" onClick={showLoadingNotification} />
             </>
         )
     }

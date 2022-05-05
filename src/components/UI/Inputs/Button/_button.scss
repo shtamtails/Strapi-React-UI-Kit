@@ -25,114 +25,61 @@
   }
 }
 
-.btn-filled-success {
-  color: $neutral-0;
-  border: none;
-  background-color: $success-600;
+$colors: "success", "danger", "info";
+$types: "filled", "outline", "light", "subtle";
+
+@mixin button($color, $bgc, $border, $hbgc) {
+  color: $color;
+  background-color: $bgc;
+  border: 1px solid $border;
   &:hover {
-    background-color: $success-500;
+    background-color: $hbgc;
   }
 }
-
-.btn-outline-success {
-  background: none;
-  border: 1px solid $success-600;
-  color: $success-600;
-  &:hover {
-    background-color: $success-100;
-  }
-}
-
-.btn-light-success {
-  background-color: $success-100;
-  border: 1px solid $success-200;
-  color: $success-600;
-  &:hover {
-    background: none;
-  }
-}
-
-.btn-subtle-success {
-  color: $success-600;
-  background: none;
-  border: none;
-  &:hover {
-    background-color: $success-100;
-  }
-}
-
-//
-
-.btn-filled-danger {
-  color: $neutral-0;
-  border: none;
-  background-color: $danger-600;
-  &:hover {
-    background-color: $danger-500;
-  }
-}
-
-.btn-outline-danger {
-  background: none;
-  border: 1px solid $danger-600;
-  color: $danger-600;
-  &:hover {
-    background-color: $danger-100;
-  }
-}
-
-.btn-light-danger {
-  background-color: $danger-100;
-  border: 1px solid $danger-200;
-  color: $danger-600;
-  &:hover {
-    background: none;
-  }
-}
-
-.btn-subtle-danger {
-  color: $danger-600;
-  background: none;
-  border: none;
-  &:hover {
-    background-color: $danger-100;
-  }
-}
-
-//
-
-.btn-filled-info {
-  border: none;
-  background-color: $primary-600;
-  color: $neutral-0;
-  &:hover {
-    background-color: $primary-500;
-  }
-}
-
-.btn-outline-info {
-  background: none;
-  border: 1px solid $primary-600;
-  color: $primary-600;
-  &:hover {
-    background-color: $primary-100;
-  }
-}
-
-.btn-light-info {
-  background-color: $primary-100;
-  border: 1px solid $primary-200;
-  color: $primary-600;
-  &:hover {
-    background: none;
-  }
-}
-
-.btn-subtle-info {
-  color: $primary-600;
-  background: none;
-  border: none;
-  &:hover {
-    background-color: $primary-100;
+@each $color in $colors {
+  @each $type in $types {
+    $color-100: "";
+    $color-200: "";
+    $color-300: "";
+    $color-400: "";
+    $color-500: "";
+    $color-600: "";
+    $color-700: "";
+    $color-800: "";
+    @if $color == "success" {
+      $color-100: $success-100;
+      $color-200: $success-200;
+      $color-500: $success-500;
+      $color-600: $success-600;
+      $color-700: $success-700;
+    }
+    @if $color == "danger" {
+      $color-100: $danger-100;
+      $color-200: $danger-200;
+      $color-500: $danger-500;
+      $color-600: $danger-600;
+      $color-700: $danger-700;
+    }
+    @if $color == "info" {
+      $color-100: $primary-100;
+      $color-200: $primary-200;
+      $color-500: $primary-500;
+      $color-600: $primary-600;
+      $color-700: $primary-700;
+    }
+    .btn-#{$type}-#{$color} {
+      @if $type == "filled" {
+        @include button(#fff, $color-600, transparent, $color-500);
+      }
+      @if $type == "outline" {
+        @include button($color-600, none, $color-600, $color-100);
+      }
+      @if $type == "light" {
+        @include button($color-600, $color-100, $color-200, none);
+      }
+      @if $type == "subtle" {
+        @include button($color-600, none, transparent, $color-100);
+      }
+    }
   }
 }

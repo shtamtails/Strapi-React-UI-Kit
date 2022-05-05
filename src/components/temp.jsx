@@ -173,7 +173,7 @@ const App = () => {
                 activities on and around the fjords of Norway
               </Card.Text>
               <Card.Footer>
-                <Button variant="light" type="info" height="md">
+                <Button type="light" type="info" height="md">
                   Book classic tour
                 </Button>
               </Card.Footer>
@@ -192,7 +192,7 @@ const App = () => {
                 activities on and around the fjords of Norway
               </Card.Text>
               <Card.Footer>
-                <Button variant="light" type="info">
+                <Button type="light" type="info">
                   Book classic tour
                 </Button>
               </Card.Footer>
@@ -211,7 +211,7 @@ const App = () => {
                 activities on and around the fjords of Norway
               </Card.Text>
               <Card.Footer>
-                <Button variant="light" type="info">
+                <Button type="light" type="info">
                   Book classic tour
                 </Button>
               </Card.Footer>
@@ -221,7 +221,7 @@ const App = () => {
         <Divider>Modal</Divider>
         <div style={{ margin: "20px auto", width: "120px" }}>
           <Button
-            variant="light"
+            type="light"
             type="info"
             modal={modal}
             setModal={setModal}
@@ -237,7 +237,7 @@ const App = () => {
         <Divider> Select </Divider>
         <Select optionsList={options} value={value1} setValue={setValue1} />
         <Divider> Action Icon </Divider>
-        <ActionIcon variant="outline" size="md" disabled>
+        <ActionIcon type="outline" size="md" disabled>
           <AiOutlineLock />
         </ActionIcon>
         <Divider></Divider>

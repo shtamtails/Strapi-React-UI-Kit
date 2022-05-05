@@ -6,3 +6,4 @@ export { NotificationsPage } from "./UI/DataDisplay/Notifications/NotificationsP
 export { ActionIconPage } from "./UI/Inputs/ActionIcon/ActionIconPage";
 export { AutocompletePage } from "./UI/Inputs/Autocomplete/AutocompletePage";
 export { SelectPage } from "./UI/Inputs/Select/SelectPage";
+export { ButtonPage } from "./UI/Inputs/Button/ButtonPage";
