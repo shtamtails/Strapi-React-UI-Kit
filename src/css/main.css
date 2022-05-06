@@ -1,4 +1,5 @@
 .action-icon {
+  cursor: pointer;
   border-radius: 4px;
   width: 28px;
   height: 28px;
@@ -27,6 +28,7 @@
 }
 
 .action-icon-disabled {
+  cursor: not-allowed;
   background-color: #f6f6f9 !important;
   border: 1px solid #f6f6f9 !important;
 }
@@ -867,6 +869,13 @@ textarea[type="text"]:disabled::placeholder {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+}
+
+.select-container select {
+  display: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .select-container .select-input {

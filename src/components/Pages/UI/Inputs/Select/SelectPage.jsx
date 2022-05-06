@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { ComponentPreview, Subtitle, About, Main, Code } from "../../../Template";
 import { Select, Switch } from "../../../../UI";
 import { useUniqueId } from "../../../../../Hooks";
@@ -10,6 +10,7 @@ export const SelectPage = () => {
   const [value, setValue] = useState(null);
   const [height, setHeight] = useState("md");
   const [sideIcon, setSideIcon] = useState(true);
+  const [required, setRequired] = useState(false);
 
   const options = [
     { id: useUniqueId(), text: "React", value: "react" },
@@ -21,6 +22,7 @@ export const SelectPage = () => {
     { id: useUniqueId(), text: "md", value: "md" },
     { id: useUniqueId(), text: "lg", value: "lg" },
   ];
+  const ref = useRef(null);
   return (
     <div className="documentation">
       <About
@@ -37,6 +39,7 @@ export const SelectPage = () => {
           component={
             <div className="autocomplete-component-preview">
               <Select
+                useref={ref}
                 label="Chose your favourite javascript framework/library"
                 optionsList={options}
                 value={value}
@@ -46,6 +49,8 @@ export const SelectPage = () => {
                 description="Listen to your heart..."
                 sideIcon={sideIcon && <GrCodeSandbox />}
                 height={height}
+                defaultValue={options[0]}
+                required={required}
               />
             </div>
           }
@@ -60,15 +65,21 @@ export const SelectPage = () => {
                 <div className="text">Loading</div>
               </div>
               <div className="section">
+                <Switch value={required} setValue={setRequired} />
+                <div className="text">Required</div>
+              </div>
+              <div className="section">
                 <Switch value={sideIcon} setValue={setSideIcon} />
                 <div className="text">Icon</div>
               </div>
+
               <div className="section">
                 <Select
                   label="Height"
                   optionsList={heightOptions}
                   value={height}
                   setValue={setHeight}
+                  defaultValue={heightOptions[1]}
                 />
               </div>
             </>
@@ -96,6 +107,8 @@ export const SelectPage = () => {
             description="Listen to your heart..."
             disabled={${disabled}}
             loading={${loading}}
+            defaultValue={options[0]}
+            required={${required}}
         />
     )
  }

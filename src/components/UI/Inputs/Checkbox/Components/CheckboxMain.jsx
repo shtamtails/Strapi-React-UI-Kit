@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsCheckLg } from "react-icons/bs";
 
-export const CheckboxMain = React.forwardRef(({ disabled, onClick }, ref) => {
+export const CheckboxMain = React.forwardRef(({ disabled, onClick, value, setValue }, ref) => {
   const checkboxMain = ["checkbox"];
   const checkmarkStyles = ["checkmark"];
   disabled && checkboxMain.push("disabled");
@@ -10,6 +10,7 @@ export const CheckboxMain = React.forwardRef(({ disabled, onClick }, ref) => {
   const handleClick = () => {
     setChecked(!checked);
     onClick && onClick();
+    setValue(!value);
   };
 
   return (

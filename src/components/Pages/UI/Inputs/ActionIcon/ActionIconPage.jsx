@@ -46,7 +46,6 @@ export const ActionIconPage = () => {
           component={
             <div className="action-icon-component-preview">
               <ActionIcon
-                type="filled"
                 loading={loading}
                 disabled={disabled}
                 size={size}
@@ -68,10 +67,22 @@ export const ActionIconPage = () => {
                 <div className="text">Loading</div>
               </div>
               <div className="section">
-                <Select label="Size" optionsList={sizeOptions} value={size} setValue={setSize} />
+                <Select
+                  label="Size"
+                  optionsList={sizeOptions}
+                  value={size}
+                  setValue={setSize}
+                  defaultValue={sizeOptions[1]}
+                />
               </div>
               <div className="section">
-                <Select label="Type" optionsList={typeOptions} value={type} setValue={setType} />
+                <Select
+                  label="Type"
+                  optionsList={typeOptions}
+                  value={type}
+                  setValue={setType}
+                  defaultValue={typeOptions[3]}
+                />
               </div>
               <div className="section">
                 <Select
@@ -79,6 +90,7 @@ export const ActionIconPage = () => {
                   optionsList={colorOptions}
                   value={color}
                   setValue={setColor}
+                  defaultValue={colorOptions[1]}
                 />
               </div>
             </>

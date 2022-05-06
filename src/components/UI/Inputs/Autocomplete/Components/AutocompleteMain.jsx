@@ -1,11 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { InputSidebutton, InputSideIcon } from "../../General";
 import ClearButton from "./ClearButton";
 
 export const AutocompleteMain = React.forwardRef(
-  ({ handleSelectClick, loading, disabled, setInputValue, inputValue, sideIcon, height }, ref) => {
+  (
+    {
+      handleSelectInputFieldClick,
+      loading,
+      disabled,
+      setInputFieldValue,
+      inputFieldValue,
+      sideIcon,
+      height,
+      required,
+    },
+    ref
+  ) => {
     const handleInputChange = (e) => {
-      setInputValue(e.target.value);
+      setInputFieldValue(e.target.value);
     };
 
     const styles = ["select-input"];
@@ -17,19 +29,20 @@ export const AutocompleteMain = React.forwardRef(
         <div className="select-container">
           <InputSideIcon icon={sideIcon} />
           <input
+            required={required}
             className={styles.join(" ")}
             ref={ref}
             disabled={disabled || loading}
             type="text"
-            onClick={handleSelectClick}
-            value={inputValue}
+            onClick={handleSelectInputFieldClick}
+            value={inputFieldValue}
             onChange={handleInputChange}
           />
           <ClearButton
             loading={loading}
             disabled={disabled}
-            inputValue={inputValue}
-            setInputValue={setInputValue}
+            inputFieldValue={inputFieldValue}
+            setInputFieldValue={setInputFieldValue}
           />
           <InputSidebutton loading={loading} />
         </div>

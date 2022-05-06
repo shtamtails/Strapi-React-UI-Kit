@@ -3,12 +3,13 @@ import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template
 import { Checkbox, Switch } from "../../../../UI";
 
 export const CheckboxPage = () => {
-  const ref = useRef(null);
-  const handleClick = () => {
-    console.log(ref.current.checked);
-  };
+  //   const ref = useRef(null);
+
   const [value, setValue] = useState(false);
   const [disabled, setDisabled] = useState(false);
+  const handleClick = () => {
+    console.log(value);
+  };
   return (
     <div className="documentation">
       <About
@@ -24,11 +25,11 @@ export const CheckboxPage = () => {
           component={
             <>
               <Checkbox
-                useref={ref}
+                value={value}
                 setValue={setValue}
                 label="Yes, I don't read license agreement."
                 disabled={disabled}
-                // onClick={handleClick}
+                onClick={handleClick}
               />
             </>
           }
@@ -47,12 +48,38 @@ export const CheckboxPage = () => {
 
  const Demo = () => {
      const ref = useRef(null)
+     const handleClick = () => {
+         console.log(ref.current.checked);
+     }
      return (
         <Checkbox
             useref={ref}
-            setValue={setValue}
             label="Yes, I don't read license agreement."
-            disabled={disabled}
+            disabled={${disabled}}
+            onClick={handleClick}
+        />
+     )
+ }
+`}
+        </Code>
+        <Subtitle>Using component with state</Subtitle>
+        <Code>
+          {`
+ import { useState } from "react";
+ import { Checkbox } from "./UI/";
+
+ const Demo = () => {
+     const [checked, setChecked] = useState(false);
+     const handleClick = () => {
+         console.log(checked);
+     }
+     return (
+        <Checkbox
+            value={checked}
+            setValue={setChecked}
+            label="Yes, I don't read license agreement."
+            disabled={${disabled}}
+            onClick={handleClick}
         />
      )
  }

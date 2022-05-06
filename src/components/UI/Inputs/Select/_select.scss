@@ -1,4 +1,8 @@
 .select-container {
+  select {
+    display: none;
+    appearance: none;
+  }
   display: flex;
   align-items: center;
   width: 100%;

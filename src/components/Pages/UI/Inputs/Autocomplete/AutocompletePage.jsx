@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useUniqueId } from "../../../../../Hooks";
 import { Autocomplete, Switch, Select } from "../../../../UI";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
@@ -10,8 +10,10 @@ export const AutocompletePage = () => {
   const [loading, setLoading] = useState(false);
   const [sideIcon, setSideIcon] = useState(true);
   const [height, setHeight] = useState("md");
+  const [required, setRequired] = useState(false);
+
   const options = [
-    { id: useUniqueId(), text: "React", value: "react" },
+    { id: useUniqueId(), text: "Reac1t", value: "react" },
     { id: useUniqueId(), text: "Angular", value: "angular" },
     { id: useUniqueId(), text: "Vue", value: "vue" },
   ];
@@ -20,6 +22,8 @@ export const AutocompletePage = () => {
     { id: useUniqueId(), text: "md", value: "md" },
     { id: useUniqueId(), text: "lg", value: "lg" },
   ];
+
+  const ref = useRef(null);
   return (
     <div className="documentation">
       <About
@@ -45,6 +49,9 @@ export const AutocompletePage = () => {
                 loading={loading}
                 sideIcon={sideIcon && <GrCodeSandbox />}
                 height={height}
+                required={required}
+                useref={ref}
+                defaultValue={options[0]}
               />
             </div>
           }
@@ -59,6 +66,10 @@ export const AutocompletePage = () => {
                 <div className="text">Loading</div>
               </div>
               <div className="section">
+                <Switch value={required} setValue={setRequired} />
+                <div className="text">Required</div>
+              </div>
+              <div className="section">
                 <Switch value={sideIcon} setValue={setSideIcon} />
                 <div className="text">Icon</div>
               </div>
@@ -68,6 +79,7 @@ export const AutocompletePage = () => {
                   optionsList={heightOptions}
                   value={height}
                   setValue={setHeight}
+                  defaultValue={heightOptions[1]}
                 />
               </div>
             </>
@@ -95,6 +107,8 @@ export const AutocompletePage = () => {
             description="Try to search for some option"
             disabled={${disabled}}
             loading={${loading}}
+            defaultValue={options[0]}
+            required={${required}}
             ${sideIcon ? `sideIcon={<GrCodeSandbox />}` : ``}
             ${height ? `height="${height}"` : ``}
         />
