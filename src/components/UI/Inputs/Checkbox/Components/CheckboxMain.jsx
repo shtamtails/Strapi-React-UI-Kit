@@ -1,16 +1,35 @@
-import React from "react";
-import { Checkmark } from "./Checkmark";
+import React, { useState } from "react";
+import { BsCheckLg } from "react-icons/bs";
 
-export const CheckboxMain = ({ handleCheckboxClick, disabled, value }) => {
+export const CheckboxMain = React.forwardRef(({ disabled, onClick }, ref) => {
   const checkboxMain = ["checkbox"];
+  const checkmarkStyles = ["checkmark"];
   disabled && checkboxMain.push("disabled");
-  value && checkboxMain.push("checked");
+  disabled && checkmarkStyles.push("checkmark-dark");
+  const [checked, setChecked] = useState(false);
+  const handleClick = () => {
+    setChecked(!checked);
+    onClick && onClick();
+  };
 
   return (
-    <div className={checkboxMain.join(" ")} onClick={handleCheckboxClick}>
-      <Checkmark value={value} disabled={disabled} />
-    </div>
+    <>
+      <input
+        ref={ref}
+        type="checkbox"
+        className="checkbox"
+        disabled={disabled}
+        onClick={handleClick}
+      />
+      <span className={checkboxMain.join(" ")}>
+        {checked && (
+          <div className={checkmarkStyles.join(" ")}>
+            <BsCheckLg />
+          </div>
+        )}
+      </span>
+    </>
   );
-};
+});
 
 export default CheckboxMain;

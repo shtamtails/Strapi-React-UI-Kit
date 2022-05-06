@@ -1,5 +1,5 @@
 import "../css/main.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AppShell, Navbar } from "./UI";
 import { NavbarContent } from "./NavbarContent";
 import {
@@ -11,6 +11,7 @@ import {
   NotificationsPage,
   SelectPage,
   ButtonPage,
+  CheckboxPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -76,6 +77,7 @@ const App = () => {
           <Route path="/autocomplete" element={<AutocompletePage />} />
           <Route path="/select" element={<SelectPage />} />
           <Route path="/button" element={<ButtonPage />} />
+          <Route path="/checkbox" element={<CheckboxPage />} />
         </Routes>
       </AppShell>
     </>

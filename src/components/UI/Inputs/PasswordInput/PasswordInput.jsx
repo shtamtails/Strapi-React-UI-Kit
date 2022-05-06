@@ -18,6 +18,7 @@ export const PasswordInput = React.forwardRef(({ ...props }, ref) => {
       <InputLabel label={props.label} required={props.required} />
       <InputMain loading={props.loading} icon={props.sideIcon}>
         <input
+          ref={ref}
           className={styles.join(" ")}
           required={props.required}
           disabled={props.disabled || props.loading}
