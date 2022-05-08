@@ -1,35 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import { SwitchMain, SwitchStatus } from "./Components";
+import { SwitchMain, SwitchLabel } from "./Components";
 
-export const Switch = (props) => {
+export const Switch = ({ label, disabled, value, setValue }) => {
   const handleSwitchClick = (e) => {
-    !props.disabled && props.setValue(!props.value);
+    !disabled && setValue(!value);
   };
   return (
     <>
-      <InputLabel label={props.label} required={props.required} />
       <div className="switch-container">
         <SwitchMain
-          value={props.value}
-          disabled={props.disabled}
+          value={value}
+          setValue={setValue}
+          disabled={disabled}
           handleSwitchClick={handleSwitchClick}
         />
-        <SwitchStatus value={props.value} disabled={props.disabled} showStatus={props.showStatus} />
+        <SwitchLabel label={label} />
       </div>
-      <InputDescription description={props.description} />
     </>
   );
-};
-
-Switch.propTypes = {
-  value: PropTypes.bool.isRequired,
-  setValue: PropTypes.func.isRequired,
-  showStatus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  label: PropTypes.string,
-  description: PropTypes.string,
 };
 
 export default Switch;

@@ -1,17 +1,25 @@
 import React from "react";
 
-export const SwitchMain = ({ value, disabled, handleSwitchClick }) => {
-  const inputStyles = ["switch-input"];
-  value ? inputStyles.push("switch-true") : inputStyles.push("switch-false");
-  disabled && inputStyles.push("input-disabled");
-  const ballStyles = ["switch-ball"];
-  value ? ballStyles.push("ball-true") : ballStyles.push("ball-false");
-
-  return (
-    <div className={inputStyles.join(" ")} onClick={handleSwitchClick}>
-      <div className={ballStyles.join(" ")}></div>
-    </div>
-  );
-};
+export const SwitchMain = React.forwardRef(
+  ({ setValue, value, disabled, handleSwitchClick }, ref) => {
+    const switchStyles = ["switch"];
+    disabled && switchStyles.push("switch-disabled");
+    const handleClick = (e) => {
+      setValue(!value);
+    };
+    return (
+      <>
+        <input
+          ref={ref}
+          type="checkbox"
+          className={switchStyles.join(" ")}
+          onClick={handleClick}
+          disabled={disabled}
+          defaultChecked={value}
+        />
+      </>
+    );
+  }
+);
 
 export default SwitchMain;

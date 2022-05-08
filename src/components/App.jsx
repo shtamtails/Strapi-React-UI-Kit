@@ -12,6 +12,7 @@ import {
   SelectPage,
   ButtonPage,
   CheckboxPage,
+  SwitchPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -54,6 +55,7 @@ const logo = (
 // ? Autocomplete / Select
 // add default option and its value is text but not value prop
 // Autocomplete value verify, maybe use the same method as the select component
+// Remove value requirement in select/autocomplete pages
 
 const App = () => {
   return (
@@ -78,6 +80,7 @@ const App = () => {
           <Route path="/select" element={<SelectPage />} />
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/checkbox" element={<CheckboxPage />} />
+          <Route path="/switch" element={<SwitchPage />} />
         </Routes>
       </AppShell>
     </>

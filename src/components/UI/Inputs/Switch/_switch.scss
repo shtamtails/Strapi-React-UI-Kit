@@ -1,15 +1,22 @@
 .switch-container {
   display: flex;
   align-items: center;
-
-  .switch-input {
+  position: relative;
+  .switch {
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    cursor: pointer;
     position: relative;
     display: flex;
     align-items: center;
     width: 36px;
     height: 20px;
     border-radius: 24px;
-    .switch-ball {
+    transition: background-color 200ms linear;
+    background-color: $neutral-200;
+    &:after {
+      content: "";
       position: absolute;
       margin-left: 4px;
       margin-right: 4px;
@@ -18,35 +25,29 @@
       height: 14px;
       border-radius: 100%;
       background-color: #fff;
+      left: 0px;
+      transition: left 300ms ease;
     }
-    .ball-true {
+    &:checked {
+      background-color: $success-500;
+      transition: background-color 200ms linear;
+    }
+    &:checked::after {
       transition: left 300ms ease;
       left: 14px;
     }
-    .ball-false {
-      transition: left 300ms ease;
-      left: 0;
+  }
+
+  .switch-label {
+    margin-left: 10px;
+    font-size: 16px;
+    color: $neutral-700;
+  }
+  .switch-disabled {
+    cursor: not-allowed;
+    background-color: $neutral-200 !important;
+    &::after {
+      background-color: $neutral-100;
     }
   }
-
-  .switch-true {
-    background-color: $success-500;
-  }
-  .switch-false {
-    background-color: $danger-500;
-  }
-  .switch-status {
-    margin-left: 10px;
-  }
-}
-
-.status-true {
-  color: $success-500;
-}
-
-.status-false {
-  color: $danger-500;
-}
-.status-disabled {
-  color: $neutral-600 !important;
 }

@@ -74,8 +74,7 @@ export const Select = ({
 };
 
 Select.propTypes = {
-  value: PropTypes.string,
-  setValue: PropTypes.func,
+  setValue: PropTypes.func.isRequired,
   optionsList: PropTypes.array.isRequired,
   disabled: PropTypes.bool,
   required: PropTypes.bool,

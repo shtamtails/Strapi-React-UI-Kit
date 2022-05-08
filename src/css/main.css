@@ -997,9 +997,16 @@ textarea[type="text"]:disabled::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
-.switch-container .switch-input {
+.switch-container .switch {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1010,9 +1017,13 @@ textarea[type="text"]:disabled::placeholder {
   width: 36px;
   height: 20px;
   border-radius: 24px;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  background-color: #dcdce4;
 }
 
-.switch-container .switch-input .switch-ball {
+.switch-container .switch:after {
+  content: "";
   position: absolute;
   margin-left: 4px;
   margin-right: 4px;
@@ -1023,42 +1034,36 @@ textarea[type="text"]:disabled::placeholder {
   height: 14px;
   border-radius: 100%;
   background-color: #fff;
+  left: 0px;
+  -webkit-transition: left 300ms ease;
+  transition: left 300ms ease;
 }
 
-.switch-container .switch-input .ball-true {
+.switch-container .switch:checked {
+  background-color: #5cb176;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.switch-container .switch:checked::after {
   -webkit-transition: left 300ms ease;
   transition: left 300ms ease;
   left: 14px;
 }
 
-.switch-container .switch-input .ball-false {
-  -webkit-transition: left 300ms ease;
-  transition: left 300ms ease;
-  left: 0;
-}
-
-.switch-container .switch-true {
-  background-color: #5cb176;
-}
-
-.switch-container .switch-false {
-  background-color: #ee5e52;
-}
-
-.switch-container .switch-status {
+.switch-container .switch-label {
   margin-left: 10px;
+  font-size: 16px;
+  color: #4a4a6a;
 }
 
-.status-true {
-  color: #5cb176;
+.switch-container .switch-disabled {
+  cursor: not-allowed;
+  background-color: #dcdce4 !important;
 }
 
-.status-false {
-  color: #ee5e52;
-}
-
-.status-disabled {
-  color: #666687 !important;
+.switch-container .switch-disabled::after {
+  background-color: #f6f6f9;
 }
 
 textarea[type="text"] {
@@ -1822,7 +1827,8 @@ h5 {
 }
 
 .documentation .main .component-preview {
-  border: 1px solid #dcdce4;
+  border: 1px solid #eaeaef;
+  border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

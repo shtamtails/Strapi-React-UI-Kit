@@ -8,3 +8,4 @@ export { AutocompletePage } from "./UI/Inputs/Autocomplete/AutocompletePage";
 export { SelectPage } from "./UI/Inputs/Select/SelectPage";
 export { ButtonPage } from "./UI/Inputs/Button/ButtonPage";
 export { CheckboxPage } from "./UI/Inputs/Checkbox/CheckboxPage";
+export { SwitchPage } from "./UI/Inputs/Switch/SwitchPage";

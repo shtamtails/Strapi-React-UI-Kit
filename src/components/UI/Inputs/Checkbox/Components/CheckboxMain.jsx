@@ -21,6 +21,7 @@ export const CheckboxMain = React.forwardRef(({ disabled, onClick, value, setVal
         className="checkbox"
         disabled={disabled}
         onClick={handleClick}
+        defaultChecked={value}
       />
       <span className={checkboxMain.join(" ")}>
         {checked && (

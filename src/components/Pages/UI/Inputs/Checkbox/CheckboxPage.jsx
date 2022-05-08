@@ -7,9 +7,7 @@ export const CheckboxPage = () => {
 
   const [value, setValue] = useState(false);
   const [disabled, setDisabled] = useState(false);
-  const handleClick = () => {
-    console.log(value);
-  };
+  const handleClick = () => {};
   return (
     <div className="documentation">
       <About
@@ -24,13 +22,15 @@ export const CheckboxPage = () => {
         <ComponentPreview
           component={
             <>
-              <Checkbox
-                value={value}
-                setValue={setValue}
-                label="Yes, I don't read license agreement."
-                disabled={disabled}
-                onClick={handleClick}
-              />
+              <div style={{ height: "100%", display: "flex" }}>
+                <Checkbox
+                  value={value}
+                  setValue={setValue}
+                  label="Yes, I don't read license agreement."
+                  disabled={disabled}
+                  onClick={handleClick}
+                />
+              </div>
             </>
           }
           settings={

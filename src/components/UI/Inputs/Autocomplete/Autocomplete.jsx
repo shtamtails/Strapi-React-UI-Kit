@@ -6,7 +6,6 @@ import { InputContainer, InputLabel, InputDescription } from "../General";
 import { useClickOutside, useElementWidth } from "../../../../Hooks";
 
 export const Autocomplete = ({
-  value,
   disabled,
   loading,
   setValue,
@@ -79,7 +78,6 @@ export const Autocomplete = ({
 };
 
 Autocomplete.propTypes = {
-  value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
   optionsList: PropTypes.array.isRequired,
   disabled: PropTypes.bool,
