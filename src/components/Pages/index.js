@@ -9,3 +9,6 @@ export { SelectPage } from "./UI/Inputs/Select/SelectPage";
 export { ButtonPage } from "./UI/Inputs/Button/ButtonPage";
 export { CheckboxPage } from "./UI/Inputs/Checkbox/CheckboxPage";
 export { SwitchPage } from "./UI/Inputs/Switch/SwitchPage";
+export { PasswordInputPage } from "./UI/Inputs/PasswordInput/PasswordInputPage";
+export { TextInputPage } from "./UI/Inputs/TextInput/TextInputPage";
+export { TextAreaPage } from "./UI/Inputs/TextArea/TextAreaPage";

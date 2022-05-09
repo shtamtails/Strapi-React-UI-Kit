@@ -1,6 +1,6 @@
 import "../css/main.css";
 import React, { useEffect, useRef, useState } from "react";
-import { AppShell, Navbar } from "./UI";
+import { AppShell, Navbar, PasswordInput } from "./UI";
 import { NavbarContent } from "./NavbarContent";
 import {
   AccordionPage,
@@ -13,6 +13,8 @@ import {
   ButtonPage,
   CheckboxPage,
   SwitchPage,
+  PasswordInputPage,
+  TextInputPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -56,6 +58,8 @@ const logo = (
 // add default option and its value is text but not value prop
 // Autocomplete value verify, maybe use the same method as the select component
 // Remove value requirement in select/autocomplete pages
+// ? GENERAL
+// Change ref to useref in parent components
 
 const App = () => {
   return (
@@ -81,6 +85,8 @@ const App = () => {
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/checkbox" element={<CheckboxPage />} />
           <Route path="/switch" element={<SwitchPage />} />
+          <Route path="/passwordinput" element={<PasswordInputPage />} />
+          <Route path="/textinput" element={<TextInputPage />} />
         </Routes>
       </AppShell>
     </>

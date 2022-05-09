@@ -5,7 +5,7 @@ export const SwitchMain = React.forwardRef(
     const switchStyles = ["switch"];
     disabled && switchStyles.push("switch-disabled");
     const handleClick = (e) => {
-      setValue(!value);
+      setValue && setValue(!value);
     };
     return (
       <>
