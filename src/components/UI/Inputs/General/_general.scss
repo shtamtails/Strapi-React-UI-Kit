@@ -22,7 +22,7 @@ textarea[type="text"] {
     border: solid 1px $primary-600;
   }
   &:disabled {
-    background-color: $neutral-200 !important;
+    background-color: $neutral-150 !important;
     color: $neutral-600 !important;
     cursor: not-allowed;
     &::placeholder {
@@ -86,7 +86,7 @@ textarea[type="text"] {
     margin-right: -30px;
   }
   .disabled {
-    background-color: $neutral-200 !important;
+    background-color: $neutral-150 !important;
     color: $neutral-600 !important;
     cursor: not-allowed;
     &::placeholder {

@@ -736,7 +736,7 @@ textarea[type="text"]:focus {
 input[type="text"]:disabled,
 input[type="password"]:disabled,
 textarea[type="text"]:disabled {
-  background-color: #dcdce4 !important;
+  background-color: #eaeaef !important;
   color: #666687 !important;
   cursor: not-allowed;
 }
@@ -832,7 +832,7 @@ textarea[type="text"]:disabled::placeholder {
 }
 
 .input-container .disabled {
-  background-color: #dcdce4 !important;
+  background-color: #eaeaef !important;
   color: #666687 !important;
   cursor: not-allowed;
 }
@@ -1067,7 +1067,10 @@ textarea[type="text"]:disabled::placeholder {
 }
 
 textarea[type="text"] {
+  padding: 10px;
   height: 80px;
+  min-height: 50px;
+  min-width: 300px;
 }
 
 .divider {

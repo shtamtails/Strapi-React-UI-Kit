@@ -15,6 +15,7 @@ import {
   SwitchPage,
   PasswordInputPage,
   TextInputPage,
+  TextAreaPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -87,6 +88,7 @@ const App = () => {
           <Route path="/switch" element={<SwitchPage />} />
           <Route path="/passwordinput" element={<PasswordInputPage />} />
           <Route path="/textinput" element={<TextInputPage />} />
+          <Route path="/textarea" element={<TextAreaPage />} />
         </Routes>
       </AppShell>
     </>

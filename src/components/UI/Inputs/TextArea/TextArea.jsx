@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
+// ! Add max-width prop
+
 export const TextArea = React.forwardRef(({ ...props }, ref) => {
   if (props.loading) {
     props.disabled = true;
@@ -12,6 +14,7 @@ export const TextArea = React.forwardRef(({ ...props }, ref) => {
       <InputLabel label={props.label} required={props.required} />
       <InputMain loading={props.loading} icon={props.sideIcon}>
         <textarea
+          style={{ maxWidth: `${props.maxWidth}`, maxHeight: `${props.maxHeight}` }}
           className={props.sideIcon ? "with-icon" : "default"}
           required={props.required && true}
           disabled={props.disabled && true}
