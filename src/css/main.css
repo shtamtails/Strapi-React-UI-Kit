@@ -1463,15 +1463,15 @@ textarea[type="text"] {
 }
 
 .modal {
-  position: fixed;
+  position: absolute;
   margin-top: 75px;
   border-radius: 5px;
-  width: 450px;
+  width: 500px;
+  padding-bottom: 30px;
   background-color: #fff;
-  padding-bottom: 24px;
 }
 
-.modal .header {
+.modal .modal-header {
   padding-left: 20px;
   padding-right: 16px;
   height: 60px;
@@ -1487,7 +1487,7 @@ textarea[type="text"] {
   border-bottom: 1px solid #f6f6f9;
 }
 
-.modal .close-btn svg {
+.modal .modal-close-btn svg {
   width: 28px;
   height: auto;
   display: -webkit-box;
@@ -1495,12 +1495,12 @@ textarea[type="text"] {
   display: flex;
 }
 
-.modal .close-btn:hover {
+.modal .modal-close-btn:hover {
   border-radius: 5px;
   background-color: #f6f6f9;
 }
 
-.modal .content {
+.modal .modal-content {
   margin: 0 20px;
 }
 

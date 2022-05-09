@@ -12,3 +12,5 @@ export { SwitchPage } from "./UI/Inputs/Switch/SwitchPage";
 export { PasswordInputPage } from "./UI/Inputs/PasswordInput/PasswordInputPage";
 export { TextInputPage } from "./UI/Inputs/TextInput/TextInputPage";
 export { TextAreaPage } from "./UI/Inputs/TextArea/TextAreaPage";
+
+export { ModalPage } from "./UI/Overlay/Modal/ModalPage";

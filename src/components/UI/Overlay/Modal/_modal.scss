@@ -23,13 +23,13 @@
 }
 
 .modal {
-  position: fixed;
+  position: absolute;
   margin-top: 75px;
   border-radius: 5px;
-  width: 450px;
+  width: 500px;
+  padding-bottom: 30px;
   background-color: #fff;
-  padding-bottom: 24px;
-  .header {
+  .modal-header {
     padding-left: 20px;
     padding-right: 16px;
     height: 60px;
@@ -38,9 +38,8 @@
     align-items: center;
     border-bottom: 1px solid $neutral-100;
   }
-  .title {
-  }
-  .close-btn {
+
+  .modal-close-btn {
     svg {
       width: 28px;
       height: auto;
@@ -51,7 +50,7 @@
       background-color: $neutral-100;
     }
   }
-  .content {
+  .modal-content {
     margin: 0 20px;
   }
 }

@@ -1,6 +1,6 @@
 import "../css/main.css";
 import React, { useEffect, useRef, useState } from "react";
-import { AppShell, Navbar, PasswordInput } from "./UI";
+import { AppShell, Navbar, Modal, TextInput, PasswordInput, Button } from "./UI";
 import { NavbarContent } from "./NavbarContent";
 import {
   AccordionPage,
@@ -16,6 +16,7 @@ import {
   PasswordInputPage,
   TextInputPage,
   TextAreaPage,
+  ModalPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -63,8 +64,55 @@ const logo = (
 // Change ref to useref in parent components
 
 const App = () => {
+  const [modal, setModal] = useState(false);
+
   return (
     <>
+      {modal && (
+        <Modal title="Create new account" modal={modal} setModal={setModal}>
+          <form>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+              <div style={{ marginRight: "5px", width: "100%" }}>
+                <TextInput label="First Name" placeholder="John" required />
+              </div>
+              <div style={{ marginLeft: "5px", width: "100%" }}>
+                <TextInput label="Last Name" placeholder="Doe" required />
+              </div>
+            </div>
+            <div style={{ marginTop: "10px" }}>
+              <TextInput
+                label="Username"
+                description="You can change it later"
+                required
+                placeholder="johndoe"
+              />
+            </div>
+
+            <div style={{ marginTop: "10px" }}>
+              <TextInput
+                label="E-mail"
+                description="We will send confirmation message on this adress"
+                required
+                placeholder="johndoe@mail.com"
+              />
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+              <div style={{ marginRight: "5px", width: "100%" }}>
+                <PasswordInput label="Password" required />
+              </div>
+              <div style={{ marginLeft: "5px", width: "100%" }}>
+                <PasswordInput label="Confirm password" required />
+              </div>
+            </div>
+            <div style={{ margin: "20px 0" }}></div>
+            <Button color="success" variant="light" submit>
+              Confirm
+            </Button>
+          </form>
+        </Modal>
+      )}
+
       <AppShell
         navbar={
           <Navbar width={260}>
@@ -89,6 +137,7 @@ const App = () => {
           <Route path="/passwordinput" element={<PasswordInputPage />} />
           <Route path="/textinput" element={<TextInputPage />} />
           <Route path="/textarea" element={<TextAreaPage />} />
+          <Route path="/modal" element={<ModalPage modal={modal} setModal={setModal} />} />
         </Routes>
       </AppShell>
     </>

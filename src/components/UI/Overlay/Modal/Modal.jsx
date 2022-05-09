@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import { useClickOutside } from "../../../../Hooks";
 
-export const Modal = ({ children, title, modal, setModal }) => {
+export const Modal = ({ children, title, setModal, width }) => {
   const ref = useRef(null);
   useClickOutside(ref, () => {
     handleCloseClick();
@@ -19,22 +19,18 @@ export const Modal = ({ children, title, modal, setModal }) => {
 
   useEffect(() => {
     setIsVisible("modal-visible");
-    document.body.style.overflowY = "hidden";
-    return () => {
-      document.body.style.overflowY = "scroll";
-    };
   }, []);
 
   return (
     <div className={isVisible}>
-      <div ref={ref} className="modal">
-        <div className="header">
+      <div ref={ref} className="modal" style={{ width: `${width}` }}>
+        <div className="modal-header">
           <div className="title">{title}</div>
-          <div className="close-btn" onClick={handleCloseClick}>
+          <div className="modal-close-btn" onClick={handleCloseClick}>
             <IoIosClose />
           </div>
         </div>
-        <div className="content">{children}</div>
+        <div className="modal-content">{children}</div>
       </div>
     </div>
   );
