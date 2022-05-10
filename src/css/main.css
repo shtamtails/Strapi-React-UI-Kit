@@ -1504,6 +1504,12 @@ textarea[type="text"] {
   margin: 0 20px;
 }
 
+.afix {
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+}
+
 .container__main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1513,6 +1519,7 @@ textarea[type="text"] {
 .content {
   width: 100%;
   height: 100vh;
+  scroll-behavior: smooth;
   overflow-y: auto;
 }
 
@@ -1575,7 +1582,7 @@ textarea[type="text"] {
   margin-left: 10px;
 }
 
-.navbar-accordion .content {
+.navbar-accordion .navbar-accordion-content {
   margin-left: 28px;
   margin-right: 28px;
   display: -webkit-box;

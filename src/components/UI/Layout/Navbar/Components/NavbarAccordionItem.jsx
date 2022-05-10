@@ -4,7 +4,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 export const NavbarAccordionItem = ({ title, children, isOpened, onClick }) => {
   // Styling
   const iconStyles = ["icon"];
-  const contentStyles = ["content"];
+  const contentStyles = ["navbar-accordion-content"];
   isOpened && iconStyles.push("opened");
   isOpened && contentStyles.push("displayed");
   // Ref used to get content height

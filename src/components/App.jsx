@@ -17,6 +17,7 @@ import {
   TextInputPage,
   TextAreaPage,
   ModalPage,
+  AffixPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -56,6 +57,7 @@ const logo = (
 // ? NOTIFICATIONS
 // add notification loading on load functionality
 // add notification autoclose functionality
+// move notifications to top
 // ? Autocomplete / Select
 // add default option and its value is text but not value prop
 // Autocomplete value verify, maybe use the same method as the select component
@@ -137,6 +139,7 @@ const App = () => {
           <Route path="/passwordinput" element={<PasswordInputPage />} />
           <Route path="/textinput" element={<TextInputPage />} />
           <Route path="/textarea" element={<TextAreaPage />} />
+          <Route path="/affix" element={<AffixPage />} />
           <Route path="/modal" element={<ModalPage modal={modal} setModal={setModal} />} />
         </Routes>
       </AppShell>
