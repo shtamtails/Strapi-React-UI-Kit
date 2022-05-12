@@ -9,11 +9,13 @@ export const Notification = ({
   icon,
   type,
   position,
+  autoclose,
+  autocloseTime,
   removeNotification,
   updateNotification,
 }) => {
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const positionTimeout = setTimeout(() => {
       updateNotification(id, {
         title: title,
         body: body,
@@ -22,8 +24,17 @@ export const Notification = ({
         position: "0px",
       });
     }, 50);
+    if (autoclose === true) {
+      const autoremoveTimeout = setTimeout(() => {
+        handleClose(id);
+      }, [autocloseTime]);
+      return () => {
+        clearTimeout(autoremoveTimeout);
+      };
+    }
+
     return () => {
-      clearTimeout(timeout);
+      clearTimeout(positionTimeout);
     };
   }, []);
   const handleClose = (id) => {
@@ -61,6 +72,8 @@ export const Notification = ({
 
 Notification.defaultProps = {
   position: "-600px",
+  autoclose: true,
+  autocloseTime: 5000,
 };
 
 export default Notification;

@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
-import { Button, Notification, newNotification } from "../../../../UI";
+import { Button, Notifications } from "../../../../UI";
 import { useUniqueId } from "../../../../../Hooks";
 import { AiFillInfoCircle, AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
-import { updateNotification } from "../../../../UI/DataDisplay/Notification/Notification";
-
+import { addToObject, updateObject } from "../../../../UI/DataDisplay/Notification/Utils";
 export const NotificationsPage = () => {
   const [notifications, setNotifications] = useState([]);
-  const createNotification = newNotification(setNotifications, notifications);
+  const [keys, setKeys] = useState(Object.keys(notifications));
+  const newNotification = addToObject(notifications, setNotifications, setKeys);
+  const updateNotification = updateObject(notifications, setNotifications, setKeys);
   const id = useUniqueId();
 
   return (
     <>
-      <Notification.Container notifications={notifications} setNotifications={setNotifications} />
+      <Notifications
+        notifications={notifications}
+        setNotifications={setNotifications}
+        keys={keys}
+        setKeys={setKeys}
+      />
       <div className="documentation">
         <About
           name="Notification"
@@ -31,8 +37,7 @@ export const NotificationsPage = () => {
                   <div className="notification-component-preview-buttons">
                     <Button
                       onClick={() => {
-                        createNotification({
-                          id: id,
+                        newNotification(id, {
                           title: "Danger notification",
                           body: "blah blah blah blah blah blah blah blah blah blah ",
                           icon: <AiFillWarning />,
@@ -48,8 +53,7 @@ export const NotificationsPage = () => {
                   <div className="notification-component-preview-buttons">
                     <Button
                       onClick={() => {
-                        createNotification({
-                          id: id,
+                        newNotification(id, {
                           title: "Success notification",
                           body: "blah blah blah blah blah blah blah blah blah blah ",
                           icon: <AiFillCheckCircle />,
@@ -65,8 +69,7 @@ export const NotificationsPage = () => {
                   <div className="notification-component-preview-buttons">
                     <Button
                       onClick={() => {
-                        createNotification({
-                          id: id,
+                        newNotification(id, {
                           title: "Default notification",
                           body: "blah blah blah blah blah blah blah blah blah blah ",
                           icon: <AiFillInfoCircle />,
@@ -82,12 +85,23 @@ export const NotificationsPage = () => {
                   <div className="notification-component-preview-buttons">
                     <Button
                       onClick={() => {
-                        createNotification({
-                          id: id,
+                        newNotification(id, {
                           title: "Loading notification",
                           body: "blah blah blah blah blah blah blah blah blah blah ",
                           type: "loading",
+                          autoclose: false,
                         });
+                        setTimeout(() => {
+                          updateNotification(id, {
+                            title: "Notification succesfully loaded!",
+                            body: "blah blah blah blah blah blah blah blah blah blah ",
+                            type: "success",
+                            icon: <AiFillCheckCircle />,
+                            autoclose: true,
+                            autocloseTime: 3000,
+                            position: "0px",
+                          });
+                        }, 3000);
                       }}
                       variant="outline"
                       color="info"

@@ -12,14 +12,12 @@ export const TestPage = () => {
       body: "body",
       type: "success",
       icon: <AiFillAccountBook />,
-      // position: "-600px",
     },
     1: {
       title: "title",
       body: "body",
       type: "success",
       icon: <AiFillAccountBook />,
-      // position: "-600px",
     },
   };
   const [notifications, setNotifications] = useState(testNotifications);
@@ -50,7 +48,6 @@ export const TestPage = () => {
             body: id,
             type: "danger",
             icon: <AiFillAccountBook />,
-            position: "-600px",
           })
         }
       >
