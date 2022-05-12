@@ -5,6 +5,11 @@ import Loader from "../../Utils/Loader/Loader";
 import PropTypes from "prop-types";
 
 export const Notification = ({ title, body, icon, type, id, clearNotification }) => {
+  const [titleState, setTitle] = useState(title);
+  const [bodyState, setBody] = useState(body);
+  const [iconState, setIcon] = useState(icon);
+  const [typeState, setType] = useState(type);
+
   const [position, setPosition] = useState("-600px");
 
   useEffect(() => {
@@ -20,13 +25,13 @@ export const Notification = ({ title, body, icon, type, id, clearNotification })
 
   return (
     <>
-      <div className={`notification notification-body-${type}`} style={{ right: position }}>
-        <div className={`notification-icon notification-${type}`}>
-          {type === "loading" ? <Loader /> : icon}
+      <div className={`notification notification-body-${typeState}`} style={{ right: position }}>
+        <div className={`notification-icon notification-${typeState}`}>
+          {typeState === "loading" ? <Loader /> : iconState}
         </div>
         <div className="notification-content">
-          <div className="notification-title">{title}</div>
-          <div className="notification-body">{body}</div>
+          <div className="notification-title">{titleState}</div>
+          <div className="notification-body">{bodyState}</div>
         </div>
 
         {type !== "loading" && (
@@ -44,7 +49,10 @@ Notification.propTypes = {
   id: PropTypes.any.isRequired,
 };
 
-export const newNotification = () => {};
+export const updateNotification = (notifications, setNotifications, data) => {
+  // console.log(notifications.find((e) => e.id === "testid"));
+  // console.log(data);
+};
 
 Notification.Container = NotificationContainer;
 

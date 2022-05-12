@@ -15,3 +15,5 @@ export { TextAreaPage } from "./UI/Inputs/TextArea/TextAreaPage";
 
 export { ModalPage } from "./UI/Overlay/Modal/ModalPage";
 export { AffixPage } from "./UI/Overlay/Affix/AffixPage";
+
+export { TestPage } from "./UI/TestPage";

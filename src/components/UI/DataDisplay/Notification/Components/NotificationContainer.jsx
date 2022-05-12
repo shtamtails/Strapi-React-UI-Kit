@@ -16,7 +16,7 @@ export const NotificationContainer = ({ notifications, setNotifications }) => {
     <>
       <div className="notifications">
         {notifications.length > 0 &&
-          notifications.map((el) => {
+          notifications.map((el, index) => {
             return (
               <Notification
                 key={el.id}

@@ -3,6 +3,7 @@ import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template
 import { Button, Notification, newNotification } from "../../../../UI";
 import { useUniqueId } from "../../../../../Hooks";
 import { AiFillInfoCircle, AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
+import { updateNotification } from "../../../../UI/DataDisplay/Notification/Notification";
 
 export const NotificationsPage = () => {
   const [notifications, setNotifications] = useState([]);

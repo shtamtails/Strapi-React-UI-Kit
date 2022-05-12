@@ -18,6 +18,7 @@ import {
   TextAreaPage,
   ModalPage,
   AffixPage,
+  TestPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useUniqueId } from "../Hooks";
@@ -55,6 +56,7 @@ const logo = (
 
 // TODO
 // ? NOTIFICATIONS
+// ! unique state for each notification
 // add notification loading on load functionality
 // add notification autoclose functionality
 // move notifications to top
@@ -141,6 +143,7 @@ const App = () => {
           <Route path="/textarea" element={<TextAreaPage />} />
           <Route path="/affix" element={<AffixPage />} />
           <Route path="/modal" element={<ModalPage modal={modal} setModal={setModal} />} />
+          <Route path="/test" element={<TestPage />} />
         </Routes>
       </AppShell>
     </>
