@@ -120,55 +120,45 @@ export const NotificationsPage = () => {
     import { useState } from 'react';
 
     const Demo = () => {
-        const [notifications, setNotifications] = useState([]);
-        const createNotification = newNotification(setNotifications, notifications);
-        const id = useUniqueId();
+      const [notifications, setNotifications] = useState([]);
+      const [keys, setKeys] = useState(Object.keys(notifications));
+      const newNotification = addToObject(notifications, setNotifications, setKeys);
+      const updateNotification = updateObject(notifications, setNotifications, setKeys);
+      const id = useUniqueId();
 
-        const showSuccessNotification = () => {
-            createNotification({
-                id: id,
-                title: "Success notification",
-                body: "blah blah blah blah blah blah blah blah blah blah ",
-                icon: <AiFillCheckCircle />,
-                type: "success",
-              });
-        }
-
-        const showDangerNotification = () => {
-            createNotification({
-                id: id,
-                title: "Danger notification",
-                body: "blah blah blah blah blah blah blah blah blah blah ",
-                icon: <AiFillWarning />,
-                type: "danger",
-              });
-        }
-
-        const showDefaultNotification = () => {
-            createNotification({
-                id: id,
-                title: "Default notification",
-                body: "blah blah blah blah blah blah blah blah blah blah ",
-                icon: <AiFillInfoCircle />,
-                type: "info",
-              });
-        }
+      const showSuccessNotification = () => {
+        newNotification(id, {
+          title: "Success notification",
+          body: "blah blah blah blah blah blah blah blah blah blah ",
+          icon: <AiFillCheckCircle />,
+          type: "success",
+          });
+        });
 
         const showLoadingNotification = () => {
-            createNotification({
-                id: id,
-                title: "Loading notification",
-                body: "blah blah blah blah blah blah blah blah blah blah ",
-                type: "loading",
-              });
+          newNotification(id, {
+            title: "Loading notification",
+            body: "blah blah blah blah blah blah blah blah blah blah ",
+            type: "loading",
+            autoclose: false,
+          });
+          setTimeout(() => {
+            updateNotification(id, {
+              title: "Notification succesfully loaded!",
+              body: "blah blah blah blah blah blah blah blah blah blah ",
+              type: "success",
+              icon: <AiFillCheckCircle />,
+              autoclose: true,
+              autocloseTime: 3000,
+              position: "0px",    // ! Required!
+            });
+          }, 3000);
         }
 
         return (
             <>
             <Notification.Container notifications={notifications} setNotifications={setNotifications} />
             <Button color="success" type="light" onClick={showSuccessNotification} />
-            <Button color="danger" type="light" onClick={showDangerNotification} />
-            <Button color="info" type="light" onClick={showDefaultNotification} />
             <Button color="info" type="outline" onClick={showLoadingNotification} />
             </>
         )
