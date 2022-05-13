@@ -55,15 +55,6 @@ const logo = (
 );
 
 // TODO
-// ? NOTIFICATIONS
-// ! unique state for each notification
-// add notification loading on load functionality
-// add notification autoclose functionality
-// move notifications to top
-// ? Autocomplete / Select
-// add default option and its value is text but not value prop
-// Autocomplete value verify, maybe use the same method as the select component
-// Remove value requirement in select/autocomplete pages
 // ? GENERAL
 // Change ref to useref in parent components
 

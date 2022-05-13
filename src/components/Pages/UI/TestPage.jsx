@@ -1,66 +1,7 @@
-import React, { useState } from "react";
-import { AiFillAccountBook } from "react-icons/ai";
-import { useUniqueId } from "../../../Hooks";
-import { Button } from "../../UI";
-import Notifications from "./Test/Notifications";
-import { addToObject, removeFromObject, updateObject } from "./Test/Utils";
+import React from "react";
 
 export const TestPage = () => {
-  const testNotifications = {
-    0: {
-      title: "title",
-      body: "body",
-      type: "success",
-      icon: <AiFillAccountBook />,
-    },
-    1: {
-      title: "title",
-      body: "body",
-      type: "success",
-      icon: <AiFillAccountBook />,
-    },
-  };
-  const [notifications, setNotifications] = useState(testNotifications);
-  const [keys, setKeys] = useState(Object.keys(notifications));
-  const newNotification = addToObject(notifications, setNotifications, setKeys);
-  const updateNotification = updateObject(notifications, setNotifications, setKeys);
-
-  const id = useUniqueId();
-  return (
-    <>
-      <Button
-        onClick={() => {
-          updateNotification("3b2p9tc", {
-            title: "HELLO WORLD!",
-            body: "Successfully loaded",
-            type: "success",
-            icon: <AiFillAccountBook />,
-            position: "0px",
-          });
-        }}
-      >
-        Update notification
-      </Button>
-      <Button
-        onClick={() =>
-          newNotification(id, {
-            title: "title2",
-            body: id,
-            type: "danger",
-            icon: <AiFillAccountBook />,
-          })
-        }
-      >
-        Add Notification
-      </Button>
-      <Notifications
-        notifications={notifications}
-        setNotifications={setNotifications}
-        keys={keys}
-        setKeys={setKeys}
-      />
-    </>
-  );
+  return <div>TestPage</div>;
 };
 
 export default TestPage;

@@ -12,7 +12,7 @@ export const NavbarContent = () => {
   };
   return (
     <>
-      <Navbar.Accordion>
+      <Navbar.Accordion multiple>
         <Navbar.AccordionItem title="INPUTS">
           <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/actionicon">
             <div className="link" onSelect={handleClick}>

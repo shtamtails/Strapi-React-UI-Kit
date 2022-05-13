@@ -11,9 +11,9 @@ export const AutocompletePage = () => {
   const [sideIcon, setSideIcon] = useState(true);
   const [height, setHeight] = useState("md");
   const [required, setRequired] = useState(false);
-
+  console.log(value);
   const options = [
-    { id: useUniqueId(), text: "Reac1t", value: "react" },
+    { id: useUniqueId(), text: "React", value: "react" },
     { id: useUniqueId(), text: "Angular", value: "angular" },
     { id: useUniqueId(), text: "Vue", value: "vue" },
   ];
