@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b55a565.css",
-    "main.js": "/static/js/main.7bf46cbb.js",
-    "index.html": "/index.html",
-    "main.5b55a565.css.map": "/static/css/main.5b55a565.css.map",
-    "main.7bf46cbb.js.map": "/static/js/main.7bf46cbb.js.map"
+    "main.css": "/Strapi-React-UI-Kit/static/css/main.5b55a565.css",
+    "main.js": "/Strapi-React-UI-Kit/static/js/main.7bf46cbb.js",
+    "index.html": "/Strapi-React-UI-Kit/index.html",
+    "main.5b55a565.css.map": "/Strapi-React-UI-Kit/static/css/main.5b55a565.css.map",
+    "main.7bf46cbb.js.map": "/Strapi-React-UI-Kit/static/js/main.7bf46cbb.js.map"
   },
   "entrypoints": [
     "static/css/main.5b55a565.css",
