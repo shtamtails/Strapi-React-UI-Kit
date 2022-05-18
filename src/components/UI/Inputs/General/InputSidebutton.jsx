@@ -1,6 +1,7 @@
 import React from "react";
 import { Loader, Copy } from "../../";
-import useClipboard from "../../../../Hooks/useClipboard";
+import { useClipboard } from "../../../../Hooks/";
+
 import PropTypes from "prop-types";
 
 export const InputSidebutton = ({ loading, copy, onClick, ...props }) => {

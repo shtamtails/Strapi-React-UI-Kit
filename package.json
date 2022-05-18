@@ -2,7 +2,7 @@
   "name": "ui-kit",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://shtamtails.github.io",
+  "homepage": "https://shtamtails.github.io/Strapi-React-UI-Kit/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",

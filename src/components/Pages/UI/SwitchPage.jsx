@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Switch, Button } from "../../../../UI";
-import { ComponentPreview, Subtitle, About, Main, Code } from "../../../Template";
+import { Switch, Button } from "../../UI";
+import { ComponentPreview, Subtitle, About, Main, Code } from "../Template";
 export const SwitchPage = () => {
   const [value, setValue] = useState(true);
   const [disabled, setDisabled] = useState(false);

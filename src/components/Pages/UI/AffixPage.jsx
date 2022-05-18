@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Affix } from "../../../../UI";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
+import { Affix } from "../../UI";
+import { About, Code, Subtitle, Main } from "../Template/";
 
 export const AffixPage = () => {
   return (

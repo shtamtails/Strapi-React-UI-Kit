@@ -74,6 +74,14 @@ export const NavbarContent = () => {
             <div className="link">Modal</div>
           </NavLink>
         </Navbar.AccordionItem>
+        <Navbar.AccordionItem title="Utils">
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/skeleton">
+            <div className="link">Skeleton</div>
+          </NavLink>
+          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/divider">
+            <div className="link">Divider</div>
+          </NavLink>
+        </Navbar.AccordionItem>
         <Navbar.AccordionItem title="Testing">
           <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/test">
             <div className="link">Test page</div>

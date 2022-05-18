@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import { useUniqueId } from "../../../../../Hooks";
-import { TextArea, Select, Switch, Button, TextInput } from "../../../../UI";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
+import { useUniqueId } from "../../../Hooks";
+import { TextArea, Select, Switch, Button, TextInput } from "../../UI";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 export const TextAreaPage = () => {
   const [value, setValue] = useState(null);
   const [disabled, setDisabled] = useState(false);

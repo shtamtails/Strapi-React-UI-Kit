@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
-import { useUniqueId } from "../../../../../Hooks";
-import { TextInput, Select, Switch, Button } from "../../../../UI";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
+import { useUniqueId } from "../../../Hooks";
+import { PasswordInput, Select, Switch, Button } from "../../UI";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 
-export const TextInputPage = () => {
+export const PasswordInputPage = () => {
   const [value, setValue] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -15,13 +15,13 @@ export const TextInputPage = () => {
     { id: useUniqueId, text: "Large", value: "lg" },
   ];
 
-  const textInputRef = useRef(null);
+  const passwordInputRef = useRef(null);
   return (
     <div className="documentation">
       <About
-        name="Text Input"
-        info="Simply get user input"
-        importCode={`import { TextInput } from './UI/';`}
+        name="Password Input"
+        info="Get user password with hide/reveal content button"
+        importCode={`import { PasswordInput } from './UI/';`}
         sourceLink=""
         packageLink=""
       />
@@ -29,15 +29,15 @@ export const TextInputPage = () => {
         <Subtitle>Usage</Subtitle>
         <ComponentPreview
           component={
-            <TextInput
-              ref={textInputRef}
-              label="Username"
-              description="Username or email"
+            <PasswordInput
+              ref={passwordInputRef}
+              label="Password"
+              description="Don't show your password to unknown people!"
               disabled={disabled}
               loading={loading}
               height={height}
               required={required}
-              placeholder="Admin"
+              placeholder="Password"
             />
           }
           settings={
@@ -70,17 +70,17 @@ export const TextInputPage = () => {
         <Code>
           {`
     import { useState } from 'react'; 
-    import { TextInput } from './UI';
+    import { PasswordInput } from './UI';
 
     const Demo = () => {
-        const [value, setValue] = useState(null);
+        const [password, setPassword] = useState(null);
         return (
             <PasswordInput
-            value={value}
-            setValue={setValue}
-            label="Login"
-            description="Username or password"
-            placeholder="Login"
+            value={password}
+            setValue={setPassword}
+            label="Password"
+            description="Don't show your password to unknown people!"
+            placeholder="Password"
             disabled={${disabled}}
             loading={${loading}}
             height={${height}}
@@ -94,20 +94,20 @@ export const TextInputPage = () => {
         <Code>
           {`
     import { useRef } from 'react'; 
-    import { TextInput } from './UI';
+    import { PasswordInput } from './UI';
 
     const Demo = () => {
-    const textInputRef = useRef(null);
+    const passwordInputRef = useRef(null);
         return (
             <PasswordInput
-              ref={textInputRef}
-              label="Login"
-              description="Username or email"
+              ref={passwordInputRef}
+              label="Password"
+              description="Don't show your password to unknown people!"
               disabled={disabled}
               loading={loading}
               height={height}
               required={required}
-              placeholder="Login"
+              placeholder="Password"
             />
           />
         )
@@ -119,4 +119,4 @@ export const TextInputPage = () => {
   );
 };
 
-export default TextInputPage;
+export default PasswordInputPage;

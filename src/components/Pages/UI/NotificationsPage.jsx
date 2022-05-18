@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
-import { Button, Notifications } from "../../../../UI";
-import { useUniqueId } from "../../../../../Hooks";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
+import { Button, Notifications } from "../../UI";
+import { useUniqueId } from "../../../Hooks";
 import { AiFillInfoCircle, AiFillWarning, AiFillCheckCircle } from "react-icons/ai";
-import { addToObject, updateObject } from "../../../../UI/DataDisplay/Notification/Utils";
+import { addToObject, updateObject } from "../../UI/DataDisplay/Notification/Utils";
 export const NotificationsPage = () => {
   const [notifications, setNotifications] = useState([]);
   const [keys, setKeys] = useState(Object.keys(notifications));

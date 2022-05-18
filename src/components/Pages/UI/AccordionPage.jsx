@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Accordion, Kbd, Switch } from "../../../../UI";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
+import { useState } from "react";
+import { Accordion, Switch } from "../../UI";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template";
 
 export const AccordionPage = () => {
   const [multiple, setMultiple] = useState(false);

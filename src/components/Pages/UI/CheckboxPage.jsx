@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
-import { Checkbox, Switch } from "../../../../UI";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
+import { Checkbox, Switch } from "../../UI";
 
 export const CheckboxPage = () => {
   //   const ref = useRef(null);

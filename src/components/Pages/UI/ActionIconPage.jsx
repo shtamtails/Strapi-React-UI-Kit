@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { ActionIcon, Select, Switch } from "../../../../UI";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
+import { useState } from "react";
+import { ActionIcon, Select, Switch } from "../../UI";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 import { FiSettings } from "react-icons/fi";
-import { useUniqueId } from "../../../../../Hooks";
+import { useUniqueId } from "../../../Hooks/";
 
 export const ActionIconPage = () => {
   const [disabled, setDisabled] = useState(false);

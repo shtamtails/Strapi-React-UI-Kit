@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
-import { Card, Button, Switch, TextInput } from "../../../../UI";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
+import { Card, Button, Switch, TextInput } from "../../UI";
 
 export const CardPage = () => {
   const [shadow, setShadow] = useState(false);

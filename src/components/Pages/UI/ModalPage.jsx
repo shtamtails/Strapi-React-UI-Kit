@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Modal, TextInput, PasswordInput, Checkbox, Button } from "../../../../UI";
-import { About, Code, ComponentPreview, Subtitle, Main } from "../../../Template/";
+import { Modal, TextInput, PasswordInput, Checkbox, Button } from "../../UI";
+import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
 
 export const ModalPage = ({ modal, setModal }) => {
