@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
-
 export const NavbarLogo = ({ logo, text, subtext, collapse }) => {
   const logoStyles = ["navbar-logo"];
-  // collapse && logoStyles.push("logo-collapsed");
 
   return (
     <div className={logoStyles.join(" ")}>

@@ -1,4 +1,3 @@
-import React from "react";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 import { Kbd } from "../../UI";
 

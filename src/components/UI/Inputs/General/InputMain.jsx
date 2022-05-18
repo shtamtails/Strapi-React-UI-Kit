@@ -1,4 +1,3 @@
-import React from "react";
 import InputSidebutton from "./InputSidebutton";
 import InputSideIcon from "./InputSideIcon";
 import PropTypes from "prop-types";

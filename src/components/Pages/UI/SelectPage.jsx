@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ComponentPreview, Subtitle, About, Main, Code } from "../Template";
 import { Select, Switch } from "../../UI";
-import { useUniqueId } from "../../../Hooks";
+import { useUniqueId } from "../../Hooks";
 import { GrCodeSandbox } from "react-icons/gr";
 
 export const SelectPage = () => {

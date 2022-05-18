@@ -1,6 +1,5 @@
-import React from "react";
 import { Loader, Copy } from "../../";
-import { useClipboard } from "../../../../Hooks/";
+import { useClipboard } from "../../../Hooks/";
 
 import PropTypes from "prop-types";
 

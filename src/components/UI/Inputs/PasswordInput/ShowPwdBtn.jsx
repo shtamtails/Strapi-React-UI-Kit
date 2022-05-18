@@ -1,4 +1,3 @@
-import React from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 export const ShowPwdBtn = ({ loading, disabled, passwordVisibility, setPasswordVisibility }) => {

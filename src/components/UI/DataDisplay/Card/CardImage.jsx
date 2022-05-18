@@ -1,5 +1,3 @@
-import React from "react";
-
 export const CardImage = ({ src, alt, height }) => {
   return (
     <div className="image" style={{ height: height }}>

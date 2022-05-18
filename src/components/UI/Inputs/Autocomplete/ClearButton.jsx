@@ -1,4 +1,3 @@
-import React from "react";
 import { CgClose } from "react-icons/cg";
 
 export const ClearButton = ({ inputFieldValue, setInputFieldValue, loading, disabled }) => {

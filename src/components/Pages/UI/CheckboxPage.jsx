@@ -1,10 +1,8 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 import { Checkbox, Switch } from "../../UI";
 
 export const CheckboxPage = () => {
-  //   const ref = useRef(null);
-
   const [value, setValue] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const handleClick = () => {};

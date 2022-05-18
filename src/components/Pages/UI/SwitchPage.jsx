@@ -1,11 +1,10 @@
-import React, { useRef, useState } from "react";
-import { Switch, Button } from "../../UI";
+import { useRef, useState } from "react";
+import { Switch } from "../../UI";
 import { ComponentPreview, Subtitle, About, Main, Code } from "../Template";
 export const SwitchPage = () => {
-  const [value, setValue] = useState(true);
   const [disabled, setDisabled] = useState(false);
-
   const switchRef = useRef(null);
+
   return (
     <div className="documentation">
       <About

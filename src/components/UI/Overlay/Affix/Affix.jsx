@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../../UI";
-import { AiOutlineArrowUp } from "react-icons/ai";
 
 export const Affix = ({ parentPath }) => {
   const [showed, setShowed] = useState(false);

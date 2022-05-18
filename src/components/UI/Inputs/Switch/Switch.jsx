@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { InputContainer, InputLabel, InputDescription } from "../General";
-import { SwitchMain, SwitchLabel } from "./Components";
+import { SwitchMain } from "./SwitchMain";
+import { SwitchLabel } from "./SwitchLabel";
 
 export const Switch = ({ label, disabled, value, setValue, useref }) => {
   const handleSwitchClick = (e) => {

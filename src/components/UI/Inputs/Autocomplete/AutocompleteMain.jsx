@@ -1,5 +1,5 @@
 import React from "react";
-import { InputSidebutton, InputSideIcon } from "../../General";
+import { InputSidebutton, InputSideIcon } from "../General";
 import ClearButton from "./ClearButton";
 
 export const AutocompleteMain = React.forwardRef(

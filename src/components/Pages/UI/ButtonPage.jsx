@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Button } from "../../UI";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 

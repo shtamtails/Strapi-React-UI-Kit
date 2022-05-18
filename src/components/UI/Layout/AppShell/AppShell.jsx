@@ -1,5 +1,3 @@
-import React from "react";
-
 export const AppShell = ({ navbar, children }) => {
   return (
     <div className="container__main">

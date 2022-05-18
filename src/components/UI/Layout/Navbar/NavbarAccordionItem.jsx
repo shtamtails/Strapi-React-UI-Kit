@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export const NavbarAccordionItem = ({ title, children, isOpened, onClick }) => {

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoIosClose } from "react-icons/io";
-import { useClickOutside } from "../../../../Hooks/";
+import { useClickOutside } from "../../../Hooks";
 
 export const Modal = ({ children, title, setModal, width }) => {
   const ref = useRef(null);

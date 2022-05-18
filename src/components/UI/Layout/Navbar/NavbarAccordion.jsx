@@ -1,7 +1,6 @@
-import React from "react";
 import { useState } from "react";
-import { NavbarAccordionItem } from "../Components";
-import { createEmptyList } from "../../../DataDisplay/Accordion/Components";
+import { NavbarAccordionItem } from "./NavbarAccordionItem";
+import { createEmptyList } from "../../DataDisplay/Accordion/Utils";
 
 export const NavbarAccordion = ({ children, multiple }) => {
   const total = children.length;

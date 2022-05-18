@@ -1,10 +1,9 @@
-import React, { useRef, useState } from "react";
-import { useUniqueId } from "../../../Hooks";
-import { PasswordInput, Select, Switch, Button } from "../../UI";
+import { useRef, useState } from "react";
+import { useUniqueId } from "../../Hooks";
+import { PasswordInput, Select, Switch } from "../../UI";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 
 export const PasswordInputPage = () => {
-  const [value, setValue] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const [required, setRequired] = useState(false);

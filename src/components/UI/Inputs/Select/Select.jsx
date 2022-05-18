@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useState, useRef } from "react";
-import { SelectMain, SelectDrop } from "./Components";
+import { SelectMain } from "./SelectMain";
+import { SelectDrop } from "./SelectDrop";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import { useClickOutside, useElementWidth } from "../../../../Hooks";
+import { useClickOutside, useElementWidth } from "../../../Hooks/";
 
 export const Select = ({
   value,

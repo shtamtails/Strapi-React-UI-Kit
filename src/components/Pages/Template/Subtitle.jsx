@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Subtitle = ({ children }) => {
   return (
     <div className="subtitle">

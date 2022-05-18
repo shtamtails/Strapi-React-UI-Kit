@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 import { Card, Button, Switch, TextInput } from "../../UI";
 

@@ -1,6 +1,6 @@
-import React from "react";
 import PropTypes from "prop-types";
-import { CheckboxLabel, CheckboxMain } from "./Components";
+import { CheckboxLabel } from "./CheckboxLabel";
+import { CheckboxMain } from "./CheckboxMain";
 
 export const Checkbox = ({ label, disabled, onClick, useref, value, setValue }) => {
   return (

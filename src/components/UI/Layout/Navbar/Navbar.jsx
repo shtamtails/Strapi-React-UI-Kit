@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import { NavbarAccordion, NavbarAccordionItem, NavbarLogo } from "./Components";
+import { useState } from "react";
+import { NavbarAccordion } from "./NavbarAccordion";
+import { NavbarAccordionItem } from "./NavbarAccordionItem";
+import { NavbarLogo } from "./NavbarLogo";
 import { FaAngleLeft } from "react-icons/fa";
 
 export const Navbar = ({ children, width, collapsable, collapse, setCollapse }) => {

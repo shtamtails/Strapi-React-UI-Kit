@@ -1,4 +1,3 @@
-import React from "react";
 import Loader from "../../Utils/Loader/Loader";
 
 export const ActionIcon = ({ children, size, type, color, loading, disabled }) => {

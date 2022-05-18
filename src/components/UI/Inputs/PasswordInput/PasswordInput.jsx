@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { ShowPwdBtn } from "./Components";
+import { ShowPwdBtn } from "./ShowPwdBtn";
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
 export const PasswordInput = React.forwardRef(({ ...props }, ref) => {

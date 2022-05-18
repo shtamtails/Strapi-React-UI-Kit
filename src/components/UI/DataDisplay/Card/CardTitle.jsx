@@ -1,5 +1,3 @@
-import React from "react";
-
 export const CardTitle = ({ children, badge }) => {
   return (
     <div className="title-container">

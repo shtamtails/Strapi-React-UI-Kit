@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Notification from "./Notification";
 import { removeFromObject, updateObject } from "./Utils";
 

@@ -1,6 +1,5 @@
-import React from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { InputSidebutton, InputSideIcon } from "../../General";
+import { InputSidebutton, InputSideIcon } from "../General";
 
 export const SelectMain = ({
   handleSelectInputFieldClick,

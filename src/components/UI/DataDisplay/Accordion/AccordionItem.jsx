@@ -1,13 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export const AccordionItem = ({ title, children, isOpened, onClick }) => {
-  // Styling
   const iconStyles = ["icon"];
   const contentStyles = ["content"];
   isOpened && iconStyles.push("opened");
   isOpened && contentStyles.push("displayed");
-  // Ref used to get content height
   const ref = useRef(null);
   const [height, setHeight] = useState(ref.current);
   useEffect(() => {

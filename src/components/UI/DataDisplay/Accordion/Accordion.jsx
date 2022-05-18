@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { createEmptyList } from "./Components";
-import AccordionItem from "./Components/AccordionItem";
+import { useState } from "react";
+import { createEmptyList } from "./Utils";
+import { AccordionItem } from "./AccordionItem";
 
 export const Accordion = ({ children, multiple }) => {
   const total = children.length;

@@ -1,5 +1,7 @@
-import React from "react";
-import { CardFooter, CardImage, CardText, CardTitle } from "./Components/";
+import { CardFooter } from "./CardFooter";
+import { CardImage } from "./CardImage";
+import { CardText } from "./CardText";
+import { CardTitle } from "./CardTitle";
 
 export const Card = ({ children, shadow }) => {
   return (

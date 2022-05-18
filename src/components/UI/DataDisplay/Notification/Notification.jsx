@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { CgClose } from "react-icons/cg";
 import Loader from "../../Utils/Loader/Loader";
 

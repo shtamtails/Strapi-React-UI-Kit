@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { AutocompleteMain, AutocompleteDrop } from "./Components";
+import { AutocompleteMain } from "./AutocompleteMain";
+import { AutocompleteDrop } from "./AutocompleteDrop";
 import { InputContainer, InputLabel, InputDescription } from "../General";
-import { useClickOutside, useElementWidth } from "../../../../Hooks";
+import { useClickOutside, useElementWidth } from "../../../Hooks";
 
 export const Autocomplete = ({
   disabled,

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { InputContainer, InputLabel, InputDescription, InputMain } from "../General";
 
 export const TextInput = React.forwardRef(({ ...props }, ref) => {

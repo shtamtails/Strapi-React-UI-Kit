@@ -1,20 +1,13 @@
-import React, { useRef, useState } from "react";
-import { useUniqueId } from "../../../Hooks";
-import { TextArea, Select, Switch, Button, TextInput } from "../../UI";
+import { useRef, useState } from "react";
+import { TextArea, Switch, TextInput } from "../../UI";
 import { About, Code, ComponentPreview, Subtitle, Main } from "../Template/";
 export const TextAreaPage = () => {
-  const [value, setValue] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const [required, setRequired] = useState(false);
   const [height, setHeight] = useState(null);
   const [maxWidth, setMaxWidth] = useState(500);
   const [maxHeight, setMaxHeight] = useState(200);
-  const heightOptions = [
-    { id: useUniqueId, text: "Small", value: "sm" },
-    { id: useUniqueId, text: "Medium", value: "md" },
-    { id: useUniqueId, text: "Large", value: "lg" },
-  ];
 
   const passwordInputRef = useRef(null);
   return (

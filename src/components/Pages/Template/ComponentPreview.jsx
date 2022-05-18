@@ -1,5 +1,3 @@
-import React from "react";
-
 export const ComponentPreview = ({ component, settings, height, width }) => {
   return (
     <div className="component-preview">

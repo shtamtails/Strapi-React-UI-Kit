@@ -1,5 +1,5 @@
 import "../css/main.css";
-import React, { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { AppShell, Navbar, Modal, TextInput, PasswordInput, Button } from "./UI";
 import { NavbarContent } from "./NavbarContent";
 import {
@@ -21,7 +21,6 @@ import {
   TestPage,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
-import { useUniqueId } from "../Hooks";
 
 const logo = (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
