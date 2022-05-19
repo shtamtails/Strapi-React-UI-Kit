@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { NavbarAccordion } from "./NavbarAccordion";
 import { NavbarAccordionItem } from "./NavbarAccordionItem";
-import { NavbarLogo } from "./NavbarLogo";
 import { FaAngleLeft } from "react-icons/fa";
 
-export const Navbar = ({ children, width, collapsable, collapse, setCollapse }) => {
+export const Navbar = ({ children, width, collapsable, collapse, setCollapse, withHeader }) => {
   const [navbarWidth, setNavbarwidth] = useState(width);
 
   const btnStyles = ["collapse-btn"];
+  const navbarStyles = ["navbar"];
+  withHeader && navbarStyles.push("vh100-header");
   const btnMargin = { left: `${!collapse ? `${width - 40}px` : `50px`}` };
   collapse && btnStyles.push("collapse-btn-opened");
   const handleCollapseClick = () => {
@@ -16,7 +17,7 @@ export const Navbar = ({ children, width, collapsable, collapse, setCollapse }) 
   };
 
   return (
-    <div className="navbar" style={{ width: navbarWidth }}>
+    <div className={navbarStyles.join(" ")} style={{ width: navbarWidth }}>
       {children}
       {collapsable && (
         <div className={btnStyles.join(" ")} style={btnMargin} onClick={handleCollapseClick}>
@@ -29,10 +30,7 @@ export const Navbar = ({ children, width, collapsable, collapse, setCollapse }) 
 
 Navbar.Accordion = NavbarAccordion;
 Navbar.AccordionItem = NavbarAccordionItem;
-Navbar.Logo = NavbarLogo;
 
-Navbar.defaultProps = {
-  width: 260,
-};
+Navbar.defaultProps = {};
 
 export default Navbar;

@@ -3,51 +3,143 @@ import { Navbar } from "./UI";
 import { NavLink } from "react-router-dom";
 
 export const NavbarContent = () => {
-  const handleClick = (e) => {
-    console.log(e.target.classList.add("current"));
-  };
   const activePage = {
     backgroundColor: "#f0f0ff",
     borderLeft: "1px solid #7b79ff",
   };
+
+  const items = [
+    {
+      id: 0,
+      name: "Action Icon",
+      link: "/actionicon",
+      topic: "inputs",
+    },
+    {
+      id: 1,
+      name: "Autocomplete",
+      link: "/autocomplete",
+      topic: "inputs",
+    },
+    {
+      id: 2,
+      name: "Select",
+      link: "/select",
+      topic: "inputs",
+    },
+    {
+      id: 3,
+      name: "Button",
+      link: "/button",
+      topic: "inputs",
+    },
+    {
+      id: 4,
+      name: "",
+      link: "/checkbox",
+      topic: "inputs",
+    },
+    {
+      id: 5,
+      name: "",
+      link: "/switch",
+      topic: "inputs",
+    },
+    {
+      id: 6,
+      name: "",
+      link: "/passowrdinput",
+      topic: "inputs",
+    },
+    {
+      id: 7,
+      name: "",
+      link: "/textinput",
+      topic: "inputs",
+    },
+    {
+      id: 8,
+      name: "",
+      link: "/textarea",
+      topic: "inputs",
+    },
+    {
+      id: 9,
+      name: "",
+      link: "/accordion",
+      topic: "dataDisplay",
+    },
+    {
+      id: 10,
+      name: "",
+      link: "/card",
+      topic: "dataDisplay",
+    },
+    {
+      id: 11,
+      name: "",
+      link: "/kbd",
+      topic: "dataDisplay",
+    },
+    {
+      id: 12,
+      name: "",
+      link: "/notifications",
+      topic: "dataDisplay",
+    },
+    {
+      id: 13,
+      name: "",
+      link: "/affix",
+      topic: "overlay",
+    },
+    {
+      id: 14,
+      name: "",
+      link: "/modal",
+      topic: "overlay",
+    },
+    {
+      id: 15,
+      name: "",
+      link: "/skeleton",
+      topic: "utils",
+    },
+    {
+      id: 16,
+      name: "",
+      link: "/divider",
+      topic: "utils",
+    },
+  ];
+  const inputsTopic = items.filter((el) => {
+    return el.topic === "inputs";
+  });
+  const overlayTopic = items.filter((el) => {
+    return el.topic === "datadisplay";
+  });
+  const dataDisplayTopic = items.filter((el) => {
+    return el.topic === "overlay";
+  });
+  const utilsTopic = items.filter((el) => {
+    return el.topic === "utils";
+  });
+  console.log(inputsTopic.map((el) => console.log(el.name)));
   return (
     <>
       <Navbar.Accordion multiple>
         <Navbar.AccordionItem title="INPUTS">
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/actionicon">
-            <div className="link" onSelect={handleClick}>
-              Action Icon
-            </div>
-          </NavLink>
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/autocomplete">
-            <div className="link" onSelect={handleClick}>
-              Autocomplete
-            </div>
-          </NavLink>
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/select">
-            <div className="link">Select</div>
-          </NavLink>
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/button">
-            <div className="link">Button</div>
-          </NavLink>
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/checkbox">
-            <div className="link">Checkbox</div>
-          </NavLink>
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/switch">
-            <div className="link">Switch</div>
-          </NavLink>
-          <NavLink
-            style={({ isActive }) => (isActive ? activePage : undefined)}
-            to="/passwordinput"
-          >
-            <div className="link">Password Input</div>
-          </NavLink>
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/textinput">
-            <div className="link">Text Input</div>
-          </NavLink>
-          <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/textarea">
-            <div className="link">Text Area</div>
-          </NavLink>
+          {inputsTopic.map((el) => {
+            return (
+              <NavLink
+                key={el.id}
+                style={({ isActive }) => (isActive ? activePage : undefined)}
+                to={el.link}
+              >
+                <div className="link">{el.name}</div>
+              </NavLink>
+            );
+          })}
         </Navbar.AccordionItem>
         <Navbar.AccordionItem title="Data Display">
           <NavLink style={({ isActive }) => (isActive ? activePage : undefined)} to="/accordion">

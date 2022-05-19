@@ -1,4 +1,4 @@
-export const NavbarLogo = ({ logo, text, subtext, collapse }) => {
+export const HeaderLogo = ({ logo, text, subtext, collapse }) => {
   const logoStyles = ["navbar-logo"];
 
   return (
@@ -13,5 +13,3 @@ export const NavbarLogo = ({ logo, text, subtext, collapse }) => {
     </div>
   );
 };
-
-export default NavbarLogo;

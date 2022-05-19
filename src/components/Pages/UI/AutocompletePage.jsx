@@ -9,8 +9,9 @@ export const AutocompletePage = () => {
   const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const [sideIcon, setSideIcon] = useState(true);
-  const [height, setHeight] = useState("md");
+  const [height, setHeight] = useState(null);
   const [required, setRequired] = useState(false);
+  const [borderRadius, setBorderRadius] = useState(null);
   console.log(value);
   const options = [
     { id: useUniqueId(), text: "React", value: "react" },
@@ -21,6 +22,13 @@ export const AutocompletePage = () => {
     { id: useUniqueId(), text: "sm", value: "sm" },
     { id: useUniqueId(), text: "md", value: "md" },
     { id: useUniqueId(), text: "lg", value: "lg" },
+  ];
+  const borderRadiusOptions = [
+    { id: useUniqueId(), text: "sm", value: "sm" },
+    { id: useUniqueId(), text: "md", value: "md" },
+    { id: useUniqueId(), text: "lg", value: "lg" },
+    { id: useUniqueId(), text: "xl", value: "xl" },
+    { id: useUniqueId(), text: "xxl", value: "xxl" },
   ];
 
   const ref = useRef(null);
@@ -50,8 +58,10 @@ export const AutocompletePage = () => {
                 sideIcon={sideIcon && <GrCodeSandbox />}
                 height={height}
                 required={required}
+                borderRadius={borderRadius}
                 useref={ref}
                 defaultValue={options[0]}
+                placeholder={"..."}
               />
             </div>
           }
@@ -82,6 +92,15 @@ export const AutocompletePage = () => {
                   defaultValue={heightOptions[1]}
                 />
               </div>
+              <div className="section">
+                <Select
+                  label="Border Radius"
+                  optionsList={borderRadiusOptions}
+                  value={borderRadius}
+                  setValue={setBorderRadius}
+                  defaultValue={borderRadiusOptions[1]}
+                />
+              </div>
             </>
           }
         />
@@ -109,6 +128,8 @@ export const AutocompletePage = () => {
             loading={${loading}}
             defaultValue={options[0]}
             required={${required}}
+            borderRadius="${borderRadius}"
+            placeholder={"..."}
             ${sideIcon ? `sideIcon={<GrCodeSandbox />}` : ``}
             ${height ? `height="${height}"` : ``}
         />

@@ -14,9 +14,11 @@ export const Autocomplete = ({
   required,
   useref,
   height,
+  placeholder,
   sideIcon,
   optionsList,
   description,
+  borderRadius,
   defaultValue,
 }) => {
   // State for handle if select options is opened or closed
@@ -54,6 +56,7 @@ export const Autocomplete = ({
     <InputContainer ref={inputContainerRef}>
       <InputLabel label={label} required={required} />
       <AutocompleteMain
+        borderRadius={borderRadius}
         ref={useref}
         handleSelectInputFieldClick={handleSelectInputFieldClick}
         loading={loading}
@@ -62,6 +65,7 @@ export const Autocomplete = ({
         inputFieldValue={inputFieldValue}
         height={height}
         sideIcon={sideIcon}
+        placeholder={placeholder}
         required={required}
       />
       <AutocompleteDrop

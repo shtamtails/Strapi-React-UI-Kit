@@ -12,6 +12,8 @@ export const AutocompleteMain = React.forwardRef(
       inputFieldValue,
       sideIcon,
       height,
+      borderRadius,
+      placeholder,
       required,
     },
     ref
@@ -23,6 +25,7 @@ export const AutocompleteMain = React.forwardRef(
     const styles = ["select-input"];
     sideIcon ? styles.push("with-icon") : styles.push("default");
     height && styles.push(height);
+    borderRadius && styles.push(`br-${borderRadius}`);
 
     return (
       <>
@@ -37,6 +40,7 @@ export const AutocompleteMain = React.forwardRef(
             onClick={handleSelectInputFieldClick}
             value={inputFieldValue}
             onChange={handleInputChange}
+            placeholder={placeholder}
           />
           <ClearButton
             loading={loading}
