@@ -11,6 +11,7 @@ export const HeaderSearch = () => {
       id: el.id,
       text: el.name,
       value: el.link,
+      description: el.description,
     };
   });
 

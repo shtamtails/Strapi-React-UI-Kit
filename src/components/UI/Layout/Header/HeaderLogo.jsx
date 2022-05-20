@@ -1,5 +1,5 @@
 export const HeaderLogo = ({ logo, text, subtext, collapse }) => {
-  const logoStyles = ["navbar-logo"];
+  const logoStyles = ["header-logo"];
 
   return (
     <div className={logoStyles.join(" ")}>

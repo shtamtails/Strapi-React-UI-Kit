@@ -98,36 +98,6 @@
   }
 }
 
-.navbar-logo {
-  overflow-x: hidden;
-  display: flex;
-  align-items: center;
-  padding-left: 14px;
-  height: 70px;
-  transition: all 500ms ease;
-  .logo {
-    display: flex;
-    svg {
-      width: 34px;
-      height: auto;
-    }
-  }
-  .text {
-    transition: opacity 500ms ease;
-    margin-left: 12px;
-    font-weight: 600;
-  }
-  .main_text {
-    font-size: 16px;
-  }
-  .sub_text {
-    color: $neutral-600;
-    font-size: 11px;
-    text-transform: uppercase;
-    flex: 1 0;
-  }
-}
-
 .collapse-btn {
   transition: left 500ms ease;
   background-color: #fff;

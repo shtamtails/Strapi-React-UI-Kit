@@ -13,9 +13,24 @@ export const AutocompletePage = () => {
   const [required, setRequired] = useState(false);
   const [borderRadius, setBorderRadius] = useState(null);
   const options = [
-    { id: useUniqueId(), text: "React", value: "react" },
-    { id: useUniqueId(), text: "Angular", value: "angular" },
-    { id: useUniqueId(), text: "Vue", value: "vue" },
+    {
+      id: useUniqueId(),
+      text: "React",
+      value: "react",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quidem.",
+    },
+    {
+      id: useUniqueId(),
+      text: "Angular",
+      value: "angular",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quidem.",
+    },
+    {
+      id: useUniqueId(),
+      text: "Vue",
+      value: "vue",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quidem.",
+    },
   ];
   const heightOptions = [
     { id: useUniqueId(), text: "sm", value: "sm" },
@@ -111,11 +126,26 @@ export const AutocompletePage = () => {
 
  const Demo = () => {
     const [value, setValue] = useState(null);
-    const options = [{
-        { id: useUniqueId(), text: "React", value: "react" },
-        { id: useUniqueId(), text: "Angular", value: "angular" },
-        { id: useUniqueId(), text: "Vue", value: "vue" },
-    }]
+    const options = [
+      {
+        id: useUniqueId(),
+        text: "React",
+        value: "react",
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quidem.",
+      },
+      {
+        id: useUniqueId(),
+        text: "Angular",
+        value: "angular",
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quidem.",
+      },
+      {
+        id: useUniqueId(),
+        text: "Vue",
+        value: "vue",
+        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, quidem.",
+      },
+    ];
     return (
         <Autocomplete
             label="Chose your favourite framework"
