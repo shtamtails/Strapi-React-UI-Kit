@@ -12,7 +12,6 @@ export const AutocompletePage = () => {
   const [height, setHeight] = useState(null);
   const [required, setRequired] = useState(false);
   const [borderRadius, setBorderRadius] = useState(null);
-  console.log(value);
   const options = [
     { id: useUniqueId(), text: "React", value: "react" },
     { id: useUniqueId(), text: "Angular", value: "angular" },

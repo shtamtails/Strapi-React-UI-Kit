@@ -75,7 +75,7 @@ $types: "filled", "outline", "light", "subtle";
         @include button($color-600, none, $color-600, $color-100);
       }
       @if $type == "light" {
-        @include button($color-600, $color-100, $color-200, none);
+        @include button($color-600, $color-100, $color-200, transparent);
       }
       @if $type == "subtle" {
         @include button($color-600, none, transparent, $color-100);

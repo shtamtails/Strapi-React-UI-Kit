@@ -16,7 +16,7 @@
 .navbar {
   transition: width 500ms ease;
   height: calc(100vh);
-  width: 260px;
+  min-width: 260px;
   background-color: #fff;
   border-right: 1px solid $neutral-200;
 }
